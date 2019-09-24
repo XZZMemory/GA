@@ -11,7 +11,7 @@ class Population:
     individualList = []  # 初始个体列表
     # 种群参数设置
     sizeOfPopulation = 30  # 测试，先写10个种群大小
-    iterations = 70  # 迭代次数
+    iterations = 50  # 迭代次数
     crossoverPc = 0.95  # 交叉概率
     mutatePm = 0.09  # 0.02#变异概率
 
@@ -588,8 +588,8 @@ class Population:
             print("种群个体列表长度小于2")
         competitors_1 = random.sample(self.individualList, 2)
         competitors_2 = random.sample(self.individualList, 2)
-        fitness_1 = [competitors_1[0].getFitness(), competitors_1[1].getFitness()]
-        fitness_2 = [competitors_2[0].getFitness(), competitors_2[1].getFitness()]
+        fitness_1 = [competitors_1[0].getFitnessWithIntegral(), competitors_1[1].getFitnessWithIntegral()]
+        fitness_2 = [competitors_2[0].getFitnessWithIntegral(), competitors_2[1].getFitnessWithIntegral()]
         '''选择适应大的个体去交叉'''
         father = competitors_1[1] if fitness_1[1] > fitness_1[0] else competitors_1[0]
         mather = competitors_2[1] if (fitness_2[1] > fitness_2[0]) else competitors_2[0]

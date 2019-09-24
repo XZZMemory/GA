@@ -234,6 +234,7 @@ class Individual:
 
     def getFitness(self):
         fileName = "sinr.txt"
+        print("执行getFitness函数")
         self.SINR = self.getSINR()
         f = open(fileName, 'w')
         f.write(str(self.SINR) + '\n')
@@ -422,6 +423,7 @@ class Individual:
         return asm_array
 
     def getSINR(self):
+        print("执行getsinr函数")
         fileName = 'sinrInGet.txt'
         f = open(fileName, 'a')
         SINR = []

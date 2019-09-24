@@ -125,7 +125,7 @@ def main2(dataTime):
     # 根据初始化参数，执行
     rootPath = "./data"
     # type:[1,5]
-    for type in range(3, 6):
+    for type in range(2, 6):
         fileName = dataTime + "-" + str(type) + "-VQD" + str(type) + ".txt"
         populationFitnessPath = rootPath + "/populationFitness/" + fileName
         maxFitnessPath = rootPath + "/maxFitness/" + fileName
@@ -133,8 +133,8 @@ def main2(dataTime):
         print("画图数据")
         print("VQD" + str(type) + ".points " + str(resultVQD.points) + '\n')
         print("画收敛图")
-        painter = Painter()
-        painter.paintOne(resultVQD, population.iterations)
+        #painter = Painter()
+        #painter.paintOne(resultVQD, population.iterations)
 
 
 population = Population()  # 初始化

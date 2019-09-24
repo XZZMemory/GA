@@ -98,11 +98,6 @@ class Painter:
                 cir2 = Circle(xy=(locationOfBase[base][0], locationOfBase[base][1]), radius=baseCoverArea[base],
                               alpha=0.5,
                               color='gray')
-            '''
-            cir3 = Circle(xy=(locationOfBase[base][0], locationOfBase[base][1]), radius=5, alpha=0.5,
-                          color='black')
-            ax.add_patch(cir3)
-            '''
             ax.add_patch(cir2)
         for user in range(len(locationOfUser)):
             cir2 = Circle(xy=(locationOfUser[user][0], locationOfUser[user][1]), radius=5, alpha=0.5, color='red')
@@ -124,12 +119,14 @@ class Painter:
         ax.plot(x, y, 'ro')
         plt.axis('scaled')
         plt.axis('equal')  # changes limits of x or y axis so that equal increments of x and y have the same length
+        #plt.scatter(label=fileName[len(fileName) - 8:len(fileName) - 4])
         plt.show()
         # './png/data/maxFitness/20190513-1-VQD4-NetworkTopology.png'
 
     def paint9(self):
-        points = [[0, 35.99972526544358], [1, 36.999245344915586], [2, 37.99851896670715], [3, 37.99851896670715], [4, 38.99851389104737], [5, 38.99851389104737], [6, 40.998465598338115], [7, 40.998465598338115], [8, 40.998465598338115], [9, 40.998465598338115]]
-
+        points = [[0, 35.99972526544358], [1, 36.999245344915586], [2, 37.99851896670715], [3, 37.99851896670715],
+                  [4, 38.99851389104737], [5, 38.99851389104737], [6, 40.998465598338115], [7, 40.998465598338115],
+                  [8, 40.998465598338115], [9, 40.998465598338115]]
 
         iterations = 100
 
@@ -335,8 +332,11 @@ class Painter:
         plt.axis('scaled')
         plt.axis('equal')  # changes limits of x or y axis so that equal increments of x and y have the same length
         plt.show()
+
     def paint22(self):
-        points=[[0, 35.99972526544358], [1, 36.999245344915586], [2, 37.99851896670715], [3, 37.99851896670715], [4, 38.99851389104737], [5, 38.99851389104737], [6, 40.998465598338115], [7, 40.998465598338115], [8, 40.998465598338115], [9, 40.998465598338115]]
+        points = [[0, 35.99972526544358], [1, 36.999245344915586], [2, 37.99851896670715], [3, 37.99851896670715],
+                  [4, 38.99851389104737], [5, 38.99851389104737], [6, 40.998465598338115], [7, 40.998465598338115],
+                  [8, 40.998465598338115], [9, 40.998465598338115]]
 
         plt.figure(2)
         plt.title("GA", fontsize=24)
@@ -346,11 +346,11 @@ class Painter:
                     label="name",
                     s=1)  # marker定义形状，label与plt.legend画出右上角图例
 
-
         plt.axis([0, 12, 0, 50])
         plt.legend(
             loc='upper right')  # center left lower right right upper center lower center center right lower left best.....
         plt.show()
+
 
 pa = Painter()
 pa.paint22()
