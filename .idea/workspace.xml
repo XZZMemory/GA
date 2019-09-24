@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/de/Population.py" line="9" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="010aef75-3e83-4ebe-9809-b2e7e5e82e46" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GA/Individual.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA/Individual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TypeOfVQD.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/picture/TypeOfVQD.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VQD1.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/picture/VQD1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VQD2.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/picture/VQD2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VQD3.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/picture/VQD3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VQD4.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/picture/VQD4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VQD5.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/picture/VQD5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/de/Individual.py" beforeDir="false" afterPath="$PROJECT_DIR$/de/Individual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/五种方式对比.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/picture/五种方式对比.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/每日进度.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/picture/每日进度.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/网络拓扑图20190627.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/picture/网络拓扑图20190627.png" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/GAofQoE$Painter.coverage" NAME="Painter Coverage Results" MODIFIED="1547205966205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$Painter.coverage" NAME="Painter Coverage Results" MODIFIED="1556591100209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GAofQoE$Population.coverage" NAME="Population Coverage Results" MODIFIED="1554699885422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$test6.coverage" NAME="test6 Coverage Results" MODIFIED="1556266693464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GA$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1557218592165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1556273060858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GAofQoE$Util.coverage" NAME="Util Coverage Results" MODIFIED="1555639747412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$Util.coverage" NAME="Util Coverage Results" MODIFIED="1556174048977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$test.coverage" NAME="test Coverage Results" MODIFIED="1556616931776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GAofQoE$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1545310626653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GAofQoE$.coverage" NAME="函数测试 Coverage Results" MODIFIED="1544417346467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$test7.coverage" NAME="test7 Coverage Results" MODIFIED="1556277074335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GAofQoE$test5.coverage" NAME="test5 Coverage Results" MODIFIED="1547202128154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GAofQoE$Individual.coverage" NAME="Individual Coverage Results" MODIFIED="1544584019778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1556276915796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GA$GA.coverage" NAME="GA Coverage Results" MODIFIED="1557221445541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GAofQoE$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1547202067649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$Main.coverage" NAME="Main Coverage Results" MODIFIED="1556272264861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1556276926833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GAofQoE$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1547202119787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GAofQoE$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1545311174238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$test5.coverage" NAME="test5 Coverage Results" MODIFIED="1556276997574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GAofQoE$test.coverage" NAME="test Coverage Results" MODIFIED="1548069673506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GAofQoE$Main.coverage" NAME="Main Coverage Results" MODIFIED="1554704288560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GAofQoE$GA.coverage" NAME="GA Coverage Results" MODIFIED="1555836024198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GAofQoE$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1547213587109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$test8.coverage" NAME="test8 Coverage Results" MODIFIED="1556278390918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GA$Population.coverage" NAME="Population Coverage Results" MODIFIED="1556613095004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GAofQoE$paint.coverage" NAME="paint Coverage Results" MODIFIED="1547202715103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/GAofQoE$test6.coverage" NAME="test6 Coverage Results" MODIFIED="1545312466382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GAofQoE$test1__1_.coverage" NAME="test1 (1) Coverage Results" MODIFIED="1545310750293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="GA" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GA/GA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
+              <folding>
+                <element signature="e#7#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/de/Individual.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GA/Individual.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/picture/每日进度.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>painter</find>
+      <find>Alpha</find>
+      <find>allLocationInitialTest</find>
+      <find>new</find>
+      <find>fit</find>
+      <find>VN</find>
+      <find>getBaseCoveredUsers</find>
+      <find>getVQD5</find>
+      <find>getBaseCoveredVideoImportant</find>
+      <find>getBaseVisitedOfUserVisitingVideoOfVQD5</find>
+      <find>basevisitedUE</find>
+      <find>getVQD</find>
+      <find>f</find>
+      <find>userLocationInitial</find>
+      <find>SINR</find>
+      <find>getPEROfVQD123</find>
+      <find>getSINR</find>
+      <find>getPERofBaseChannelWithoutSINR</find>
+      <find>getPEROfVNWithIntegral</find>
+      <find>getAns</find>
+      <find>getPERWithoutSINROfVQD45</find>
+      <find>getPERofBaseChannelWithIntegral</find>
+      <find>N0</find>
+      <find>tau</find>
+      <find>getPEROfVQD45</find>
+      <find>getAllFitness</find>
+      <find>fitnessPositive</find>
+      <find>maxFitnessInCurrentPopulation</find>
+      <find>printListWithTwoDi</find>
+      <find>perFileName</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GotoFileConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="ARCHIVE" />
+      <filtered-out-file-type name="ActionScript" />
+      <filtered-out-file-type name="AspectJ" />
+      <filtered-out-file-type name="BuildoutCfg" />
+      <filtered-out-file-type name="C#" />
+      <filtered-out-file-type name="C++" />
+      <filtered-out-file-type name="CSS" />
+      <filtered-out-file-type name="Chameleon" />
+      <filtered-out-file-type name="CoffeeScript" />
+      <filtered-out-file-type name="CommandLine" />
+      <filtered-out-file-type name="Cucumber" />
+      <filtered-out-file-type name="Cython" />
+      <filtered-out-file-type name="DATASOURCE_STORAGE" />
+      <filtered-out-file-type name="DTD" />
+      <filtered-out-file-type name="Database Element" />
+      <filtered-out-file-type name="Dockerfile" />
+      <filtered-out-file-type name="ECMAScript 6" />
+      <filtered-out-file-type name="Erlang" />
+      <filtered-out-file-type name="Flow" />
+      <filtered-out-file-type name="H2 Database" />
+      <filtered-out-file-type name="HTML" />
+      <filtered-out-file-type name="HTTP Request" />
+      <filtered-out-file-type name="Haml" />
+      <filtered-out-file-type name="Haskell" />
+      <filtered-out-file-type name="IDEA_MODULE" />
+      <filtered-out-file-type name="IDEA_PROJECT" />
+      <filtered-out-file-type name="IDEA_WORKSPACE" />
+      <filtered-out-file-type name="IDL" />
+      <filtered-out-file-type name="IPNB" />
+      <filtered-out-file-type name="Images" />
+      <filtered-out-file-type name="Ini" />
+      <filtered-out-file-type name="JQL" />
+      <filtered-out-file-type name="JSCS" />
+      <filtered-out-file-type name="JSHint" />
+      <filtered-out-file-type name="JSON" />
+      <filtered-out-file-type name="JSP" />
+      <filtered-out-file-type name="JSX Harmony" />
+      <filtered-out-file-type name="JavaFX" />
+      <filtered-out-file-type name="JavaScript" />
+      <filtered-out-file-type name="Jinja2" />
+      <filtered-out-file-type name="Less" />
+      <filtered-out-file-type name="Literate CoffeeScript" />
+      <filtered-out-file-type name="Locale" />
+      <filtered-out-file-type name="Mako" />
+      <filtered-out-file-type name="Native" />
+      <filtered-out-file-type name="PATCH" />
+      <filtered-out-file-type name="PHP" />
+      <filtered-out-file-type name="PLAIN_TEXT" />
+      <filtered-out-file-type name="Perl" />
+      <filtered-out-file-type name="Properties" />
+      <filtered-out-file-type name="Puppet" />
+      <filtered-out-file-type name="Python" />
+      <filtered-out-file-type name="PythonStub" />
+      <filtered-out-file-type name="Qt UI file" />
+      <filtered-out-file-type name="RNG Compact" />
+      <filtered-out-file-type name="ReST" />
+      <filtered-out-file-type name="RegExp" />
+      <filtered-out-file-type name="ResourceBundle" />
+      <filtered-out-file-type name="SCSS" />
+      <filtered-out-file-type name="SQL" />
+      <filtered-out-file-type name="SQLite Database" />
+      <filtered-out-file-type name="SVG" />
+      <filtered-out-file-type name="Sass" />
+      <filtered-out-file-type name="Scratch" />
+      <filtered-out-file-type name="SourceMap" />
+      <filtered-out-file-type name="Stylus" />
+      <filtered-out-file-type name="TSLint" />
+      <filtered-out-file-type name="TypeScript" />
+      <filtered-out-file-type name="TypeScript JSX" />
+      <filtered-out-file-type name="UML" />
+      <filtered-out-file-type name="UNKNOWN" />
+      <filtered-out-file-type name="Web2Py" />
+      <filtered-out-file-type name="XHTML" />
+      <filtered-out-file-type name="XML" />
+      <filtered-out-file-type name="YAML" />
+      <filtered-out-file-type name="YouTrack" />
+      <filtered-out-file-type name="textmate" />
+    </file-type-list>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/maxFitnessOfEachPopulationVQD1" />
+        <option value="$PROJECT_DIR$/maxFitnessOfEachPopulationVQD3" />
+        <option value="$PROJECT_DIR$/test/MyObject.py" />
+        <option value="$PROJECT_DIR$/populationOfVQD2" />
+        <option value="$PROJECT_DIR$/TypeOfVQD.py" />
+        <option value="$PROJECT_DIR$/TypeOfVQD" />
+        <option value="$PROJECT_DIR$/test/Util.py" />
+        <option value="$PROJECT_DIR$/test/Main.py" />
+        <option value="$PROJECT_DIR$/test/painter/test3.py" />
+        <option value="$PROJECT_DIR$/test/painter/test5.py" />
+        <option value="$PROJECT_DIR$/test/painter/test7.py" />
+        <option value="$PROJECT_DIR$/test/painter/test8.py" />
+        <option value="$PROJECT_DIR$/Util.py" />
+        <option value="$PROJECT_DIR$/maxFitnessOfEachPopulationVQD4" />
+        <option value="$PROJECT_DIR$/test/painter/test.py" />
+        <option value="$PROJECT_DIR$/Result.py" />
+        <option value="$PROJECT_DIR$/data/maxFitness/VQD4-2.txt" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/test/file.txt" />
+        <option value="$PROJECT_DIR$/test/fileTest.py" />
+        <option value="$PROJECT_DIR$/sinr.txt" />
+        <option value="$PROJECT_DIR$/test/painter/userGenerateTest.py" />
+        <option value="$PROJECT_DIR$/venv/Classes.py" />
+        <option value="$PROJECT_DIR$/解决问题.txt" />
+        <option value="$PROJECT_DIR$/de/object/object.py" />
+        <option value="$PROJECT_DIR$/de/object.py" />
+        <option value="$PROJECT_DIR$/de/test.py" />
+        <option value="$PROJECT_DIR$/de/DE.py" />
+        <option value="$PROJECT_DIR$/data/maxFitness/20190622-1-VQD5.txt" />
+        <option value="$PROJECT_DIR$/data/maxFitness/20190527-1-VQD5.txt" />
+        <option value="$PROJECT_DIR$/data/maxFitness/20190526-1-VQD4.txt" />
+        <option value="$PROJECT_DIR$/data/maxFitness/20190527-1-VQD4.txt" />
+        <option value="$PROJECT_DIR$/每日进度.txt" />
+        <option value="$PROJECT_DIR$/de/Population.py" />
+        <option value="$PROJECT_DIR$/test/__init__.py" />
+        <option value="$PROJECT_DIR$/data/maxFitness/20190627-1-VQD4.txt" />
+        <option value="$PROJECT_DIR$/test/Test.py" />
+        <option value="$PROJECT_DIR$/al/matching.py" />
+        <option value="$PROJECT_DIR$/de/MyObject.py" />
+        <option value="$PROJECT_DIR$/al/ma.py" />
+        <option value="$PROJECT_DIR$/test/Object.py" />
+        <option value="$PROJECT_DIR$/GA.py" />
+        <option value="$PROJECT_DIR$/Painter.py" />
+        <option value="$PROJECT_DIR$/Utils.py" />
+        <option value="$PROJECT_DIR$/data/maxFitness/20190508-1-VQD4.txt" />
+        <option value="$PROJECT_DIR$/data/maxFitness/20190516-1-VQD4.txt" />
+        <option value="$PROJECT_DIR$/data/maxFitness/20190611-1-VQD5.txt" />
+        <option value="$PROJECT_DIR$/data/maxFitness/20190623-1-VQD5.txt" />
+        <option value="$PROJECT_DIR$/Population.py" />
+        <option value="$PROJECT_DIR$/Individual.py" />
+        <option value="$PROJECT_DIR$/de/Individual.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GA" type="462c0819:PsiDirectoryNode" />
+              <item name="al" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GA" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GA" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="self.VQD&#9;null&#9;null&#10;sumOfBS&#9;null&#9;null&#10;VQD&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Enhancing Availability GA" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\content\PycharmProjects\GA\data\picture" />
+      <recent name="E:\content\PycharmProjects\GA\GA" />
+      <recent name="E:\content\PycharmProjects\GA\de" />
+      <recent name="$PROJECT_DIR$/data/PER" />
+      <recent name="$PROJECT_DIR$/test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/venv" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.GA">
+    <configuration name="GA" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GAofQoE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="E:\content\PycharmProjects\GA\GA\GA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Object" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GAofQoE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/Object.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Painter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GAofQoE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="E:\content\PycharmProjects\GA\GA\Painter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GAofQoE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GAofQoE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="E:\content\PycharmProjects\GA\GA\Utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.GA" />
+      <item itemvalue="Python.Test" />
+      <item itemvalue="Python.Utils" />
+      <item itemvalue="Python.Object" />
+      <item itemvalue="Python.Painter" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.GA" />
+        <item itemvalue="Python.Painter" />
+        <item itemvalue="Python.Object" />
+        <item itemvalue="Python.Utils" />
+        <item itemvalue="Python.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="010aef75-3e83-4ebe-9809-b2e7e5e82e46" name="Default Changelist" comment="" />
+      <created>1527473759464</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527473759464</updated>
+      <workItem from="1541395851703" duration="1407000" />
+      <workItem from="1541403123701" duration="1364000" />
+      <workItem from="1556030346409" duration="70000" />
+      <workItem from="1556290845968" duration="2687000" />
+      <workItem from="1558920564109" duration="44763000" />
+      <workItem from="1559995211174" duration="11131000" />
+      <workItem from="1560341438649" duration="4455000" />
+      <workItem from="1560926320361" duration="1534000" />
+      <workItem from="1561038406036" duration="3432000" />
+      <workItem from="1561099918422" duration="2867000" />
+      <workItem from="1561190863877" duration="1358000" />
+      <workItem from="1561204201613" duration="23059000" />
+      <workItem from="1561351124119" duration="10057000" />
+      <workItem from="1561514941230" duration="2929000" />
+      <workItem from="1561532202360" duration="15302000" />
+      <workItem from="1561623469411" duration="22874000" />
+      <workItem from="1563589816592" duration="8073000" />
+      <workItem from="1564324080818" duration="1235000" />
+      <workItem from="1566911822793" duration="598000" />
+      <workItem from="1567060259304" duration="5104000" />
+      <workItem from="1567843963635" duration="1578000" />
+      <workItem from="1568010450778" duration="12833000" />
+      <workItem from="1568684672797" duration="12848000" />
+      <workItem from="1568943874264" duration="20074000" />
+      <workItem from="1569219872052" duration="13670000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="236964000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1064" extended-state="7" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3383978" visible="true" weight="0.24413647" />
+      <window_info id="Favorites" order="1" sideWeight="0.6602151" side_tool="true" weight="0.24147122" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5021322" side_tool="true" weight="0.22150537" />
+      <window_info anchor="bottom" id="Structure" order="1" sideWeight="0.6616022" weight="0.24408603" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.7516129" />
+      <window_info anchor="bottom" id="Python Console" order="3" weight="0.32795697" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="4" sideWeight="0.4978678" visible="true" weight="0.2860215" />
+      <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32795697" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49946696" weight="0.9548387" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" weight="0.32795697" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="0" visible="true" weight="0.20522387" />
+      <window_info anchor="right" id="Database" order="1" weight="0.32875606" />
+      <window_info anchor="right" id="SciView" order="2" weight="0.49253732" />
+      <window_info anchor="right" id="Commander" order="3" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
+      <window_info anchor="right" id="Debug" order="6" weight="0.5415778" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3383978" visible="true" weight="0.24413647" />
+      <window_info id="Favorites" order="1" sideWeight="0.6602151" side_tool="true" weight="0.24147122" />
+      <window_info id="Structure" order="2" sideWeight="0.6616022" side_tool="true" weight="0.24413647" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5021322" side_tool="true" weight="0.22150537" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.3281471" />
+      <window_info anchor="bottom" id="Python Console" order="2" weight="0.32840723" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4978678" weight="0.22150537" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32795697" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49946696" weight="0.45698926" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.32840723" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="0" visible="true" weight="0.20522387" />
+      <window_info anchor="right" id="Database" order="1" weight="0.32875606" />
+      <window_info anchor="right" id="SciView" order="2" weight="0.49253732" />
+      <window_info anchor="right" id="Commander" order="3" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
+      <window_info anchor="right" id="Debug" order="6" weight="0.5415778" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>181</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>236</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>258</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>263</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>253</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>355</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/al/ma.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Population.py</url>
+          <line>578</line>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>268</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>271</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>421</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GA/Individual.py</url>
+          <line>404</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self.sumofBS" />
+        <watch expression="__py_debug_temp_var_89368243" />
+        <watch expression="__py_debug_temp_var_89368243" />
+        <watch expression="__py_debug_temp_var_89368243" />
+        <watch expression="__py_debug_temp_var_89368243" />
+        <watch expression="__py_debug_temp_var_89368243" />
+        <watch expression="__py_debug_temp_var_89368243" />
+        <watch expression="__py_debug_temp_var_89368243" />
+        <watch expression="population.individualList[0].C" />
+        <watch expression="individualforCross" />
+        <watch expression="individualForCross[0].C" />
+        <watch expression="self.C" />
+        <watch expression="self.P" />
+        <watch expression="self.VN" />
+        <watch expression="self.SINR" />
+        <watch expression="self.sumOfBase" />
+        <watch expression="self.sumOfChannels" />
+        <watch expression="self.sumOfVideo" />
+        <watch expression="self.typeOfVQD" />
+        <watch expression="self.population.individualList[0]" />
+        <watch expression="self.C" />
+        <watch expression="__py_debug_temp_var_674801211" />
+        <watch expression="__py_debug_temp_var_1539038842" />
+        <watch expression="self.locationOfUser[4]" />
+        <watch expression="__py_debug_temp_var_1154675069" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GA$userGenerateTest.coverage" NAME="userGenerateTest Coverage Results" MODIFIED="1559028445165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GA$Utils.coverage" NAME="Utils Coverage Results" MODIFIED="1567844321576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$Painter.coverage" NAME="Painter Coverage Results" MODIFIED="1569224994607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$Population.coverage" NAME="Population Coverage Results" MODIFIED="1561472837408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/de" />
+    <SUITE FILE_PATH="coverage/GA$Object.coverage" NAME="Object Coverage Results" MODIFIED="1569220077503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$fileTest.coverage" NAME="fileTest Coverage Results" MODIFIED="1558923489431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$Test.coverage" NAME="Test Coverage Results" MODIFIED="1561682805356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$GA.coverage" NAME="GA Coverage Results" MODIFIED="1569247500926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$test8.coverage" NAME="test8 Coverage Results" MODIFIED="1556291440003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GA$test.coverage" NAME="test Coverage Results" MODIFIED="1561205011533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/de" />
+    <SUITE FILE_PATH="coverage/GA$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1561084327041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
+    <SUITE FILE_PATH="coverage/GA$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1561625832112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>self.baseCapacity</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/other/populationOfVQD">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20424">
+          <caret selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190508-1-VQD4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-490" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190508-2-VQD4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1272">
+          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190513-1-VQD4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20914" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190516-1-VQD4.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190611-1-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190608-1-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190613-2-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1042" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190614-1-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2385" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190623-1-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190622-2-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3880" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190624-2-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4938" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190624-2-VQD4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1580" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190626-1-VQD4.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/populationOfVQD1">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/populationOfVQD2">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/populationOfVQD3">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/maxFitnessOfEachPopulationVQD.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/maxFitnessOfEachPopulationVQD1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/maxFitnessOfEachPopulationVQD2">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other/maxFitnessOfEachPopulationVQD3">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/VQD4-20190505-2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-775" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/VQD4-20190506-1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/VQD4-20190506-1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2100" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190923-4-VQD4.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/picture/网络拓扑图20190627.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/picture/VQD5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/picture/TypeOfVQD.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GA/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/de/DE.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/de/MyObject.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/de/Population.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GA/myplot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GA/Painter.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GA/Population.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190923-1-VQD1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-637">
+          <caret line="11" selection-start-line="11" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GA/GA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
+          <folding>
+            <element signature="e#7#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/PER/20190528-VQD5-2-PER.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/de/Individual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sinrInGet.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190923-2-VQD2.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190923-3-VQD3.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/populationFitness/20190923-1-VQD1.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/populationFitness/20190923-3-VQD3.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/populationFitness/20190923-2-VQD2.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sinr.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GA/Individual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/pachongTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/file.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/picture/每日进度.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
