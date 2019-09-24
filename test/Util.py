@@ -1,5 +1,5 @@
-from GA.Painter import Painter
-from GA.Result import Result
+from Painter import Painter
+from Result import Result
 
 vn=[[1, -1, 1, -1, -1, -1, 1, 1, -1], [-1, 1, 1, -1, 1, -1, 1, 1, 1], [-1, -1, -1, -1, -1, -1, 1, 1, -1],
                    [-1, -1, 1, 1, -1, -1, -1, 1, 1]]

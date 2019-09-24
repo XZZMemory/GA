@@ -1,3 +1,3 @@
-from GA.Painter import Painter
+from Painter import Painter
 painter = Painter()
 painter.paint9()

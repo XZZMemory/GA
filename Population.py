@@ -1,8 +1,8 @@
 import random
 import copy  # 深复制，浅复制
-from GA import Utils
-from GA.Individual import Individual
-from GA.Painter import Painter
+import Utils
+from Individual import Individual
+from Painter import Painter
 import numpy as np
 
 
