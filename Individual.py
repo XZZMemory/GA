@@ -20,7 +20,7 @@ class Individual:
     bias = 1000  # 计算误码率时的偏移量
     population = []
     # 高斯噪声
-    BW = 1e7;
+    BW = 1e7
     __N0_dbm = -174 + 10 * np.log10(BW)
     __N0 = 10 ** ((__N0_dbm - 30) / 10)
     #perFileName = "./data/picture/20190528-VQD5-2-picture.txt"
@@ -407,7 +407,10 @@ class Individual:
                 if user != -1:
                     ss = self.P[base][channel] * self.powerOfBase[base] * (
                             (self.distanceUserToBase[user][base]) ** (-4))
-                    asm = math.e ** (-(self.tau * self.__N0) / ss)
+                    try:
+                        asm = math.e ** (-(self.tau * self.__N0) / ss)
+                    except:
+                        print(str(self.P[base][channel] * self.powerOfBase[base])+" "+str(ss) )
                     for otherBase in range(self.sumOfBase):
                         if otherBase != base:
                             ii = self.P[otherBase][channel] * self.powerOfBase[otherBase] * (

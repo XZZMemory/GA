@@ -352,5 +352,5 @@ class Painter:
         plt.show()
 
 
-pa = Painter()
-pa.paint22()
+#pa = Painter()
+#pa.paint22()

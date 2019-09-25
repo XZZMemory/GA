@@ -33,20 +33,19 @@ def ga(population, fileName, maxFitnessFile, typeOfVQD):
     painter.paintNetworkTopology(population.baseRadius, population.locationOfBase, population.locationOfUser,
                                  population.basevisitedUE, maxFitnessFile)
     '''存储结果，用于绘图，文件操作'''
-    iterations = 0  # 当前迭代次数
-    while (iterations < population.iterations):
-        # if(iterations%50==0):
-        fitness = population.getAllFitnessIntegral()  # 得到种群的适应值，种群的适应值均是负数，我们选取最大的适应值
+    iterations = 1  # 当前迭代次数
+    while (iterations <= population.iterations):
+        fitness = population.getAllFitnessIntegral()
         maxFitnessInCurrentPopulation = getMaxNum(fitness)
         print("当前迭代的代数：" + str(iterations) + "   当前种群适应值最好的：" + str(maxFitnessInCurrentPopulation))
         minFitnessInCurrentPopulation = getMinNum(fitness)
-        if iterations == 0:
+        if iterations == 1:
             maxFitness = maxFitnessInCurrentPopulation
             minFitness = minFitnessInCurrentPopulation
         else:
             maxFitness = maxFitness if maxFitness > maxFitnessInCurrentPopulation else maxFitnessInCurrentPopulation
             minFitness = minFitness if minFitness < maxFitnessInCurrentPopulation else minFitnessInCurrentPopulation
-        m.write("iterations " + str(iterations) + ": " + str( maxFitnessInCurrentPopulation) + '\n')
+        m.write("iterations " + str(iterations) + ": " + str(maxFitnessInCurrentPopulation) + '\n')
         f.write("iterations " + str(iterations + 1) + '\n')
         f.write(str(fitness) + '\n')
         points.append([iterations, maxFitnessInCurrentPopulation])
@@ -73,13 +72,13 @@ def ga(population, fileName, maxFitnessFile, typeOfVQD):
             fit = tempIndividulalList[i].getFitnessWithIntegral()
             tempFitness.append(fit)
         for i in range(population.sizeOfPopulation):
-            mat = "{:40}\t{:30}\t{:40}\t{:30}"
+            # mat = "{:40}\t{:30}\t{:40}\t{:30}"
+            mat2 = "{:30}\t{:30}"
             if tempIndividulalList == None:
                 print(str(i) + "个体是空！")
                 exit(1)
-            print(mat.format(
-                str(population.individualList[i]), "GA前的个体适应值 " + str(fitness[i]),
-                str(tempIndividulalList[i]), "GA后的个体适应值" + str(tempFitness[i])))
+            # print(mat.format(str(population.individualList[i]), "GA前的个体适应值 " + str(fitness[i]),str(tempIndividulalList[i]), "GA后的个体适应值" + str(tempFitness[i])))
+            print(mat2.format("GA前的个体适应值 " + str(fitness[i]), "GA后的个体适应值" + str(tempFitness[i])))
             # fitness 是和 population.individualList[i].getFitness()对应的
             if (tempFitness[i] > fitness[i]):
                 population.individualList[i] = copy.deepcopy(tempIndividulalList[i])
@@ -125,7 +124,7 @@ def main2(dataTime):
     # 根据初始化参数，执行
     rootPath = "./data"
     # type:[1,5]
-    for type in range(2, 6):
+    for type in range(3, 6):
         fileName = dataTime + "-" + str(type) + "-VQD" + str(type) + ".txt"
         populationFitnessPath = rootPath + "/populationFitness/" + fileName
         maxFitnessPath = rootPath + "/maxFitness/" + fileName
@@ -133,8 +132,8 @@ def main2(dataTime):
         print("画图数据")
         print("VQD" + str(type) + ".points " + str(resultVQD.points) + '\n')
         print("画收敛图")
-        #painter = Painter()
-        #painter.paintOne(resultVQD, population.iterations)
+        # painter = Painter()
+        # painter.paintOne(resultVQD, population.iterations)
 
 
 population = Population()  # 初始化

@@ -11,7 +11,7 @@ class Population:
     individualList = []  # 初始个体列表
     # 种群参数设置
     sizeOfPopulation = 30  # 测试，先写10个种群大小
-    iterations = 50  # 迭代次数
+    iterations = 100  # 迭代次数
     crossoverPc = 0.95  # 交叉概率
     mutatePm = 0.09  # 0.02#变异概率
 
