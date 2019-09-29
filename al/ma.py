@@ -5,6 +5,7 @@ import random
 
 
 class ma:
+    # 在当前C、P，确定base和video的映射关系
     def matching(self, baseList, videoList, C, P, userList, ):
         # 1. 初始化base和video
         # *2.  获取交换对
@@ -62,11 +63,11 @@ class ma:
         f.write('\n')
         return SINR
 
-    # 对于基站而言，是否可以交换,找到交换对
+    # 对于基站而言，是否可以交换,找到交换对，找到交换对
     def getSwapBlock(self, base, baseVideo):
         videoList = baseVideo[base]
-        for currentBase in range(len(baseVideo)):
-            if currentBase != base:
-                currentBaseVideoList = baseVideo[currentBase]
+        for anotherBase in range(len(baseVideo)):
+            if anotherBase != base:
+                anotherBaseVideoList = baseVideo[anotherBase]
                 for videoFlag in range(len(videoList)):
-                    i = 0
+                    video = videoList[videoFlag]
