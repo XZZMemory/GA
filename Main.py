@@ -124,7 +124,7 @@ def main2(dataTime):
     # 根据初始化参数，执行
     rootPath = "./data"
     # type:[1,5]
-    for type in range(3, 6):
+    for type in range(1, 6):
         fileName = dataTime + "-" + str(type) + "-VQD" + str(type) + ".txt"
         populationFitnessPath = rootPath + "/populationFitness/" + fileName
         maxFitnessPath = rootPath + "/maxFitness/" + fileName
