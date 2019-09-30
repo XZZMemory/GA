@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/de/Population.py" line="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010aef75-3e83-4ebe-9809-b2e7e5e82e46" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190926-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/2019.9.27-1-3000-30/20190926-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190926-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/2019.9.27-1-3000-30/20190926-2-VQD2.txt" afterDir="false" />
-    </list>
+    <list default="true" id="010aef75-3e83-4ebe-9809-b2e7e5e82e46" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,24 +76,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/20190927-1-VQD1.txt">
+        <entry file="file://$PROJECT_DIR$/data/maxFitness/20190927-2-3000-30/20190927-1-VQD1.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-68294" />
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/20190927-2-VQD2.txt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/maxFitness/20190927-2-3000-30/20190927-2-VQD2.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-36171" />
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/2019.9.26-1-3000-30/20190926-5-VQD5.txt">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Individual.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
+            <state relative-caret-position="179">
+              <caret line="421" selection-start-line="421" selection-end-line="421" />
             </state>
           </provider>
         </entry>
@@ -129,15 +124,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/maxFitness/2019.9.25-1-1000-30/myplot.png">
           <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data4.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -333,7 +319,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -403,11 +389,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\20190927-2-3000-30" />
       <recent name="E:\content\PycharmProjects\GA\data\maxFitness\painter" />
       <recent name="E:\content\PycharmProjects\GA\data\maxFitness\2019.9.27-1-3000-30" />
       <recent name="E:\content\PycharmProjects\GA\data\maxFitness\2019.9.26-1-3000-30" />
       <recent name="E:\content\PycharmProjects\GA\data\maxFitness" />
-      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\2019.9.25With1000-30" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/venv" />
@@ -591,12 +577,12 @@
       <workItem from="1569378865279" duration="14723000" />
       <workItem from="1569495233553" duration="2845000" />
       <workItem from="1569551990714" duration="2693000" />
-      <workItem from="1569572471621" duration="8583000" />
+      <workItem from="1569572471621" duration="8695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275452000" />
+    <option name="totallyTimeSpent" value="275564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -608,7 +594,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1064" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1064" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.33870968" visible="true" weight="0.2521322" />
       <window_info id="Structure" order="1" sideWeight="0.66129035" weight="0.2468017" />
@@ -616,18 +603,18 @@
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5021322" side_tool="true" weight="0.22150537" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.7516129" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.32795697" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4978678" weight="0.2860215" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" sideWeight="0.4978678" visible="true" weight="0.2860215" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32795697" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49946696" visible="true" weight="0.39462367" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49946696" weight="0.39462367" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32795697" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="0" visible="true" weight="0.20522387" />
       <window_info anchor="right" id="Database" order="1" weight="0.32875606" />
-      <window_info anchor="right" id="SciView" order="2" weight="0.49253732" />
+      <window_info anchor="right" id="SciView" order="2" visible="true" weight="0.49253732" />
       <window_info anchor="right" id="Commander" order="3" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
@@ -853,13 +840,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/2019.9.24-2-50/20190924-1-VQD1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -986,13 +966,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/data/maxFitness/20190926-3-VQD3.txt" />
-    <entry file="file://$PROJECT_DIR$/Individual.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Population.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -1151,14 +1124,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190927-1-VQD1.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190927-2-3000-30/20190927-1-VQD1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68294" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190927-2-VQD2.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190927-2-3000-30/20190927-2-VQD2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-36171" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20190927-2-3000-30/20190927-3-VQD3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68560" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Individual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="421" selection-start-line="421" selection-end-line="421" />
+        </state>
       </provider>
     </entry>
   </component>
