@@ -23,7 +23,7 @@ class Individual:
     BW = 1e7
     __N0_dbm = -174 + 10 * np.log10(BW)
     __N0 = 10 ** ((__N0_dbm - 30) / 10)
-    #perFileName = "./data/picture/20190528-VQD5-2-picture.txt"
+    # perFileName = "./data/picture/20190528-VQD5-2-picture.txt"
 
     '''个体中需要用到的：1.C、P的初始化 
                         2.个体的适应值计算
@@ -266,7 +266,7 @@ class Individual:
 
     # 这时候计算出来的就是信道的可靠性，不用求反
     def getFitnessWithIntegral(self):
-        #self.SINR = self.getSINR()
+        # self.SINR = self.getSINR()
         self.asm_array = self.getPERofBaseChannelWithIntegral()
         self.ans = self.getAns()
         PER = []
@@ -410,16 +410,19 @@ class Individual:
                     try:
                         asm = math.e ** (-(self.tau * self.__N0) / ss)
                     except:
-                        print(str(self.P[base][channel] * self.powerOfBase[base])+" "+str(ss) )
+                        print(str(self.P[base][channel] * self.powerOfBase[base]) + " " + str(ss))
                     for otherBase in range(self.sumOfBase):
                         if otherBase != base:
-                            ii = self.P[otherBase][channel] * self.powerOfBase[otherBase] * (
-                                    (self.distanceUserToBase[user][otherBase]) ** (-4)) * self.tau
-                            try:
-                                ivalue = ss / (ss + ii)
-                            except Exception:
-                                print("ss:" + str(ss) + " ii: " + str(ii))
-                            asm = asm * ivalue
+                            # 当前产生干扰的基站信道，是否被占用，未被占用，则不产生干扰
+                            if self.C[otherBase][channel] != -1:
+                                ii = self.P[otherBase][channel] * self.powerOfBase[otherBase] * (
+                                        (self.distanceUserToBase[user][otherBase]) ** (-4)) * self.tau
+                                try:
+                                    ivalue = ss / (ss + ii)
+                                except Exception:
+                                    print("ss:" + str(ss) + " ii: " + str(ii))
+                                asm = asm * ivalue
+
                     asm_array[base].append(asm)
                 else:
                     asm_array[base].append(0)
