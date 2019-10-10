@@ -40,7 +40,7 @@ def painter():
     plt.plot(x5, y5, color="red")
 
     plt.xlabel("iterations", fontsize=14)
-    plt.ylabel("fitness", fontsize=14)
+    plt.ylabel("average reliability", fontsize=14)
     plt.show()
 
 
@@ -79,8 +79,26 @@ def processing(dataFilePath, iterations, maxSum):
     data = []
     for i in range(len(data1Temp)):
         data.append([i + 1, data1Temp[i] / times / maxSum])
+    print(data[0][1])
     print(data[iterations - 1][1])
+
     return data
 
 
-painter()
+#painter()
+def painterOne():
+    data1 = processing('./data1.txt',3000,78)
+
+
+    x1 = []
+    y1 = []
+    for i in range(len(data1)):
+        x1.append(data1[i][0])
+        y1.append(data1[i][1])
+
+    plt.plot(x1, y1, color="gray")
+
+    plt.xlabel("iterations", fontsize=14)
+    plt.ylabel("average reliability", fontsize=14)
+    plt.show()
+painterOne()

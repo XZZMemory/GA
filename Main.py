@@ -135,6 +135,9 @@ def main2(dataTime):
         # painter = Painter()
         # painter.paintOne(resultVQD, population.iterations)
 
+def  mainWithMatching(dataTime):
+    #根据初始化参数，执行
+    type=6
 
 population = Population()  # 初始化
 population.initialization()  # 初始化网络拓扑，测试

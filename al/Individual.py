@@ -67,7 +67,7 @@ class Individual:
 
         self.initialOfCandP()
         '''用户与基站之间的距离，用于计算SINR'''
-        #self.distanceUserToBase = self.getDistanceUserToBase()
+        # self.distanceUserToBase = self.getDistanceUserToBase()
         self.SINR = []
 
     '''用户与基站之间的距离，用户计算SINR'''
@@ -264,6 +264,34 @@ class Individual:
         '''为了符合遗传算法的演进规则，即：个体适应值越大。越容易存活，将适应值变为负数，满足GA算法演进规则'''
         return -fitness
 
+    def getFitnessOfMatching(self):
+        # self.SINR = self.getSINR()
+        # 在执行初始化时已得到该值
+        # self.asm_array = self.getPERofBaseChannelWithIntegral()  # 得到每个基站信道的可靠性
+        # self.ansArray = self.getAns()  # 得到每个用户访问某基站的可靠性
+        PER = []
+        #
+        for video in range(len(self.VN)):  # 视频i
+            PER.append([])
+            for user in range(len(self.VN[video])):
+                PER[video].append(self.getUserVisitVideoDescriptionReliability(user, video) ** self.sumOfDescription)
+
+        '''个体适应值,可靠性，越高越好'''
+        fitness = 0
+        for video in range(len(PER)):
+            for user in range(len(PER[video])):
+                fitness += PER[video][user]
+        return fitness
+        # 获取某一用户访问某视频描述的可靠性,
+
+    def getUserVisitVideoDescriptionReliability(self, user, video):
+        userUtiltyList = [0]  # 存储该视频的基站提供的可靠性，访问可靠性最大的基站
+        if self.VN[video][user] == 1:
+            for storedBase in self.videoBase[video]:
+                # 获取这个基站为用户提供的的可靠性
+                userUtiltyList.append(self.ansArray[user][storedBase])
+        return max(userUtiltyList)  # 多个基站为同一提供可靠性，选择可靠性最大的那个
+
     # 这时候计算出来的就是信道的可靠性，不用求反
     def getFitnessWithIntegral(self):
         # self.SINR = self.getSINR()
@@ -308,29 +336,6 @@ class Individual:
         return -fitness
 
     '''user访问视频video的误码率'''
-
-    def getPEROfVQD123(self, user, video):
-        pnv = 1
-        '''用户访问视频时，需要计算失真'''
-        if self.VN[video][user] == 1:
-            '''找到视频video的存储基站，到存储基站中找到信道误码率,有多个描述'''
-            # 当前描述的存储位置只有一个，是确定的
-            for base in self.VQD[video]:
-                '''video的第q个描述，在同一基站使用多条信道，考虑频谱聚合技术'''
-                uniSinr = 0
-                for channel in range(len(self.P[base])):
-                    if self.C[base][channel] == user:
-                        uniSinr += self.SINR[base][channel]  # 使用频谱聚合技术
-                pnvq = 1
-                if uniSinr > self.Ti:
-                    pnvq = self.ei * math.e ** (-(self.fi * uniSinr))  # 如果sinr大于sinr门限值，用公式误码率，如果小于则误码率直接为1
-                # 基站s使用信道m给用户n传输数据 ei、fi包大小相关约束
-                pnsvq = 0
-                pnv *= pnvq  # 多个描述，每个描述都要求误码率
-        else:
-            pnv = 0
-        return pnv
-
     '''user访问视频video的误码率'''
 
     def getPEROfVQD45(self, user, video):
@@ -382,20 +387,7 @@ class Individual:
             pnv = 0
         return pnv
 
-    def getPEROfVNWithIntegralOfVQD45(self, user, video):
-        ''' self.SINR = self.getSINR()
-        self.asm_array = self.getPERofBaseChannelWithIntegral()
-        self.ans = self.getAns(self.asm_array)'''
-        Pnv = 1
-        if self.VN[video][user] == 1:
-            '''找user访问video的描述description时，访问的基站，去哪个基站找这个视频'''
-            for decsription in range(len(self.VQD[video])):
-                visitedBase = (np.array(self.baseVisitedOfUserVisitingVideo))[user][video][decsription]
-                Pnvq = self.ans[user][visitedBase]
-                Pnv *= Pnvq  # 多个描述，每个描述都要求误码率
-        else:
-            Pnv = 0
-        return Pnv
+
 
     def getPERofBaseChannelWithIntegral(self):
         # 从基站考虑，计算每个信道的可靠性
@@ -416,7 +408,8 @@ class Individual:
                             # 当前产生干扰的基站信道，是否被占用，未被占用，则不产生干扰
                             if self.C[otherBase][channel] != -1:
                                 ii = self.P[otherBase][channel] * self.powerOfBase[otherBase] * (
-                                        (self.population.distanceUserToBase[user][otherBase]) ** (-4)) * self.population.tau
+                                        (self.population.distanceUserToBase[user][otherBase]) ** (
+                                    -4)) * self.population.tau
                                 try:
                                     ivalue = ss / (ss + ii)
                                 except Exception:
