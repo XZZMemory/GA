@@ -78,7 +78,7 @@ def ga(population, fileName, maxFitnessFile, typeOfVQD):
                 print(str(i) + "个体是空！")
                 exit(1)
             # print(mat.format(str(population.individualList[i]), "GA前的个体适应值 " + str(fitness[i]),str(tempIndividulalList[i]), "GA后的个体适应值" + str(tempFitness[i])))
-            print(mat2.format("GA前的个体适应值 " + str(fitness[i]), "GA后的个体适应值" + str(tempFitness[i])))
+            #print(mat2.format("GA前的个体适应值 " + str(fitness[i]), "GA后的个体适应值" + str(tempFitness[i])))
             # fitness 是和 population.individualList[i].getFitness()对应的
             if (tempFitness[i] > fitness[i]):
                 population.individualList[i] = copy.deepcopy(tempIndividulalList[i])

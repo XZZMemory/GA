@@ -51,7 +51,7 @@ def process():
     data4FilePath = './data4.txt'
     data5FilePath = './data5.txt'
     iterations = 3000
-    maxSum = 43
+    maxSum = 59
     data1 = processing(data1FilePath, iterations, maxSum)
     data2 = processing(data2FilePath, iterations, maxSum)
     data3 = processing(data3FilePath, iterations, maxSum)
@@ -79,16 +79,26 @@ def processing(dataFilePath, iterations, maxSum):
     data = []
     for i in range(len(data1Temp)):
         data.append([i + 1, data1Temp[i] / times / maxSum])
-    print(data[0][1])
-    print(data[iterations - 1][1])
+
+    print(dataFilePath + "  --  " + str(data[0][1]) + " --- " + str(data[iterations - 1][1]))
+    singleldata = []
+    for i in range(len(data)):
+        singleldata.append(data[i][1])
+    print(str(singleldata))
+    # fiName = "./data+" + dataFilePath[6] + "-single.txt"
+    # ff = open(fiName, 'w')
+    '''    for i in range(len(data)):
+        if i % 30 == 0:
+            ff.write(str(int(i / 30)) + '\n')'''
 
     return data
 
 
-#painter()
-def painterOne():
-    data1 = processing('./data1.txt',3000,78)
+painter()
 
+
+def painterOne():
+    data1 = processing('./data1.txt', 3000, 59)
 
     x1 = []
     y1 = []
@@ -101,4 +111,4 @@ def painterOne():
     plt.xlabel("iterations", fontsize=14)
     plt.ylabel("average reliability", fontsize=14)
     plt.show()
-painterOne()
+# painterOne()
