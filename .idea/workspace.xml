@@ -6,71 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="010aef75-3e83-4ebe-9809-b2e7e5e82e46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.10.8-1-3000-30/20191008-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.10.8-1-3000-30/20191008-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.10.8-1-3000-30/20191008-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.10.8-1-3000-30/20191008-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.10.8-1-3000-30/20191008-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.10.8-1-3000-30/20191008-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.10.8-1-3000-30/20191008-4-VQD4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.10.8-1-3000-30/20191008-4-VQD4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.10.8-1-3000-30/20191008-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.10.8-1-3000-30/20191008-5-VQD5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-1-70/20190923-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-1-70/20190923-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-1-70/20190923-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-1-70/20190923-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-1-70/20190924-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-1-70/20190924-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-1-70/20190924-4-VQD4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-1-70/20190924-4-VQD4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-1-70/20190924-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-1-70/20190924-5-VQD5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-1-70/myplot.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-1-70/myplot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-2-50/20190924-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-2-50/20190924-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-2-50/20190924-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-2-50/20190924-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-2-50/20190924-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-2-50/20190924-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-2-50/20190924-4-VQD4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-2-50/20190924-4-VQD4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.24-2-50/20190924-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.24-2-50/20190924-5-VQD5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.25-1-1000-30/20190925-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.25-1-1000-30/20190925-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.25-1-1000-30/20190925-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.25-1-1000-30/20190925-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.25-1-1000-30/20190925-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.25-1-1000-30/20190925-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.25-1-1000-30/20190925-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.25-1-1000-30/20190925-5-VQD5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.25-1-1000-30/20190926-4-VQD4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.25-1-1000-30/20190926-4-VQD4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.25-1-1000-30/myplot.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.25-1-1000-30/myplot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.26-1-3000-30/20190926-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.26-1-3000-30/20190926-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.26-1-3000-30/20190926-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.26-1-3000-30/20190926-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.26-1-3000-30/20190926-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.26-1-3000-30/20190926-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.26-1-3000-30/20190926-4-VQD4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.26-1-3000-30/20190926-4-VQD4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.26-1-3000-30/20190926-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.26-1-3000-30/20190926-5-VQD5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.26-1-3000-30/myplot.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.26-1-3000-30/myplot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.27-1-3000-30/20190926-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.27-1-3000-30/20190926-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.27-1-3000-30/20190926-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.27-1-3000-30/20190926-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.27-1-3000-30/20190927-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.27-1-3000-30/20190927-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.27-1-3000-30/20190927-4-VQD4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.27-1-3000-30/20190927-4-VQD4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/2019.9.27-1-3000-30/20190927-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/2019.9.27-1-3000-30/20190927-5-VQD5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190927-2-3000-30/20190927-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/20190927-2-3000-30/20190927-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190927-2-3000-30/20190927-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/20190927-2-3000-30/20190927-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190927-2-3000-30/20190927-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/20190927-2-3000-30/20190927-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190930-1-3000-30/20190930-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/20190930-1-3000-30/20190930-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190930-1-3000-30/20190930-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/20190930-1-3000-30/20190930-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190930-1-3000-30/20190930-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/20190930-1-3000-30/20190930-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190930-1-3000-30/20190930-4-VQD4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/20190930-1-3000-30/20190930-4-VQD4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20190930-1-3000-30/20190930-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/20190930-1-3000-30/20190930-5-VQD5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20191010-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/20191010-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/ll/20190924-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/ll/20190924-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/ll/20190925-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/ll/20190925-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/ll/20190925-4-VQD4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/ll/20190925-4-VQD4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/other/20190926-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/other/20190926-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/other/20190926-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/other/20190926-2-VQD2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/other/20190927-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/other/20190927-3-VQD3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/other/20190927-4-VQD4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/other/20190927-4-VQD4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/other/20190927-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/other/20190927-5-VQD5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/other/20190929-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/first/other/20190929-1-VQD1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/10.8-3000-30-config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/config.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/20190930-3-avg-3000-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/20190930-3-avg-3000-30.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/20190930-4-withOther.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/20190930-4-withOther.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/20911008-5-avg-3000-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/20911008-5-avg-3000-30.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/data1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/data1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/data2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/data2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/data3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/data3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/data4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/data4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/data5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/data5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/2019.10.10-3000-30/myplot.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/myplot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/Painter.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/Painter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/data1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/data1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/populationFitness/20191010-2-VQD2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/populationFitness/20191010-2-VQD2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/maxFitness/20191011-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/20191011-3-VQD3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/populationFitness/20191011-3-VQD3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/populationFitness/20191011-3-VQD3.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,42 +67,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/20191011-2-VQD2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/20191011-3-VQD3.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-31135" />
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/config.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/Painter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
+            <state relative-caret-position="355">
               <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data1.txt">
+        <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/second/data1.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
@@ -174,7 +86,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/20191010-1-VQD1.txt">
+        <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.10/20191010-1-VQD1.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="729">
               <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
@@ -192,7 +104,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/maxFitness/20191010-3-VQD3.txt">
+        <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.10/20191010-3-VQD3.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="743">
               <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
@@ -461,11 +373,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\painter\result\second" />
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness" />
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\painter\result\second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30\2019.10.11" />
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\painter\result\second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30\2019.10.10" />
       <recent name="E:\content\PycharmProjects\GA\data\maxFitness\first" />
-      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\painter\result" />
-      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\painter\2019.10.10-3000-30" />
-      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\2019.10.10-1-3000-30" />
-      <recent name="E:\content\PycharmProjects\GA\al" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/venv" />
@@ -649,12 +561,12 @@
       <workItem from="1569378865279" duration="14723000" />
       <workItem from="1569495233553" duration="2845000" />
       <workItem from="1569551990714" duration="2693000" />
-      <workItem from="1569572471621" duration="81347000" />
+      <workItem from="1569572471621" duration="82432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348216000" />
+    <option name="totallyTimeSpent" value="349301000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -667,8 +579,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1064" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.33870968" visible="true" weight="0.26226014" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.33870968" visible="true" weight="0.015991472" />
       <window_info id="Structure" order="1" sideWeight="0.66129035" weight="0.2468017" />
       <window_info id="Favorites" order="2" sideWeight="0.6602151" weight="0.24147122" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5021322" side_tool="true" weight="0.22150537" />
@@ -685,7 +598,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="0" visible="true" weight="0.20522387" />
       <window_info anchor="right" id="Database" order="1" weight="0.3283582" />
-      <window_info anchor="right" id="SciView" order="2" weight="0.7217484" />
+      <window_info anchor="right" id="SciView" order="2" visible="true" weight="0.7217484" />
       <window_info anchor="right" id="Commander" order="3" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
@@ -1075,21 +988,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191010-2-VQD2.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.10/20191010-2-VQD2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
           <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191010-5-VQD5.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.10/20191010-5-VQD5.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
           <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data5.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/second/data5.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
@@ -1103,14 +1016,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data2.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/second/data2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data3.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/second/data3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
@@ -1127,7 +1040,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data4.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/second/data4.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
@@ -1168,37 +1081,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191010-4-VQD4.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.10/20191010-4-VQD4.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="729">
           <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191011-1-VQD1.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.10/20191010-3-VQD3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="743">
           <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191011-2-VQD2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191010-3-VQD3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191011-3-VQD3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31135" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/20911008-5-avg-3000-30.png">
@@ -1252,31 +1146,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/Painter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191010-1-VQD1.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.10/20191010-1-VQD1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="729">
           <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/second/data1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.11/20191011-2-VQD2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2399">
+          <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191011-3-VQD3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31135" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/config.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.11/20191011-1-VQD1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/Painter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
         </state>
       </provider>
     </entry>
