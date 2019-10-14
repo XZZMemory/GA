@@ -2,6 +2,7 @@ import random
 import copy
 import math
 import numpy as np
+import Utils
 
 
 class Individual:
@@ -32,29 +33,30 @@ class Individual:
                         修改:需要在初始化的时候，基站有剩余的存储容量，要存储多的视频，多存几遍视频'''
     '''初始化的时候加上population.方便传输参数'''
 
-    def __init__(self, population, typeOfVQD):
-        # self.tau = population.tau
-        self.population = population
+    def __init__(self, tau, typeOfVQD, VQD, baseVisitedOfUserVisitingVideo, sumOfBase, sumOfUser, sumOfVideo,
+                 sumOfChannels, powerOfBase, baseRadius, Alpha, VN, basevisitedUE, distanceUserToBase):
+        self.tau = tau
+        # self.population = population
         '''（--------以下均是拷贝种群参数信息------'''
         # self.locationOfBase = copy.deepcopy(population.locationOfBase)  # 拷贝基站和用户的坐标位置
         # self.locationOfUser = copy.deepcopy(population.locationOfUser)
-        self.sumOfBase = population.sumOfBase
-        self.sumOfUser = population.sumOfUser
-        self.sumOfVideo = population.sumOfVideo
-        self.sumOfChannels = population.sumOfChannels
-        self.VN = population.VN
+        self.sumOfBase = sumOfBase
+        self.sumOfUser = sumOfUser
+        self.sumOfVideo = sumOfVideo
+        self.sumOfChannels = sumOfChannels
+        self.VN = VN
         ''' 每个基站的访问用户，在个体初始化C、P时使用'''
-        self.basevisitedUE = population.basevisitedUE
+        self.basevisitedUE = basevisitedUE
         # print("basevisitedUE: "+str(self.basevisitedUE))
         ''' 每个视频描述的存储地点'''
-        self.VQD = population.VQD
-        self.powerOfBase = population.powerOfBase
-        self.baseRadius = population.baseRadius
-        self.Alpha = population.Alpha  # 计算噪声参数
+        self.VQD = VQD
+        self.powerOfBase = powerOfBase
+        self.baseRadius = baseRadius
+        self.Alpha = Alpha  # 计算噪声参数时使用
         '''视频的存储方式'''
         self.typeOfVQD = typeOfVQD
         if self.typeOfVQD == 4 or self.typeOfVQD == 5:
-            self.baseVisitedOfUserVisitingVideo = population.baseVisitedOfUserVisitingVideo
+            self.baseVisitedOfUserVisitingVideo = baseVisitedOfUserVisitingVideo
         # --------拷贝种群信息结束-----------）
         self.N0 = 11
         self.Bias = 1000000  # 防止干扰和噪声过小设置的偏移值，在计算SINR之后会约掉 10^6
@@ -67,20 +69,20 @@ class Individual:
 
         self.initialOfCandP()
         '''用户与基站之间的距离，用于计算SINR'''
-        #self.distanceUserToBase = self.getDistanceUserToBase()
+        self.distanceUserToBase = distanceUserToBase
         self.SINR = []
 
-    '''用户与基站之间的距离，用户计算SINR'''
+    '''用户与基站之间的距离，用户计算SINR,废除，在population中已有值，直接传递过来'''
 
-    def getDistanceUserToBase(self):
+    '''    def getDistanceUserToBase(self):
         distance = []
         for user in range(self.sumOfUser):
             distance.append([])
             for base in range(self.sumOfBase):
-                n = ((self.population.locationOfUser[user][0] - self.population.locationOfBase[base][0]) ** 2 + (
-                        self.population.locationOfUser[user][1] - self.population.locationOfBase[base][1]) ** 2) ** 0.5
+                n = ((self.locationOfUser[user][0] - self.locationOfBase[base][0]) ** 2 + (
+                        self.locationOfUser[user][1] - self.locationOfBase[base][1]) ** 2) ** 0.5
                 distance[user].append(int(n))
-        return distance
+        return distance'''
 
     '''1.信道和功率的初始化，需要改改，2018.6.11，信道和功率的分配需要考虑实际情况，
          只有用户访问基站时，在初始化时，才会分配信道，用户不访问基站时，不分配信道
@@ -235,7 +237,7 @@ class Individual:
     def getFitness(self):
         fileName = "sinr.txt"
         print("执行getFitness函数")
-        self.SINR = self.getSINR()
+        self.getSINR()
         f = open(fileName, 'w')
         f.write(str(self.SINR) + '\n')
         for i in range(len(self.SINR)):
@@ -266,9 +268,12 @@ class Individual:
 
     # 这时候计算出来的就是信道的可靠性，不用求反
     def getFitnessWithIntegral(self):
-        # self.SINR = self.getSINR()
-        self.asm_array = self.getPERofBaseChannelWithIntegral()
-        self.ans = self.getAns()
+        # self.getSINR()
+        self.getPERofBaseChannelWithIntegral()
+        #Utils.printListWithTwoDi("************************************** asm_array", self.asm_array)
+        self.getAns()
+        #Utils.printListWithTwoDi("************************************** ans", self.ans)
+        #self.getSINR()
         PER = []
         for video in range(len(self.VN)):  # 视频i
             PER.append([])
@@ -358,9 +363,9 @@ class Individual:
 
     def getAns(self):
         # 得到用户与每个基站进行通信时的链路可靠性，根据每个信道的可靠性，self.C
-        ansArray = []
+        self.ans = []
         for user in range(self.sumOfUser):
-            ansArray.append([])
+            self.ans.append([])
             ans = 1
             for base in range(self.sumOfBase):
                 ansEachBase = 1
@@ -368,8 +373,7 @@ class Individual:
                     if self.C[base][channe] == user:
                         ansEachChannel = 1 - self.asm_array[base][channe]
                         ansEachBase *= ansEachChannel
-                ansArray[user].append(ans - ansEachBase)
-        return ansArray
+                self.ans[user].append(ans - ansEachBase)
 
     def getPEROfVNWithIntegralOfVQD123(self, user, video):
         if self.VN[video][user] == 1:
@@ -383,9 +387,9 @@ class Individual:
         return pnv
 
     def getPEROfVNWithIntegralOfVQD45(self, user, video):
-        ''' self.SINR = self.getSINR()
-        self.asm_array = self.getPERofBaseChannelWithIntegral()
-        self.ans = self.getAns(self.asm_array)'''
+        ''' self.getSINR()
+         self.getPERofBaseChannelWithIntegral()
+         self.getAns(self.asm_array)'''
         Pnv = 1
         if self.VN[video][user] == 1:
             '''找user访问video的描述description时，访问的基站，去哪个基站找这个视频'''
@@ -399,16 +403,16 @@ class Individual:
 
     def getPERofBaseChannelWithIntegral(self):
         # 从基站考虑，计算每个信道的可靠性
-        asm_array = []
+        self.asm_array = []
         for base in range(self.sumOfBase):
-            asm_array.append([])
+            self.asm_array.append([])
             for channel in range(self.sumOfChannels):
                 user = self.C[base][channel]
                 if user != -1:
                     ss = self.P[base][channel] * self.powerOfBase[base] * (
-                            (self.population.distanceUserToBase[user][base]) ** (-4))
+                            (self.distanceUserToBase[user][base]) ** (-4))
                     try:
-                        asm = math.e ** (-(self.population.tau * self.__N0) / ss)
+                        asm = math.e ** (-(self.tau * self.__N0) / ss)
                     except:
                         print(str(self.P[base][channel] * self.powerOfBase[base]) + " " + str(ss))
                     for otherBase in range(self.sumOfBase):
@@ -416,33 +420,32 @@ class Individual:
                             # 当前产生干扰的基站信道，是否被占用，未被占用，则不产生干扰
                             if self.C[otherBase][channel] != -1:
                                 ii = self.P[otherBase][channel] * self.powerOfBase[otherBase] * (
-                                        (self.population.distanceUserToBase[user][otherBase]) ** (-4)) * self.population.tau
+                                        (self.distanceUserToBase[user][otherBase]) ** (-4)) * self.tau
                                 try:
                                     ivalue = ss / (ss + ii)
                                 except Exception:
                                     print("ss:" + str(ss) + " ii: " + str(ii))
                                 asm = asm * ivalue
 
-                    asm_array[base].append(asm)
+                    self.asm_array[base].append(asm)
                 else:
-                    asm_array[base].append(0)
-        return asm_array
+                    self.asm_array[base].append(0)
 
     def getSINR(self):
         print("执行getsinr函数")
         fileName = 'sinrInGet.txt'
         f = open(fileName, 'a')
-        SINR = []
+        self.SINR = []
         WhiteNoise = -174
         for base in range(self.sumOfBase):  # 对于所有的基站s
-            SINR.append([])
+            self.SINR.append([])
             for channel in range(self.sumOfChannels):  # 对于基站s里的所有的信道m，计算信噪比，每个信道的信噪比
                 user = self.C[base][channel]  # 信道分配的用户user
                 '''信道没有分配给任何用户,则sinr为-1'''
                 sinr = -1
                 if (user != -1):
                     '''信道分配了，则需要计算SINR，计算信道功率增益， # 功率增益模型，基站到用户的距离'''
-                    G = (self.populationdistanceUserToBase[user][base]) ** (-4)
+                    G = (self.distanceUserToBase[user][base]) ** (-4)
                     '''在用户k处能接受到的信号强度,信道功率×功率增益'''
                     S = self.P[base][channel] * self.powerOfBase[base] * G * self.Bias
                     I = 0
@@ -451,7 +454,7 @@ class Individual:
                     for otherBase in range(self.sumOfBase):
                         '''如果不是当前基站，且基站信道处于非闲置状态，即功率不是0,# 其他基站在用户user处的信道增益'''
                         if (otherBase != base) and (self.C[otherBase][channel] != -1):
-                            GOther = self.population.distanceUserToBase[user][otherBase] ** (-4)
+                            GOther = self.distanceUserToBase[user][otherBase] ** (-4)
                             Ik = self.P[otherBase][channel] * self.powerOfBase[otherBase] * GOther * self.Bias
                             I += Ik  # 干扰相加，得到总的干扰  此处得到来自其他基站的干扰
                     sinr = S / (I + Noise)
@@ -463,5 +466,5 @@ class Individual:
                     else:
                         f.write("I 0" + " S/(I+N)" + str(sinr) + " noise" + str(
                             Noise / self.Bias) + '\n')
-                SINR[base].append(round(sinr, 9))
-        return SINR
+                self.SINR[base].append(round(sinr, 9))
+        return self.SINR
