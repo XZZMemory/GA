@@ -94,7 +94,7 @@ def processing(dataFilePath, iterations, maxSum):
     return data
 
 
-painter()
+#painter()
 
 
 def painterOne():
@@ -111,4 +111,4 @@ def painterOne():
     plt.xlabel("iterations", fontsize=14)
     plt.ylabel("average reliability", fontsize=14)
     plt.show()
-# painterOne()
+painterOne()

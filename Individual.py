@@ -23,7 +23,7 @@ class Individual:
     # 高斯噪声
     BW = 1e7
     __N0_dbm = -174 + 10 * np.log10(BW)
-    __N0 = 10 ** ((__N0_dbm - 30) / 10)
+    __N0 = 10 ** ((__N0_dbm - 30) / 10)  # *10
     # perFileName = "./data/picture/20190528-VQD5-2-picture.txt"
 
     '''个体中需要用到的：1.C、P的初始化 
@@ -33,7 +33,7 @@ class Individual:
                         修改:需要在初始化的时候，基站有剩余的存储容量，要存储多的视频，多存几遍视频'''
     '''初始化的时候加上population.方便传输参数'''
 
-    def __init__(self, tau, typeOfVQD, VQD, baseVisitedOfUserVisitingVideo, sumOfBase, sumOfUser, sumOfVideo,
+    def __init__(self, tau, VQD, sumOfBase, sumOfUser, sumOfVideo,
                  sumOfChannels, powerOfBase, baseRadius, Alpha, VN, basevisitedUE, distanceUserToBase):
         self.tau = tau
         # self.population = population
@@ -270,10 +270,10 @@ class Individual:
     def getFitnessWithIntegral(self):
         # self.getSINR()
         self.getPERofBaseChannelWithIntegral()
-        #Utils.printListWithTwoDi("************************************** asm_array", self.asm_array)
+        # Utils.printListWithTwoDi("************************************** asm_array", self.asm_array)
         self.getAns()
-        #Utils.printListWithTwoDi("************************************** ans", self.ans)
-        #self.getSINR()
+        # Utils.printListWithTwoDi("************************************** ans", self.ans)
+        # self.getSINR()
         PER = []
         for video in range(len(self.VN)):  # 视频i
             PER.append([])
@@ -405,6 +405,8 @@ class Individual:
         # 从基站考虑，计算每个信道的可靠性
         self.asm_array = []
         for base in range(self.sumOfBase):
+            if base == 1:
+                ll = 0
             self.asm_array.append([])
             for channel in range(self.sumOfChannels):
                 user = self.C[base][channel]

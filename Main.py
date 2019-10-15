@@ -78,7 +78,7 @@ def ga(population, fileName, maxFitnessFile, typeOfVQD):
                 print(str(i) + "个体是空！")
                 exit(1)
             # print(mat.format(str(population.individualList[i]), "GA前的个体适应值 " + str(fitness[i]),str(tempIndividulalList[i]), "GA后的个体适应值" + str(tempFitness[i])))
-            #print(mat2.format("GA前的个体适应值 " + str(fitness[i]), "GA后的个体适应值" + str(tempFitness[i])))
+            # print(mat2.format("GA前的个体适应值 " + str(fitness[i]), "GA后的个体适应值" + str(tempFitness[i])))
             # fitness 是和 population.individualList[i].getFitness()对应的
             if (tempFitness[i] > fitness[i]):
                 population.individualList[i] = copy.deepcopy(tempIndividulalList[i])
@@ -124,7 +124,8 @@ def main2(dataTime):
     # 根据初始化参数，执行
     rootPath = "./data"
     # type:[1,5]
-    for type in range(5, 6):
+    list = [ 1,5]
+    for type in list:
         fileName = dataTime + "-" + str(type) + "-VQD" + str(type) + ".txt"
         populationFitnessPath = rootPath + "/populationFitness/" + fileName
         maxFitnessPath = rootPath + "/maxFitness/" + fileName
@@ -135,9 +136,11 @@ def main2(dataTime):
         # painter = Painter()
         # painter.paintOne(resultVQD, population.iterations)
 
-def  mainWithMatching(dataTime):
-    #根据初始化参数，执行
-    type=6
+
+def mainWithMatching(dataTime):
+    # 根据初始化参数，执行
+    type = 6
+
 
 population = Population()  # 初始化
 population.initialization()  # 初始化网络拓扑，测试

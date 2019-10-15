@@ -1,4 +1,5 @@
 from random import choice
+import math
 
 user = 8
 userList = []
@@ -45,6 +46,13 @@ print("求最大值1: " + str(max(data)))
 data.append(9)
 print("求最大值2: " + str(max(data)))
 print(str(data))
-result=0 in data
+result = 0 in data
 print("in test： " + str(0 in data))
-print("not in test： " +str( 0 not in data))
+print("not in test： " + str(0 not in data))
+print((math.e) ** (-0.00137))
+print(1 * (80 ** (-4)) / 20)
+nn = []
+nn.append((1, 2))
+nn.append(3)
+print(nn)
+i = 0

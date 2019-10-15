@@ -15,7 +15,8 @@ class Population:
     crossoverPc = 0.95  # 交叉概率
     mutatePm = 0.09  # 0.02#变异概率
 
-    def __init__(self):
+    def __init__(self, baseVisitedUE):
+        self.baseVisitedUE = baseVisitedUE
         self.tau = 1
         self.sumOfBase = 7  # 0代表的是宏基站
         self.sumOfUser = 20  # 用户个数
@@ -52,7 +53,7 @@ class Population:
     5.GetAllFitness，**
     6.PopulationRevise？？   后续适应值低会自动淘汰掉'''
 
-    def initialization(self, basevisitedUE):
+    def initialization(self, basevisitedUE, videoBase):
         # self.VN = self.VNInitial()  # 就需要特殊处理了。
         self.VN = [[1, -1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, 1, -1, 1, -1, 1],
                    [1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1],
@@ -70,6 +71,7 @@ class Population:
         '''用户与基站之间的距离，用于计算SINR'''
         self.distanceUserToBase = self.getDistanceUserToBase()
         self.basevisitedUE = basevisitedUE
+        self.videoBase = videoBase
 
     # 测试
     def allLocationInitialTest(self):
@@ -169,7 +171,9 @@ class Population:
         print("typeOfVQD: " + str(self.typeOfVQD))
         self.individualList = []
         for i in range(Population.sizeOfPopulation):
-            individual = Individual(self, self.typeOfVQD)
+            individual = Individual(self.tau, self.videoBase, self.sumOfBase, self.sumOfUser, self.sumOfVideo,
+                                    self.sumOfChannels, self.powerOfBase, self.baseRadius, self.Alpha, self.VN,
+                                    self.basevisitedUE, self.distanceUserToBase)
             self.individualList.append(individual)
         print("self.individualList: " + str(self.individualList))
         print("***********种群中验证参数完毕************")
