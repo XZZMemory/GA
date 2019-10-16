@@ -1,7 +1,7 @@
 import random
 import copy  # 深复制，浅复制
 import Utils
-from Individual import Individual
+from al.Individual import Individual
 from Painter import Painter
 import numpy as np
 
@@ -15,8 +15,7 @@ class Population:
     crossoverPc = 0.95  # 交叉概率
     mutatePm = 0.09  # 0.02#变异概率
 
-    def __init__(self, baseVisitedUE):
-        self.baseVisitedUE = baseVisitedUE
+    def __init__(self, ):
         self.tau = 1
         self.sumOfBase = 7  # 0代表的是宏基站
         self.sumOfUser = 20  # 用户个数
@@ -59,7 +58,6 @@ class Population:
                    [1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1],
                    [-1, -1, 1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1],
                    [-1, 1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1]]
-        # self.typeOfVQD = typeOfVQD  # 表示VQD种类，如果是4
         # 每个视频的大小是50KBytes。
         self.VQS = []
         for video in range(self.sumOfVideo):
@@ -69,7 +67,7 @@ class Population:
         Utils.printListWithTwoDi("VN: ", self.VN)
         self.allLocationInitialTest()  # ,500m
         '''用户与基站之间的距离，用于计算SINR'''
-        self.distanceUserToBase = self.getDistanceUserToBase()
+        self.getDistanceUserToBase()
         self.basevisitedUE = basevisitedUE
         self.videoBase = videoBase
 
@@ -94,16 +92,12 @@ class Population:
                                [-252.6934480137271, -402.22348031537666], [337.05888317443726, 159.12791180485462],
                                [-216.73973223345803, 124.46229396333888],
                                [-114.24179725841555, -40.547156953680194]]  # 用户位置初始化
-        self.userToBaseSorted = self.getSortedBaseToUser(self.locationOfBase, self.locationOfUser)
-        self.getVQD(self.userToBaseSorted)  # 视频描述存储位置初始化
 
     def allLocationInitial(self):
         self.locationOfBase = self.baseLocationInitial()  # 基站位置初始化
         self.locationOfUser = self.userLocationInitial(radius=500, radius2=100, )  # 用户位置初始化 为了测试注解掉这个初始化
         paint = Painter()
         paint.paintBasesAndUsers(self.locationOfBase, self.locationOfUser)
-        self.userToBaseSorted = self.getSortedBaseToUser(self.locationOfBase, self.locationOfUser)
-        self.getVQD(self.userToBaseSorted)  # 视频描述存储位置初始化
 
     '''矩阵数据均从下标0就开始存储'''
     '''1.VN矩阵，用户与视频之间的访问关系，会返回生成矩阵，在总的初始化矩阵中再调用这个函数'''
@@ -168,8 +162,8 @@ class Population:
     def creatPopulation(self):  # 创建种群
         print("***********种群中验证参数*************")
         print("self: " + str(self))
-        print("typeOfVQD: " + str(self.typeOfVQD))
         self.individualList = []
+        print("  " + str(self.basevisitedUE))
         for i in range(Population.sizeOfPopulation):
             individual = Individual(self.tau, self.videoBase, self.sumOfBase, self.sumOfUser, self.sumOfVideo,
                                     self.sumOfChannels, self.powerOfBase, self.baseRadius, self.Alpha, self.VN,
@@ -177,6 +171,15 @@ class Population:
             self.individualList.append(individual)
         print("self.individualList: " + str(self.individualList))
         print("***********种群中验证参数完毕************")
+
+    def getDistanceUserToBase(self):
+        self.distanceUserToBase = []
+        for user in range(self.sumOfUser):
+            self.distanceUserToBase.append([])
+            for base in range(self.sumOfBase):
+                n = ((self.locationOfUser[user][0] - self.locationOfBase[base][0]) ** 2 + (
+                        self.locationOfUser[user][1] - self.locationOfBase[base][1]) ** 2) ** 0.5
+                self.distanceUserToBase[user].append(int(n))
 
     # 2.交叉，返回空或者交叉之后的两个新个体，交叉操作已测试成功
     def crossover(self,
@@ -194,17 +197,10 @@ class Population:
                 print("种群个体发生变异")
                 individualForMutate[i].mutate()
 
-    # 4.得到所有个体的适应值
-    def getAllFitness(self):
-        fitnessList = []
-        for i in range(self.sizeOfPopulation):
-            fitnessList.append(self.individualList[i].getFitness())  # 在individual文件中，这个函数的写法比较重要，好好写
-        return fitnessList
-
     def getAllFitnessIntegral(self):
         fitnessList = []
         for i in range(self.sizeOfPopulation):
-            fitnessList.append(self.individualList[i].getFitnessWithIntegral())  # 在individual文件中，这个函数的写法比较重要，好好写
+            fitnessList.append(self.individualList[i].getFitnessOfMatching())  # 在individual文件中，这个函数的写法比较重要，好好写
         return fitnessList
 
     '''根据种群适应值，选择两个个体，进行交叉，锦标赛选择法，

@@ -23,7 +23,7 @@ class Individual:
     # 高斯噪声
     BW = 1e7
     __N0_dbm = -174 + 10 * np.log10(BW)
-    __N0 = 10 ** ((__N0_dbm - 30) / 10)  # *10
+    __N0 = 10 ** ((__N0_dbm - 30) / 10)*10
     # perFileName = "./data/picture/20190528-VQD5-2-picture.txt"
 
     '''个体中需要用到的：1.C、P的初始化 
@@ -33,7 +33,7 @@ class Individual:
                         修改:需要在初始化的时候，基站有剩余的存储容量，要存储多的视频，多存几遍视频'''
     '''初始化的时候加上population.方便传输参数'''
 
-    def __init__(self, tau, VQD, sumOfBase, sumOfUser, sumOfVideo,
+    def __init__(self, tau, typeOfVQD, VQD, baseVisitedOfUserVisitingVideo, sumOfBase, sumOfUser, sumOfVideo,
                  sumOfChannels, powerOfBase, baseRadius, Alpha, VN, basevisitedUE, distanceUserToBase):
         self.tau = tau
         # self.population = population

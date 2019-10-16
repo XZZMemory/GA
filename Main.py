@@ -124,7 +124,7 @@ def main2(dataTime):
     # 根据初始化参数，执行
     rootPath = "./data"
     # type:[1,5]
-    list = [ 1,5]
+    list = [1, 2, 3, 4, 5]
     for type in list:
         fileName = dataTime + "-" + str(type) + "-VQD" + str(type) + ".txt"
         populationFitnessPath = rootPath + "/populationFitness/" + fileName

@@ -79,6 +79,7 @@ class Matching:
         self.printData("asm_array", self.asm_array)
         self.getAns()  # 获取每个用户访问基站时，基站为用户提供的可靠性
         self.printData("ansArray", self.ansArray)
+        print("init 初始化执行完毕*********************************************")
 
     def printData(self, name, data):
         print("执行print函数" + name)
@@ -135,7 +136,7 @@ class Matching:
             length = len(userList)
             basevisitedUE.append([])
             baseVisitedUserSum = np.random.randint(int(length / 3), length + 1, 1)[0]  # 随机生成基站访问用户数量
-            print("baseVisitedUserSum:" + str(baseVisitedUserSum))
+            # print("baseVisitedUserSum:" + str(baseVisitedUserSum))
             for userFlag in range(baseVisitedUserSum):
                 user = choice(userList)
                 userList.remove(user)
@@ -177,9 +178,10 @@ class Matching:
             self.C.append(chan)  # 当前基站的信道分配加入基因中
             self.P.append(powe)  # 当前基站的功率分配加入基因中
         print("初始化，基因分配")
+        print("C: ")
         for base in range(self.sumOfBase):
             print(str(base) + " : " + str(self.C[base]))
-        print("P")
+        print("P: ")
         for base in range(self.sumOfBase):
             print(str(base) + " : " + str(self.P[base]))
 
@@ -345,31 +347,20 @@ class Matching:
             baseList = self.videoBase[video1]
             initialV1Utilty = self.videoUtilty(video1)
             for video2 in range(video1 + 1, self.sumOfVideo):
-                print("*********************" + str(video1) + " " + str(video2))
                 initialV2Utilty = self.videoUtilty(video2)
                 anotherBaseList = self.videoBase[video2]
-                print("videoBase: " + str(video1) + ": ", baseList)
-                print("anotherBaseList: " + str(video2) + ": ", anotherBaseList)
 
                 # 求差，看能否交换，或者，video和空的基站交换
                 # A-B
                 differVideoList1 = [item for item in baseList if item not in anotherBaseList]
-                print("differVideoList1: " + str(differVideoList1))
                 # B-A
                 differVideolist2 = [item for item in anotherBaseList if item not in baseList]
-                print("differVideoList2: " + str(differVideolist2))
                 # 交换已匹配资源对应的资源，看是否形成交换块
                 for base1 in differVideoList1:
                     for base2 in differVideolist2:
-                        print("执行交换操作之前")
-                        print("videoBase " + str(video1) + ": ", self.videoBase[video1])
-                        print("videoBase " + str(video2) + ": ", self.videoBase[video2])
-                        print("baseVideo " + str(base1) + ": ", self.baseVideo[base1])
-                        print("baseVideo " + str(base2) + ": ", self.baseVideo[base2])
 
                         initialBase1Utilty = self.baseUtilty(base1)
                         initialBase2Utilty = self.baseUtilty(base2)
-                        print(str(video1) + " " + str(base1) + " " + str(video2) + " " + str(base2))
                         self.swapBase(video1, base1, video2, base2)
                         # 看四者的功效函数是否都大于等于并
                         differ1 = self.videoUtilty(video1) - initialV1Utilty
@@ -401,19 +392,11 @@ class Matching:
             for video2 in range(self.sumOfVideo):
                 if video1 != video2:
                     initialV2Utilty = self.videoUtilty(video2)
-                    print("videoBase: " + str(video1) + ": ", self.videoBase[video1])
-                    print("anotherBaseList: " + str(video2) + ": ", self.videoBase[video2])
                     # B-A
                     differVideolist2 = [item for item in self.videoBase[video2] if item not in self.videoBase[video1]]
-                    print("differVideoList2: " + str(differVideolist2))
                     # 交换已匹配资源对应的资源，看是否形成交换块
                     for base2 in differVideolist2:
-                        print("执行交换操作之前")
-                        print("videoBase " + str(video1) + ": ", self.videoBase[video1])
-                        print("videoBase " + str(video2) + ": ", self.videoBase[video2])
-                        print("baseVideo " + str(base2) + ": ", self.baseVideo[base2])
                         initialBase2Utilty = self.baseUtilty(base2)
-                        print(str(video1) + " " + str(video2) + " " + str(base2))
                         self.snatchDistributedBase(video1, video2, base2)
                         # 看三者的功效函数是否都大于等于并
                         differ1 = self.videoUtilty(video1) - initialV1Utilty
@@ -441,7 +424,6 @@ class Matching:
             print("***********************************")
             initialV1Utilty = self.videoUtilty(video1)
             baseList = self.videoBase[video1]
-            print("videoBase: " + str(video1) + ": ", baseList)
             # 也是求二者的差集
             exchangeableBaseList = self.getExchangeableBaselist(video1)
             differVideolist1 = [item for item in self.videoBase[video1] if item not in exchangeableBaseList]
@@ -476,7 +458,6 @@ class Matching:
         for video1 in range(self.sumOfVideo):
             print("////////////////////////////////")
             initialV1Utilty = self.videoUtilty(video1)
-            print("videoBase: " + str(video1) + ": ", baseList)
             exchangeableBaseList = self.getExchangeableBaselist(video1)
             for base in exchangeableBaseList:
                 initialBaseUtilty = self.baseUtilty(base)

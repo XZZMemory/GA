@@ -5,20 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010aef75-3e83-4ebe-9809-b2e7e5e82e46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户访问宏基站+微基站/20191015-5-VQD5.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Individual.py" beforeDir="false" afterPath="$PROJECT_DIR$/Individual.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Population.py" beforeDir="false" afterPath="$PROJECT_DIR$/Population.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/MainaMatching.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/al/Individual.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/Individual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/al/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/al/MainaMatching.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/MainOfMatching.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/al/Matching.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/Matching.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/al/Population.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/Population.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/al/fitness.txt" beforeDir="false" afterPath="$PROJECT_DIR$/al/fitness.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/al/result.txt" beforeDir="false" afterPath="$PROJECT_DIR$/al/result.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/al/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/20191014-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/20191014-5-VQD5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/Painter.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/Painter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/populationFitness/20191014-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/populationFitness/20191014-5-VQD5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/maxFitness/20191015-1-VQD1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户访问宏基站+微基站/20191015-1-VQD1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/maxFitness/20191015-5-VQD5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/populationFitness/20191015-5-VQD5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/populationFitness/20191015-5-VQD5.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,67 +82,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Population.py">
+        <entry file="file://$PROJECT_DIR$/data/maxFitness/20191016-1-VQD1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="596" column="8" selection-start-line="596" selection-start-column="8" selection-end-line="596" selection-end-column="8" />
+            <state relative-caret-position="-67685" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/al/GA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1809">
+              <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#7#32#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/al/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Individual.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="36" column="101" selection-start-line="35" selection-start-column="23" selection-end-line="36" selection-end-column="101" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/al/Matching.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/al/MainaMatching.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -147,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/al/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+            <state relative-caret-position="253">
+              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -157,13 +113,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/al/Population.py">
+        <entry file="file://$PROJECT_DIR$/al/Matching.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="173" column="60" selection-start-line="173" selection-start-column="60" selection-end-line="173" selection-end-column="60" />
+            <state relative-caret-position="578">
+              <caret line="81" column="72" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#2423#4317#0" />
               </folding>
             </state>
           </provider>
@@ -172,7 +127,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/al/Individual.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="134">
+              <caret line="223" selection-start-line="223" selection-end-line="223" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -181,15 +137,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main.py">
+        <entry file="file://$PROJECT_DIR$/al/Population.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="134">
+              <caret line="202" selection-start-line="202" selection-end-line="202" />
               <folding>
-                <element signature="e#7#32#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="851">
+              <caret line="37" column="97" selection-start-line="37" selection-start-column="97" selection-end-line="37" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/maxFitness/20191016-3-VQD3.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-22080" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/al/fitness.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/al/config.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -203,36 +185,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.distanceUserToBase</find>
-      <find>self.VN</find>
-      <find>fitness</find>
-      <find>self.Alpha</find>
-      <find>self.population</find>
-      <find>getVQD4</find>
-      <find>self.userToBaseSorted</find>
-      <find>getSortedBaseToUser</find>
-      <find>self.baseVisitedOfUserVisitingVideo</find>
       <find>getVideoImportance</find>
       <find>VNInitial</find>
       <find>VQSInitial</find>
       <find>baseLocationInitial</find>
       <find>userLocationInitial1</find>
       <find>getBaseCoveredUsers</find>
-      <find>getDistanceUserToBase</find>
-      <find>getAns</find>
       <find>getBaseVisitedOfUserVisitingVideoOfVQD4</find>
       <find>snatchDistributedBase</find>
-      <find>getVQD</find>
       <find>Alpha</find>
       <find>getSINR</find>
-      <find>getPERofBaseChannelWithIntegral</find>
       <find>getFitnessOfMatching</find>
       <find>userLocationInitial2</find>
       <find>matchingTimes</find>
-      <find>self.basevisitedUE</find>
       <find>self.tau</find>
       <find>self.VQD</find>
+      <find>getDistanceUserToBase</find>
+      <find>getAns</find>
+      <find>initializationOfVQD</find>
+      <find>self.basevisitedUE</find>
+      <find>getVQD</find>
+      <find>videoBase</find>
       <find>basevisitedUE</find>
+      <find>self.population</find>
+      <find>self.distanceUserToBase</find>
+      <find>初始化，基因分配</find>
+      <find>print</find>
+      <find>getPEROfVQDMatching</find>
+      <find>asm_array</find>
+      <find>getPERofBaseChannelWithIntegral</find>
+      <find>distanceUserToBase</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -322,7 +304,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/data/maxFitness/20190526-1-VQD4.txt" />
         <option value="$PROJECT_DIR$/data/maxFitness/20190527-1-VQD4.txt" />
         <option value="$PROJECT_DIR$/每日进度.txt" />
         <option value="$PROJECT_DIR$/de/Population.py" />
@@ -346,7 +327,6 @@
         <option value="$PROJECT_DIR$/al/ma.py" />
         <option value="$PROJECT_DIR$/config.txt" />
         <option value="$PROJECT_DIR$/al/result.txt" />
-        <option value="$PROJECT_DIR$/al/Individual.py" />
         <option value="$PROJECT_DIR$/data/maxFitness/2019.10.8-1-3000-30/20191008-5-VQD5.txt" />
         <option value="$PROJECT_DIR$/data/maxFitness/painter/10.8-3000-30-config.txt" />
         <option value="$PROJECT_DIR$/data/maxFitness/painter/data3.txt" />
@@ -364,15 +344,17 @@
         <option value="$PROJECT_DIR$/data/maxFitness/painter/result/second/data1.txt" />
         <option value="$PROJECT_DIR$/data/maxFitness/painter/result/data1.txt" />
         <option value="$PROJECT_DIR$/data/maxFitness/painter/data1.txt" />
-        <option value="$PROJECT_DIR$/Population.py" />
         <option value="$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户均可访问微基站/config.txt" />
-        <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/Utils.py" />
-        <option value="$PROJECT_DIR$/al/test.py" />
+        <option value="$PROJECT_DIR$/Population.py" />
         <option value="$PROJECT_DIR$/Individual.py" />
+        <option value="$PROJECT_DIR$/al/test.py" />
+        <option value="$PROJECT_DIR$/Utils.py" />
+        <option value="$PROJECT_DIR$/al/GA.py" />
+        <option value="$PROJECT_DIR$/al/Individual.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/al/Matching.py" />
-        <option value="$PROJECT_DIR$/al/Population.py" />
         <option value="$PROJECT_DIR$/al/Main.py" />
+        <option value="$PROJECT_DIR$/al/Population.py" />
       </list>
     </option>
   </component>
@@ -388,7 +370,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -448,6 +429,14 @@
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="maxFitness" type="462c0819:PsiDirectoryNode" />
               <item name="third" type="462c0819:PsiDirectoryNode" />
+              <item name="20191014-全部在微基站中" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GA" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="maxFitness" type="462c0819:PsiDirectoryNode" />
+              <item name="third" type="462c0819:PsiDirectoryNode" />
               <item name="20191015-噪声不变，用户均可访问微基站" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -461,12 +450,21 @@
             <path>
               <item name="GA" type="b2602c69:ProjectViewProjectNode" />
               <item name="GA" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="maxFitness" type="462c0819:PsiDirectoryNode" />
+              <item name="third" type="462c0819:PsiDirectoryNode" />
+              <item name="temp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GA" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -475,7 +473,7 @@
     <property name="SearchEverywhereHistoryKey" value="self.VQD&#9;null&#9;null&#10;sumOfBS&#9;null&#9;null&#10;VQD&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/maxFitness/painter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户访问宏基站+微基站" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -486,15 +484,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\third\20191015-噪声不变，用户均可访问微基站" />
-      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\third\201910-15-噪声不变" />
-      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\painter" />
-      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\third\20191015-噪声提升" />
-      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\third\20191014-全部在微基站中" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/venv" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\third\temp\shawaiyi" />
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\third\temp" />
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\third\20191015-噪声不变，用户访问宏基站+微基站" />
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\third\20191015-噪声不变，用户均可访问微基站" />
+      <recent name="E:\content\PycharmProjects\GA\data\maxFitness\third\201910-15-噪声不变" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -509,7 +507,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.Main (2)">
     <configuration name="Main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GAofQoE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -532,6 +530,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="GAofQoE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/al" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/al/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GAofQoE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -545,29 +565,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="E:\content\PycharmProjects\GA\al\MainaMatching.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Matching" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="GAofQoE" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/al" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/al/Matching.py" />
+      <option name="SCRIPT_NAME" value="E:\content\PycharmProjects\GA\al\MainOfMatching.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -624,16 +622,16 @@
       <item itemvalue="Python.Main (1)" />
       <item itemvalue="Python.Main" />
       <item itemvalue="Python.Utils" />
-      <item itemvalue="Python.Matching" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.Main (2)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Main" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.Matching" />
-        <item itemvalue="Python.Utils" />
+        <item itemvalue="Python.Main (2)" />
         <item itemvalue="Python.Main (1)" />
+        <item itemvalue="Python.Utils" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -675,12 +673,13 @@
       <workItem from="1569378865279" duration="14723000" />
       <workItem from="1569495233553" duration="2845000" />
       <workItem from="1569551990714" duration="2693000" />
-      <workItem from="1569572471621" duration="128254000" />
+      <workItem from="1569572471621" duration="135467000" />
+      <workItem from="1571210149070" duration="8802000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395123000" />
+    <option name="totallyTimeSpent" value="411138000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -695,8 +694,8 @@
     <frame x="-8" y="-8" width="1936" height="1064" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.33548388" visible="true" weight="0.19029851" />
-      <window_info id="Structure" order="1" sideWeight="0.66451615" side_tool="true" weight="0.19029851" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3340206" visible="true" weight="0.1924307" />
+      <window_info id="Structure" order="1" sideWeight="0.6659794" side_tool="true" visible="true" weight="0.1924307" />
       <window_info id="Favorites" order="2" sideWeight="0.66451615" side_tool="true" weight="0.18869936" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5010661" side_tool="true" weight="0.3623656" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.7516129" />
@@ -705,7 +704,7 @@
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32795697" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.4989339" weight="0.4591398" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.4989339" visible="true" weight="0.4784946" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32795697" />
@@ -853,8 +852,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/al/Matching.py</url>
-          <line>202</line>
+          <line>204</line>
           <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/al/Main.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="207" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -898,14 +902,15 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GA$Population.coverage" NAME="Population Coverage Results" MODIFIED="1569314156983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GA$Object.coverage" NAME="Object Coverage Results" MODIFIED="1569220077503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/GA$Main__2_.coverage" NAME="Main (2) Coverage Results" MODIFIED="1571230300359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/al" />
     <SUITE FILE_PATH="coverage/GA$Painter__1_.coverage" NAME="Painter (1) Coverage Results" MODIFIED="1570499979322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/maxFitness/painter" />
     <SUITE FILE_PATH="coverage/GA$test8.coverage" NAME="test8 Coverage Results" MODIFIED="1556291440003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
     <SUITE FILE_PATH="coverage/GA$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1561084327041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
-    <SUITE FILE_PATH="coverage/GA$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1571144801566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$Main__1_.coverage" NAME="Main (1) Coverage Results" MODIFIED="1571223114883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GA$userGenerateTest.coverage" NAME="userGenerateTest Coverage Results" MODIFIED="1559028445165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/painter" />
     <SUITE FILE_PATH="coverage/GA$ClassTest.coverage" NAME="ClassTest Coverage Results" MODIFIED="1571054343888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GA$Painter.coverage" NAME="Painter Coverage Results" MODIFIED="1571124584933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data/maxFitness/painter" />
-    <SUITE FILE_PATH="coverage/GA$Utils.coverage" NAME="Utils Coverage Results" MODIFIED="1571145084011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GA$Utils.coverage" NAME="Utils Coverage Results" MODIFIED="1571208938847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GA$Matching.coverage" NAME="Matching Coverage Results" MODIFIED="1571145726630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/al" />
     <SUITE FILE_PATH="coverage/GA$Main.coverage" NAME="Main Coverage Results" MODIFIED="1571146007567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/al" />
     <SUITE FILE_PATH="coverage/GA$fileTest.coverage" NAME="fileTest Coverage Results" MODIFIED="1558923489431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -913,7 +918,7 @@
     <SUITE FILE_PATH="coverage/GA$MyClass.coverage" NAME="MyClass Coverage Results" MODIFIED="1570935332102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GA$Test.coverage" NAME="Test Coverage Results" MODIFIED="1571063312477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GA$GA__1_.coverage" NAME="GA (1) Coverage Results" MODIFIED="1569295688497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GA" />
-    <SUITE FILE_PATH="coverage/GA$test.coverage" NAME="test Coverage Results" MODIFIED="1571145841992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/al" />
+    <SUITE FILE_PATH="coverage/GA$test.coverage" NAME="test Coverage Results" MODIFIED="1571195311477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/al" />
     <SUITE FILE_PATH="coverage/GA$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1561625832112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/GA$Individual.coverage" NAME="Individual Coverage Results" MODIFIED="1570705485922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -927,87 +932,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/20190930-4-withOther.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/data5.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data+1-single.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="100" lean-forward="true" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data+2-single.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1985">
-          <caret line="93" column="2" lean-forward="true" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data+3-single.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="92" column="2" selection-start-line="92" selection-start-column="2" selection-end-line="92" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data+4-single.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="2" lean-forward="true" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/data+5-single.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1985">
-          <caret line="93" column="2" lean-forward="true" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.10/20191010-1-VQD1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.11/20191011-2-VQD2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2399">
-          <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.11/20191011-3-VQD3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31135" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/config.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/second-2019.10.10-基站个数6+1-信道数30-基站存储容量4+1-用户个数30-  迭代次数3000-种群大小30/2019.10.11/20191011-1-VQD1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/painter/result/fitst-2019.10.10-3000-30/20190930-3-avg-3000-30.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://E:/Anaconda3/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -1015,9 +939,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191014-1-VQD1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191014-1-VQD1.txt" />
     <entry file="file://$PROJECT_DIR$/MyClass.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -1025,9 +947,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191014-全部在微基站中/20191014-5-VQD5.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191014-全部在微基站中/20191014-5-VQD5.txt" />
     <entry file="file://$PROJECT_DIR$/sinrInGet.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -1062,13 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191014-全部在微基站中/config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="78" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191014-全部在微基站中/20191014-3-VQD3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3542">
@@ -1097,61 +1010,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/al/config.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/201910-15-噪声不变/20191015-5-VQD5.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68280" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/maxFitness/20191014-3-VQD3.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64170">
           <caret line="2790" column="35" selection-start-line="2790" selection-start-column="35" selection-end-line="2790" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/al/fitness.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/al/result.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2300">
-          <caret line="100" column="7" selection-start-line="100" selection-start-column="7" selection-end-line="100" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声提升/20191015-1-VQD1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声提升/20191015-5-VQD5.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="3001" column="23" selection-start-line="3001" selection-start-column="23" selection-end-line="3001" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户均可访问微基站/20191015-1-VQD1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66808">
-          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户均可访问微基站/20191015-5-VQD5.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50784" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/201910-15-噪声不变/20191015-1-VQD1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="3002" selection-start-line="3002" selection-end-line="3002" />
         </state>
       </provider>
     </entry>
@@ -1162,8 +1024,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191015-5-VQD5.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户访问宏基站+微基站/20191015-1-VQD1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62652" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户访问宏基站+微基站/20191015-5-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68441" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191014-全部在微基站中/config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="78" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/201910-15-噪声不变/20191015-1-VQD1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="3002" selection-start-line="3002" selection-end-line="3002" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/201910-15-噪声不变/20191015-5-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68455" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户均可访问微基站/20191015-1-VQD1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66969">
+          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声不变，用户均可访问微基站/20191015-5-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3312" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/al/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1133">
+          <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声提升/20191015-1-VQD1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="3001" selection-start-line="3001" selection-end-line="3002" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/20191015-噪声提升/20191015-5-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="3001" column="23" selection-start-line="3001" selection-start-column="23" selection-end-line="3001" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/al/result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Population.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1182">
+          <caret line="300" column="73" selection-start-line="300" selection-start-column="73" selection-end-line="300" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/maxFitness/20191014-5-VQD5.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -1172,90 +1122,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.py">
+    <entry file="file://$PROJECT_DIR$/Individual.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/al/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+        <state relative-caret-position="23">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191015-1-VQD1.txt">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/temp/20191016-4-VQD4.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10212" />
+        <state relative-caret-position="-3289">
+          <caret line="1600" selection-start-line="1600" selection-end-line="1600" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/temp/20191016-3-VQD3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="2956" column="33" selection-start-line="2956" selection-start-column="33" selection-end-line="2956" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/al/MainOfMatching.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/temp/shawaiyi/20191016-2-VQD2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68664" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="1472">
+          <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
           <folding>
             <element signature="e#7#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Individual.py">
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/temp/shawaiyi/20191016-1-VQD1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="36" column="101" selection-start-line="35" selection-start-column="23" selection-end-line="36" selection-end-column="101" />
+        <state relative-caret-position="-66595" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191016-4-VQD4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15636" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/temp/20191016-2-VQD2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-65215" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191016-2-VQD2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2546" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/temp/20191016-5-VQD5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68416" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/third/temp/20191016-1-VQD1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68527" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="37" column="97" selection-start-line="37" selection-start-column="97" selection-end-line="37" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191016-3-VQD3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22080" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191016-1-VQD1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-67685" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/al/GA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1809">
+          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#7#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/al/MainaMatching.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="3" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/al/config.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Population.py">
+    <entry file="file://$PROJECT_DIR$/al/fitness.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/al/Matching.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="596" column="8" selection-start-line="596" selection-start-column="8" selection-end-line="596" selection-end-column="8" />
+        <state relative-caret-position="578">
+          <caret line="81" column="72" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/al/Population.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="173" column="60" selection-start-line="173" selection-start-column="60" selection-end-line="173" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#2423#4317#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/al/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        <state relative-caret-position="253">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/al/Matching.py">
+    <entry file="file://$PROJECT_DIR$/al/Population.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="16" />
+        <state relative-caret-position="134">
+          <caret line="202" selection-start-line="202" selection-end-line="202" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -1264,7 +1263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/al/Individual.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="134">
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

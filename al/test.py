@@ -55,4 +55,6 @@ nn = []
 nn.append((1, 2))
 nn.append(3)
 print(nn)
+list2 = [3, 6, 2]
+print("max: " + str(max(list2)))
 i = 0
