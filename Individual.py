@@ -2,6 +2,7 @@ import random
 import copy
 import math
 import numpy as np
+from random import choice
 import Utils
 
 
@@ -23,7 +24,7 @@ class Individual:
     # 高斯噪声
     BW = 1e7
     __N0_dbm = -174 + 10 * np.log10(BW)
-    __N0 = 10 ** ((__N0_dbm - 30) / 10)*10
+    __N0 = (10 ** ((__N0_dbm - 30) / 10)) * 10
     # perFileName = "./data/picture/20190528-VQD5-2-picture.txt"
 
     '''个体中需要用到的：1.C、P的初始化 
@@ -175,18 +176,12 @@ class Individual:
 
     def mutate(self):
         '''变异，随机选择一个位置进行变异'''
-        flag = 0
         for base in range(self.sumOfBase):
             if (len(self.basevisitedUE[base]) > 0):
                 channel = random.randint(0, self.sumOfChannels - 1)
                 '''信道处于闲置状态，没有分配给任何用户，则随机产生一个用户，将该基站base的信道channel分配给用户usernum'''
                 if (self.C[base][channel] == -1):
-                    ''' random.sample()从指定的序列中随机截取指定长度的片段，不作原地修改，返回的仍是列表，不是一个单独数字'''
-                    if flag == 0:
-                        print("发生变异")
-                        flag = 1
-                    user = (random.sample(self.basevisitedUE[base], 1))[0]
-                    self.C[base][channel] = user  # 把信道随机分配给一个用户
+                    self.C[base][channel] = choice(self.basevisitedUE[base])  # 把信道随机分配给一个用户
                     if self.Qmax - sum(self.P[base]) < self.powerLimit * 100:  # ---------2017.07.24修改为0，如果功率溢出就修复
                         self.revisePower(base)  # 功率超了修复
                     self.P[base][channel] = random.random() * (self.Qmax - sum(
@@ -195,14 +190,13 @@ class Individual:
                     '''非闲置状态,产生一个随机概率，概率p小于0.5，该信道置空；概率p大于0.5，随机选择一个用户，将信道、功率分配给该用户'''
                     p = random.random()
                     if (p < 0.5):
-                        if flag == 0:
-                            print("发生变异")
-                            flag = 1
+                        '''                        if flag == 0:
+                            # print("发生变异")
+                            flag = 1'''
                         self.C[base][channel] = -1
                         self.P[base][channel] = 0
                     else:
-                        ''' random.sample()从指定的序列中随机截取指定长度的片段，不作原地修改，返回的仍是列表，不是一个单独数字'''
-                        user = (random.sample(self.basevisitedUE[base], 1))[0]
+                        user = choice(self.basevisitedUE[base])
                         self.C[base][channel] = user  # 把信道随机分配给一个用户
                         if self.Qmax - sum(self.P[
                                                base]) < self.powerLimit * 100:  # -----------------------------------------------------------2017.07.24修改为0，如果功率溢出就修复
@@ -211,14 +205,6 @@ class Individual:
                             self.P[base]))  # -----------------------------------------------------2017.06.08功率等级修改为实数
 
     def revisePower(self, base):
-        '''
-         try:
-            print("功率修复：" + str(base) + " 总功率值： " + str(sum(self.P[base])) + " 该基站的功率分配情况：" + str(self.P[base]))
-        except IndexError:
-            print("基站："+str(base))
-            print("该基站信道分配情况："+str(self.P[base]))
-        '''
-
         for channel in range(len(self.P[base])):
             # 如果功率非常非常小(小于最低限度)，则直接置为0
             if self.P[base][channel] != 0 and self.P[base][channel] / self.Qmax < self.powerLimit:
@@ -266,14 +252,10 @@ class Individual:
         '''为了符合遗传算法的演进规则，即：个体适应值越大。越容易存活，将适应值变为负数，满足GA算法演进规则'''
         return -fitness
 
-    # 这时候计算出来的就是信道的可靠性，不用求反
+    # 这时候计算出来的就是信道的可靠性
     def getFitnessWithIntegral(self):
-        # self.getSINR()
         self.getPERofBaseChannelWithIntegral()
-        # Utils.printListWithTwoDi("************************************** asm_array", self.asm_array)
         self.getAns()
-        # Utils.printListWithTwoDi("************************************** ans", self.ans)
-        # self.getSINR()
         PER = []
         for video in range(len(self.VN)):  # 视频i
             PER.append([])
@@ -289,30 +271,6 @@ class Individual:
             for user in range(len(PER[video])):
                 fitness += PER[video][user]
         return fitness
-        '''
-        计算用户n使用基站n的信道m访问基站n中的视频v的描述q的误码率
-        每个视频描述的误码率
-        误码率，是一个数组，只要用户访问这个视频了，就需要计算对于这个用户来说，整个视频描述的误码率
-        用户不访问视频，误码率为0.用户访问视频，误码率为0-1
-        '''
-        PER = []
-        for video in range(len(self.VN)):  # 视频i
-            PER.append([])
-            if self.typeOfVQD == 4 or self.typeOfVQD == 5:
-                for user in range(len(self.VN[video])):
-                    PER[video].append(self.getPEROfVNWithIntegralOfVQD45(user, video))
-            elif self.typeOfVQD == 1 or self.typeOfVQD == 2 or self.typeOfVQD == 3:
-                for user in range(len(self.VN[video])):
-                    PER[video].append(self.getPEROfVQD123(user, video))
-        '''个体适应值/误码率，fitness，越小越好'''
-        fitness = 0
-        for video in range(len(PER)):
-            for user in range(len(PER[video])):
-                fitness += PER[video][user]
-        '''为了符合遗传算法的演进规则，即：个体适应值越大。越容易存活，将适应值变为负数，满足GA算法演进规则'''
-        return -fitness
-
-    '''user访问视频video的误码率'''
 
     def getPEROfVQD123(self, user, video):
         pnv = 1
@@ -380,23 +338,18 @@ class Individual:
             pnv = 1
             for visitedBase in self.VQD[video]:
                 '''video的第q个描述，存储基站是visitedBase'''
-                Pnvq = self.ans[user][visitedBase]
-                pnv = pnv * Pnvq
+                pnv = pnv * self.ans[user][visitedBase]
         else:
             pnv = 0
         return pnv
 
     def getPEROfVNWithIntegralOfVQD45(self, user, video):
-        ''' self.getSINR()
-         self.getPERofBaseChannelWithIntegral()
-         self.getAns(self.asm_array)'''
         Pnv = 1
         if self.VN[video][user] == 1:
             '''找user访问video的描述description时，访问的基站，去哪个基站找这个视频'''
             for decsription in range(len(self.VQD[video])):
                 visitedBase = (np.array(self.baseVisitedOfUserVisitingVideo))[user][video][decsription]
-                Pnvq = self.ans[user][visitedBase]
-                Pnv *= Pnvq  # 多个描述，每个描述都要求误码率
+                Pnv =Pnv* self.ans[user][visitedBase]  # 多个描述，每个描述都要求误码率
         else:
             Pnv = 0
         return Pnv
@@ -405,8 +358,6 @@ class Individual:
         # 从基站考虑，计算每个信道的可靠性
         self.asm_array = []
         for base in range(self.sumOfBase):
-            if base == 1:
-                ll = 0
             self.asm_array.append([])
             for channel in range(self.sumOfChannels):
                 user = self.C[base][channel]

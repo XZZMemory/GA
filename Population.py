@@ -53,8 +53,6 @@ class Population:
     6.PopulationRevise？？   后续适应值低会自动淘汰掉'''
 
     def initialization(self):
-        # self.typeOfVQD = typeOfVQD  # 表示VQD种类，如果是4
-        # 每个视频的大小是50KBytes。
         self.VQS = []
         for video in range(self.sumOfVideo):
             self.VQS.append([])
@@ -64,7 +62,7 @@ class Population:
         Utils.printListWithTwoDi("VN: ", self.VN)
         print(str(len(self.VN[0])))
         '''用户与基站之间的距离，用于计算SINR'''
-        self.getDistanceUserToBase()  # self.distanceUserToBase =
+        self.getDistanceUserToBase()
 
     # 测试
     def allLocationInitialTest(self):
@@ -141,10 +139,10 @@ class Population:
                    [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]]
 
         Utils.printListWithTwoDi("VN---", self.VN)
-        #self.randomVN()# 在随机初始化几个值，增加访问关系
+        # self.randomVN()# 在随机初始化几个值，增加访问关系
         # self.userLocationInitial2()  # 用户位置初始化,选择第二种初始化方式，均在微基站覆盖范围内
         self.getSortedBaseToUser()
-        self.getVQD(self.userToBaseSorted)  # 视频描述存储位置初始化
+        # self.getVQD()  # 视频描述存储位置初始化
 
     def randomVN(self):
         # 在随机初始化几个值，增加访问关系
@@ -157,28 +155,32 @@ class Population:
 
     def initializationOfVQD(self, typeOfVQD):
         self.typeOfVQD = typeOfVQD
-        if (self.typeOfVQD == 1):
+        if (typeOfVQD == 1):
+            self.getVQD1()
             self.VQD = self.VQD1
-        elif (self.typeOfVQD == 2):
+        elif (typeOfVQD == 2):
+            self.getVQD2()
             self.VQD = self.VQD2
-        elif (self.typeOfVQD == 3):
+        elif (typeOfVQD == 3):
+            self.getVQD3()
             self.VQD = self.VQD3
-        elif (self.typeOfVQD == 4):
+        elif (typeOfVQD == 4):
+            self.getVQD4()
             self.VQD = self.VQD4
-        elif (self.typeOfVQD == 5):
+        elif (typeOfVQD == 5):
+            self.getVQD5()
             self.VQD = self.VQD5
         if ((self.typeOfVQD == 1) or (self.typeOfVQD == 2) or (self.typeOfVQD == 3)):
             self.baseVisitedOfUserVisitingVideo = None  # 多个方式，调用同一个函数，均传递相同的参数，不存在的为None
-            self.basevisitedUE = self.getBaseVisitedUE(VQD=self.VQD)  # 返回函数值，每个基站的访问用户，在基站分配信道时使用
+            self.getBaseVisitedUE(self.VQD)  # 返回函数值，每个基站的访问用户，在基站分配信道时使用
         elif (self.typeOfVQD == 4):
             # 用户访问视频的描述时访问哪个基站
-            self.getBaseVisitedOfUserVisitingVideoOfVQD4(self.VQD4, self.userToBaseSorted, self.VN)
-            self.basevisitedUE = self.getBaseVisitedUserOfVQD45(
-                copy.deepcopy(self.baseVisitedOfUserVisitingVideo))  # 得到基站的访问用户
+            self.getBaseVisitedOfUserVisitingVideoOfVQD4()
+            self.getBaseVisitedUserOfVQD45()  # 得到基站的访问用户
         elif (self.typeOfVQD == 5):
-            self.baseVisitedOfUserVisitingVideo = self.getBaseVisitedOfUserVisitingVideoOfVQD5(self.VQD5)
-            self.basevisitedUE = self.getBaseVisitedUserOfVQD45(
-                copy.deepcopy(self.baseVisitedOfUserVisitingVideo))  # 得到基站的访问用户
+            # 用户访问视频的描述时访问哪个基站
+            self.getBaseVisitedOfUserVisitingVideoOfVQD5()
+            self.getBaseVisitedUserOfVQD45()  # 得到基站的访问用户
 
     def allLocationInitial(self):
         self.baseLocationInitial()  # 基站位置初始化
@@ -186,7 +188,7 @@ class Population:
         paint = Painter()
         paint.paintBasesAndUsers(self.locationOfBase, self.locationOfUser)
         self.getSortedBaseToUser()
-        self.getVQD(self.userToBaseSorted)  # 视频描述存储位置初始化
+        # self.getVQD()  # 视频描述存储位置初始化
 
     '''矩阵数据均从下标0就开始存储'''
     '''1.VN矩阵，用户与视频之间的访问关系，会返回生成矩阵，在总的初始化矩阵中再调用这个函数'''
@@ -229,7 +231,7 @@ class Population:
 
     '''4.用户位置的初始化,这种初始化，用户随机分布在宏基站覆盖 范围内，但不一定在微基站覆盖范围内'''
 
-    def userLocationInitial1(self, radius, radius2):
+    def userLocationInitial1(self):
         self.locationOfUser = []
         userNum = self.sumOfUser
         radius = self.baseRadius[0]
@@ -242,24 +244,6 @@ class Population:
             x[i] = x[i] * len * radius
             y[i] = y[i] * len * radius
             self.locationOfUser.append([x[i], y[i]])
-        print("***********userLo:" + str(self.locationOfUser))
-
-        '''
-        locationOfUser = []
-        for i in range(self.sumOfUser):
-            x = random.randint(0, radius)
-            yRadius = int((radius ** 2 - x ** 2) ** 0.5)
-            y = random.randint(0, yRadius)
-            xFlag = random.random()
-            if xFlag < 0.5:
-                x = -x
-            yFlag = random.random()
-            if yFlag < 0.5:
-                y = -y
-            locationOfUser.append([x, y])
-        print("locationOfUser:  " + str(locationOfUser))
-        return locationOfUser
-        '''
 
     # 用户位置初始化，用户全部在微基站覆盖范围内，初始化VN看看
     def userLocationInitial2(self):
@@ -279,7 +263,6 @@ class Population:
         i_set = np.arange(0, userNum, 1)
         list = [0, 1, 2, 3]
         for user in i_set:
-            print("9))))))))):" + str(user))
             if user % avgUserNum == 0:
                 video = random.choice(list)
                 baseFlag = baseFlag + 1
@@ -291,7 +274,54 @@ class Population:
             self.VN[video][user] = 1
         print("***********userLocation:" + str(self.locationOfUser))
         print("***********VN:" + str(self.VN))
-        user = 0
+
+        # 用户位置初始化，用户2/3在微基站覆盖范围内，1/3在宏基站覆盖范围内初始化VN看看
+
+    def userLocationInitial3(self):
+        self.VN = []
+        for video in range(self.sumOfVideo):
+            self.VN.append([])
+            for user in range(self.sumOfUser):
+                self.VN[video].append(0)
+
+        self.locationOfUser = []
+        baseFlag = 0  # 用户全部在微基站覆盖范围内
+        userNum = self.sumOfUser / 3 * 2
+        avgUserNum = self.sumOfUser / (self.sumOfBase - 1)
+        t = np.random.random(size=userNum) * 2 * np.pi - np.pi
+        x = np.cos(t)
+        y = np.sin(t)
+        i_set = np.arange(0, userNum, 1)
+        list = [0, 1, 2, 3]
+        for user in i_set:
+            if user % avgUserNum == 0:
+                videoList = random.sample(list, 2)  # 随机选择两个video，用户访问
+                baseFlag = baseFlag + 1
+            len = np.sqrt(np.random.random())
+            x[user] = x[user] * len * self.baseRadius[baseFlag]
+            y[user] = y[user] * len * self.baseRadius[baseFlag]
+            self.locationOfUser.append(
+                [x[user] + self.locationOfBase[baseFlag][0], y[user] + self.locationOfBase[baseFlag][1]])
+            for currentVideo in videoList:
+                self.VN[currentVideo][user] = 1
+            self.VN[random.choice(list)][user] = 1
+
+        # 初始化在宏基站覆盖范围内的用户
+        userNum = self.sumOfUser - userNum
+        t = np.random.random(size=(userNum)) * 2 * np.pi - np.pi
+        x = np.cos(t)
+        y = np.sin(t)
+        i_set = np.arange(0, userNum, 1)
+        list = [0, 1, 2, 3]
+        for user in i_set:
+            videoList = random.sample(list, 2)
+            len = np.sqrt(np.random.random())
+            x[user] = x[user] * len * self.baseRadius[0]
+            y[user] = y[user] * len * self.baseRadius[0]
+            self.locationOfUser.append([x[user], y[user]])
+            for currentVideo in videoList:
+                self.VN[currentVideo][user] = 1
+        Utils.printData("locationOfUser", self.locationOfUser)
 
     def getDistanceUserToBase(self):
         self.distanceUserToBase = []
@@ -301,14 +331,13 @@ class Population:
                 n = ((self.locationOfUser[user][0] - self.locationOfBase[base][0]) ** 2 + (
                         self.locationOfUser[user][1] - self.locationOfBase[base][1]) ** 2) ** 0.5
                 self.distanceUserToBase[user].append(int(n))
-        # return self.distanceUserToBase
 
     # 需要条件：用户访问视频矩阵，VQS视频的描述大小， 基站分布
-    def getVQD(self, userToBaseSorted):  # 得到四种视频存储位置，顺序存储，随机存储，按照视频重要度，离访问用户最近的基站
+    def getVQD(self):  # 得到四种视频存储位置，顺序存储，随机存储，按照视频重要度，离访问用户最近的基站
         self.getVQD1()  # 顺序存储
         self.getVQD2()  # 随机存储
         self.getVQD3()  # 基于视频重要度+距离确定存储位置
-        self.getVQD4(userToBaseSorted)  # 存储在距离访问用户最近的基站
+        self.getVQD4()  # 存储在距离访问用户最近的基站
         self.getVQD5()  # 宏基站能存储所有的视频，在某一微基站
 
     def getVQD1(self):  # 顺序存储，实际是一个三维矩阵，基站+视频+描述
@@ -363,13 +392,13 @@ class Population:
                         flagOfBase += 1
                     else:
                         flag = 1
-                baseCapacity[storedBS] -= videoDescriptionSize
+                baseCapacity[storedBS] = baseCapacity[storedBS] - videoDescriptionSize
                 self.VQD3[video].append(storedBS)
 
     '''在基站有剩余容量的情况下，视频可以存储几遍，这样命中率就高了,
        思路：存储在离访问用户最近的基站'''
 
-    def getVQD4(self, userToBaseSorted):
+    def getVQD4(self):
         self.VQD4 = []  # 返回的数据，视频的存储位置，第四种方式
         baseCapacity = copy.deepcopy(self.baseCapacity)  # self.BScapacity#每个基站的存储容量
         '''确认视频存储到哪个基站的距离到所有访问用户的距离最近横-视频video，竖-基站，存储在哪个基站，离所有访问用户的距离最近'''
@@ -403,14 +432,14 @@ class Population:
                     for description in range(len(self.VQS[video])):
                         isStored = False  # 表示对于这个视频藐视的这个访问用户，视频是否找到哦啊合适的存储地，False-没找到，True-找到了
                         flagOfBase = 0
-                        currentBase = userToBaseSorted[user][flagOfBase]  # 找到当前应该存储的基站,看看VQD4有没有这个基站，没有就存储一下。
+                        currentBase = self.userToBaseSorted[user][flagOfBase]  # 找到当前应该存储的基站,看看VQD4有没有这个基站，没有就存储一下。
                         while (((currentBase in self.VQD4[video][description]) == False) & (
                                 isStored == False)):  # 对于这个视频的这个访问用户，视频还没有找到很好的存储地
                             if (flagOfBase >= self.sumOfBase):  # 所有基站的存储容量都用完了
                                 return self.VQD4
                             if (self.VQS[video][description] > baseCapacity[currentBase]):
                                 flagOfBase += 1
-                                currentBase = userToBaseSorted[user][flagOfBase]
+                                currentBase = self.userToBaseSorted[user][flagOfBase]
 
                             else:
                                 self.VQD4[video][description].append(currentBase)
@@ -500,17 +529,16 @@ class Population:
             for base in range(len(distance[user])):
                 self.userToBaseSorted[user].append(distance[user][base][0])
 
-    def getBaseVisitedOfUserVisitingVideoOfVQD5(self, VQD5):
-        userVideoBase = []
+    def getBaseVisitedOfUserVisitingVideoOfVQD5(self):
+        self.baseVisitedOfUserVisitingVideo = []
         for user in range(self.sumOfUser):
-            userVideoBase.append([])
+            self.baseVisitedOfUserVisitingVideo.append([])
             for video in range(self.sumOfVideo):
-                userVideoBase[user].append([])
+                self.baseVisitedOfUserVisitingVideo[user].append([])
                 if self.VN[video][user] == 1:
-                    for description in range(len(VQD5[video])):
+                    for description in range(len(self.VQD5[video])):
                         base = self.getBaseOfVQD5(user, self.VQD5[video][description])
-                        userVideoBase[user][video].append(base)
-        return userVideoBase
+                        self.baseVisitedOfUserVisitingVideo[user][video].append(base)
 
     def getBaseOfVQD5(self, user, storedBaseList):
         if user == 17:
@@ -526,15 +554,15 @@ class Population:
     找到用户访问视频时访问哪个基站最好（离用户距离越近的约好），VQD4中视频的描述可能存储在多个基站中，所以我们需要找到访问哪个基站最好，
     可以在getVQD4()中确定，但本身getVQD4()函数处理过程比较麻烦，若再确定，还需要再加条件判断，所以在这直接写个函数，逻辑处理会简单些'''
 
-    def getBaseVisitedOfUserVisitingVideoOfVQD4(self, VQD4, userToBaseSorted, VN):
+    def getBaseVisitedOfUserVisitingVideoOfVQD4(self):
         self.baseVisitedOfUserVisitingVideo = []
         for user in range(self.sumOfUser):
             self.baseVisitedOfUserVisitingVideo.append([])
             for video in range(self.sumOfVideo):
                 self.baseVisitedOfUserVisitingVideo[user].append([])
-                if (VN[video][user] == 1):
-                    for description in range(len(VQD4[video])):
-                        base = self.getBaseVQD4(userToBaseSorted[user], VQD4[video][description])
+                if (self.VN[video][user] == 1):
+                    for description in range(len(self.VQD4[video])):
+                        base = self.getBaseVQD4(self.userToBaseSorted[user], self.VQD4[video][description])
                         self.baseVisitedOfUserVisitingVideo[user][video].append(base)
 
     '''4.3'''
@@ -548,22 +576,21 @@ class Population:
     '''4.3每个基站的访问用户，Individual个体的初始化，分配基站的信道和功率时使用，由于VQD4存储方式和其他不一样，所以单独写个函数'''
     '''# userVideoDescription: 用户访问视频的描述时访问哪个基站'''
 
-    def getBaseVisitedUserOfVQD45(self, baseVisitedOfUserVisitingVideo):  # user-video-description
+    def getBaseVisitedUserOfVQD45(self):  # user-video-description
         temp = []
         '''由于每个描述存储的地址是一个list，所以先求出video的所有描述存储地址，然后再进行合并'''
-        for user in range(len(baseVisitedOfUserVisitingVideo)):
+        for user in range(len(self.baseVisitedOfUserVisitingVideo)):
             temp.append([])  # user
-            for video in range(len(baseVisitedOfUserVisitingVideo[user])):
-                temp[user].extend(baseVisitedOfUserVisitingVideo[user][video])
+            for video in range(len(self.baseVisitedOfUserVisitingVideo[user])):
+                temp[user].extend(self.baseVisitedOfUserVisitingVideo[user][video])
         for user in range(len(temp)):
             temp[user] = list(set(temp[user]))
-        basevisitedUE = []  # 横坐标i：基站，纵坐标j：用户
+        self.basevisitedUE = []  # 横坐标i：基站，纵坐标j：用户
         for base in range(self.sumOfBase):
-            basevisitedUE.append([])
+            self.basevisitedUE.append([])
         for user in range(len(temp)):
             for base in temp[user]:
-                basevisitedUE[base].append(user)
-        return basevisitedUE  # 返回每个基站的访问用户（根据视频描述存储位置+每个视频的访问用户）
+                self.basevisitedUE[base].append(user)
 
     '''3.1. 根据每个视频的每个访问用户，确认视频存储到哪个基站的距离到所有访问用户的距离最近,GetVQD3函数会调用这个函数'''
 
@@ -621,41 +648,32 @@ class Population:
             for element in VQD[i]:
                 if element not in temp_VQD[i]:
                     temp_VQD[i].append(element)
-        basevisitedUE = []  # 横坐标base：基站，纵坐标user：用户
+        self.basevisitedUE = []  # 横坐标base：基站，纵坐标user：用户
         for base in range(self.sumOfBase):
-            basevisitedUE.append([])
+            self.basevisitedUE.append([])
             for video in range(len(temp_VQD)):  # 视频j，访问用户，没有重复元素
                 for flagOfStoredBase in range(len(temp_VQD[video])):
                     if (temp_VQD[video][flagOfStoredBase] == base):  # 当前j视频的第k个描述存储在基站i上，找到这个视频的访问用户
                         for user in range(len(self.VN[video])):
-                            if ((self.VN[video][user] == 1) and (user not in basevisitedUE[base])):
-                                basevisitedUE[base].append(user)
-            basevisitedUE[base].sort()
-        return copy.deepcopy(basevisitedUE)  # 返回每个基站的访问用户（根据视频描述存储位置+每个视频的访问用户）
-        # 基于VN（视频访问用户）和VQD
+                            if ((self.VN[video][user] == 1) and (user not in self.basevisitedUE[base])):
+                                self.basevisitedUE[base].append(user)
+            self.basevisitedUE[base].sort()
 
     # 1.创建种群
     def creatPopulation(self):  # 创建种群
-        print("***********种群中验证参数*************")
-        print("self: " + str(self))
+        print("***********创建种群*************")
         print("typeOfVQD: " + str(self.typeOfVQD))
         self.individualList = []
         for i in range(Population.sizeOfPopulation):
-            ''' tau, typeOfVQD, VQD, baseVisitedOfUserVisitingVideo, sumOfBase, sumOfUser, sumOfVideo,
-                 sumOfChannels, powerOfBase, baseRadius, Alpha, VN, basevisitedUE, distanceUserToBase'''
-            individual = Individual(self.tau, self.typeOfVQD, self.VQD, self.baseVisitedOfUserVisitingVideo,
-                                    self.sumOfBase, self.sumOfUser, self.sumOfVideo,
-                                    self.sumOfChannels, self.powerOfBase, self.baseRadius, self.Alpha, self.VN,
-                                    self.basevisitedUE, self.distanceUserToBase)
-            self.individualList.append(individual)
-        print("self.individualList: " + str(self.individualList))
-        print("***********种群中验证参数完毕************")
+            self.individualList.append(
+                Individual(self.tau, self.typeOfVQD, self.VQD, self.baseVisitedOfUserVisitingVideo,
+                           self.sumOfBase, self.sumOfUser, self.sumOfVideo,
+                           self.sumOfChannels, self.powerOfBase, self.baseRadius, self.Alpha, self.VN,
+                           self.basevisitedUE, self.distanceUserToBase))
 
     # 2.交叉，返回空或者交叉之后的两个新个体，交叉操作已测试成功
-    def crossover(self,
-                  individualForCross):  # individualForCross是一个数组，里面有两个个体individualForCross[0],individualForCross[1]
+    def crossover(self, individualForCross):  # individualForCross是一个数组，里面有两个个体
         if (random.random() < self.crossoverPc):  # 小于这个概率，执行交叉操作
-            print("种群中发生交叉")
             return individualForCross[0].crossover(individualForCross[1])  # 使用个体类自己的方法
         else:
             return []
@@ -664,24 +682,10 @@ class Population:
     def mutate(self, individualForMutate):  # individualForMutate，自己写，只有一个个体参数
         for i in range(2):
             if (random.random() < self.mutatePm):  # 小于mutatePm，执行变异操作
-                print("种群个体发生变异")
                 individualForMutate[i].mutate()
 
-    # 4.得到所有个体的适应值
-    def getAllFitness(self):
-        fitnessList = []
-        for i in range(self.sizeOfPopulation):
-            fitnessList.append(self.individualList[i].getFitness())  # 在individual文件中，这个函数的写法比较重要，好好写
-        return fitnessList
-
-    def getAllFitnessIntegral(self):
-        fitnessList = []
-        for i in range(self.sizeOfPopulation):
-            fitnessList.append(self.individualList[i].getFitnessWithIntegral())  # 在individual文件中，这个函数的写法比较重要，好好写
-        return fitnessList
-
-    '''根据种群适应值，选择两个个体，进行交叉，锦标赛选择法，
-    随机产生两个样本，分别竞争第一组竞争'''
+    '''选择，根据种群适应值，选择两个个体，进行交叉，锦标赛选择法，
+       随机产生两个样本，分别竞争第一组竞争'''
 
     def select(self):
         if len(self.individualList) < 2:
@@ -694,3 +698,9 @@ class Population:
         father = competitors_1[1] if fitness_1[1] > fitness_1[0] else competitors_1[0]
         mather = competitors_2[1] if (fitness_2[1] > fitness_2[0]) else competitors_2[0]
         return [copy.deepcopy(father), copy.deepcopy(mather)]
+
+    def getAllFitnessIntegral(self):
+        fitnessList = []
+        for i in range(self.sizeOfPopulation):
+            fitnessList.append(self.individualList[i].getFitnessWithIntegral())
+        return fitnessList

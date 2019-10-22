@@ -20,18 +20,12 @@ class GA:
         populationFitnessPath = rootPath + "/populationFitness/" + fileName
         maxFitnessPath = rootPath + "/maxFitness/" + fileName
         resultVQD = self.ga(self.population, populationFitnessPath, maxFitnessPath)
-        print("画图数据")
-        print("VQD" + str(type) + ".points " + str(resultVQD.points) + '\n')
-        print("画收敛图")
+        return resultVQD
+        print("GA结束")
 
     def ga(self, population, fileName, maxFitnessFile):
         population.creatPopulation()  # 生成种群
-        # 存储结果，用于绘图
         points = []
-        #f = open(fileName, 'w')
-        #f.write(fileName + '\n')
-        #m = open(maxFitnessFile, 'w')
-        #m.write(maxFitnessFile + '\n')
         painter = Painter()
         painter.paintNetworkTopology(population.baseRadius, population.locationOfBase, population.locationOfUser,
                                      population.basevisitedUE, maxFitnessFile)
@@ -40,14 +34,11 @@ class GA:
         while (iterations <= population.iterations):
             fitness = population.getAllFitnessIntegral()
             maxFitnessInCurrentPopulation = max(fitness)
-            print("当前迭代的代数：" + str(iterations) + "   当前种群适应值最好的：" + str(maxFitnessInCurrentPopulation))
+            print("代数：" + str(iterations) + "  最好值：" + str(maxFitnessInCurrentPopulation))
             if iterations == 1:
                 maxFitness = maxFitnessInCurrentPopulation
             else:
                 maxFitness = maxFitness if maxFitness > maxFitnessInCurrentPopulation else maxFitnessInCurrentPopulation
-            #m.write(str(iterations) + ": " + str(maxFitnessInCurrentPopulation) + '\n')
-            #f.write(str(iterations + 1) + '\n')
-            #f.write(str(fitness) + '\n')
             points.append([iterations, maxFitnessInCurrentPopulation])
             tempIndividulalList = []
             while (len(tempIndividulalList) < population.sizeOfPopulation):
@@ -71,14 +62,14 @@ class GA:
                 if (tempFitness[i] > fitness[i]):
                     population.individualList[i] = copy.deepcopy(tempIndividulalList[i])
             iterations += 1
-        print("GA结束后适应值最大的个体信道分配情况")
         fitness = population.getAllFitnessIntegral()
         index = Utils.getImportant(fitness)
-
-        for i in range(len(population.individualList[0].C)):
-            print(str(population.individualList[0].C[i]))
-        print("population.individualList:" + str(population.individualList))
-        #m.write(str(points) + '\n')
-        #f.close()
-        #m.close()
-        return [population.individualList[index].C, population.individualList[index].P]
+        print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%9090909090")
+        print(population.individualList[index].getFitnessOfMatching())
+        print("asm_array: " + str(population.individualList[index].asm_array))
+        print("ansArray: " + str(population.individualList[index].ansArray))
+        print("VN： " + str(population.VN))
+        print("C: " + str(population.individualList[index].C))
+        print("P: " + str(population.individualList[index].P))
+        return [population.individualList[index].C, population.individualList[index].P, fitness[index],
+                population.individualList[index].ansArray]

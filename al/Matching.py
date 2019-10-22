@@ -3,6 +3,7 @@ import math
 from random import choice
 import numpy as np
 import Utils
+import copy
 
 
 # 求user访问视频的可靠性大小，每个描述均存在同一位置，直接a的b次方得到结果
@@ -11,7 +12,7 @@ import Utils
 class Matching:
     # k考虑将这些通用信息放到一个配置文件中
     sumOfBase = 7
-    sumOfUser = 20
+    sumOfUser = 30
     sumOfVideo = 4
     sumOfDescription = 10  # 视频描述的数量，视频描述的大小默认是5
     sumOfChannels = 20
@@ -24,7 +25,7 @@ class Matching:
     P = []
     BW = 1e7
     __N0_dbm = -174 + 10 * np.log10(BW)
-    __N0 = 10 ** ((__N0_dbm - 30) / 10)
+    __N0 = (10 ** ((__N0_dbm - 30) / 10)) * 10
     tau = 1  # 计算信道可靠性时使用
     flag = 1  # 标识是否有交换块，matching算法种终止条件，当没有交换块时，flag=0，matching算法结束
 
@@ -46,7 +47,6 @@ class Matching:
         self.processing(configPath)  # 读取配置信息
         # 这个在初始化时就固定了，不会发生变化，一直就是这个，所以放在这里
         self.distanceUserToBase = self.getDistanceUserToBase()
-        self.init(None, None)
 
     # 读取配置文件信息
     def processing(self, configPath):
@@ -60,25 +60,35 @@ class Matching:
                 elif times == 3:
                     self.VN = eval(line)
                 times = times + 1
-        self.VNTimes = Utils.printListWithTwoDi(str(self.VN), self.VN)
+        self.VNTimes = Utils.getVNTimes(self.VN)  # printListWithTwoDi(str(self.VN), self.VN)
 
     # 初始化C、P，确定base和video的映射关系
-    def init(self, C, P):
+    def init(self, C, P, videoBase, baseVideo, ansArray):
         # 程序刚开始，没有C和P的话，需要初始化一个，如果经过GA算法，有了C和P，则不用再初始化了
         if C == None:
             self.initOfCAndP()
+            self.initMappingOfMatching()
+            # 3. 获取用户访问基站时的可靠性
+            self.getPERofBaseChannelWithIntegral()  # 基站每个信道的可靠性
+            # print("matching init asm_array: " + str(self.asm_array))
+            self.getAns()  # 获取每个用户访问基站时，基站为用户提供的可靠性
         else:
             self.C = C
             self.P = P
+            #
+            self.videoBase = videoBase
+            self.baseVideo = baseVideo
+            self.restOfBaseCapacity = copy.deepcopy(self.baseCapacity)  # 每个基站存储容量状态
+            for base in range(len(self.baseVideo)):
+                self.restOfBaseCapacity[base] = self.restOfBaseCapacity[base] - len(self.baseVideo[base])
+            self.ansArray = ansArray
         # 2. 确定的映射关系
         # 随机产生video和base对应关系，即：matching初始状态是随机产生的
         # 随机初始化映射关系：
-        self.initMappingOfMatching()
-        # 3. 获取用户访问基站时的可靠性
-        self.getPERofBaseChannelWithIntegral()  # 基站每个信道的可靠性
-        self.printData("asm_array", self.asm_array)
-        self.getAns()  # 获取每个用户访问基站时，基站为用户提供的可靠性
-        self.printData("ansArray", self.ansArray)
+
+        print("matching init ansArray: " + str(self.ansArray))
+        print("matching C: " + str(self.C))
+        print("matching P: " + str(self.P))
         print("init 初始化执行完毕*********************************************")
 
     def printData(self, name, data):
@@ -92,7 +102,7 @@ class Matching:
         # 随机产生video和base对应关系，即：matching初始状态是随机产生的
         # 随机初始化映射关系：
         # 对每个基站随机产生存储基站
-        self.restOfBaseCapacity = self.baseCapacity  # 每个基站存储容量状态
+        self.restOfBaseCapacity = copy.deepcopy(self.baseCapacity)  # 每个基站存储容量状态
         self.baseVideo = []  # 每个基站存储的视频
         self.videoBase = []  # 每个视频存储在哪些基站上
         for video in range(self.sumOfVideo):
@@ -136,7 +146,6 @@ class Matching:
             length = len(userList)
             basevisitedUE.append([])
             baseVisitedUserSum = np.random.randint(int(length / 3), length + 1, 1)[0]  # 随机生成基站访问用户数量
-            # print("baseVisitedUserSum:" + str(baseVisitedUserSum))
             for userFlag in range(baseVisitedUserSum):
                 user = choice(userList)
                 userList.remove(user)
@@ -177,25 +186,11 @@ class Matching:
                     powe.append(0)  # 不用的信道功率设置为0
             self.C.append(chan)  # 当前基站的信道分配加入基因中
             self.P.append(powe)  # 当前基站的功率分配加入基因中
-        print("初始化，基因分配")
-        print("C: ")
-        for base in range(self.sumOfBase):
-            print(str(base) + " : " + str(self.C[base]))
-        print("P: ")
-        for base in range(self.sumOfBase):
-            print(str(base) + " : " + str(self.P[base]))
 
     def matching(self):
         fitnessFileName = 'fitness.txt'
         ff = open(fitnessFileName, 'w')
         ff.write(str(self.getFitnessOfMatching() / self.VNTimes) + '\n')
-        # 1. 初始化base和video self.init()
-        # *2.  获取交换对  执行matching算法
-        # 3, 更新状态
-        # end(while 无交换对)*#
-        print("初始状态")
-        self.printData("videoBase:", self.videoBase)
-        self.printData("baseVideo", self.baseVideo)
         fileName = './result.txt'
         f = open(fileName, 'w')
         self.writeFile(f, "videoBase", self.videoBase)
@@ -225,8 +220,8 @@ class Matching:
                     visitedBase = self.getVisitBase(user, video)
                     if user not in self.basevisitedUE[visitedBase]:
                         self.basevisitedUE[visitedBase].append(user)
-        self.printData("self.basevisitedUE", self.basevisitedUE)
-        return [self.basevisitedUE, self.videoBase]
+        # self.printData("self.basevisitedUE", self.basevisitedUE)
+        return [self.basevisitedUE, self.videoBase, self.baseVideo]
 
     def getVisitBase(self, user, video):
         nn = []
@@ -284,8 +279,8 @@ class Matching:
                 else:
                     self.asm_array[base].append(0)
 
-    # 得到用户与每个基站进行通信时的链路可靠性，根据每个信道的可靠性，self.C。横-用户，纵-基站
     def getAns(self):
+        # 得到用户与每个基站进行通信时的链路可靠性，根据每个信道的可靠性，self.C
         self.ansArray = []
         for user in range(self.sumOfUser):
             self.ansArray.append([])
@@ -297,6 +292,7 @@ class Matching:
                         ansEachChannel = 1 - self.asm_array[base][channe]
                         ansEachBase *= ansEachChannel
                 self.ansArray[user].append(ans - ansEachBase)
+        # print("getAns: ans: " + str(self.ansArray))
 
     # 获取当前基站的功效函数
     # 基站功效函数，基站为这些访问用户所能提供的可靠性
@@ -313,8 +309,34 @@ class Matching:
             for video in stordedVideoList:
                 if self.VN[video][user] == 1:
                     anv = anv + self.ansArray[user][base]
-
         return anv
+
+    '''基站的功效函数,基站实际提供的可靠性,计算的是用户实际访问该基站的可靠性'''
+
+    def baseUtilty2(self, base):
+        # * 1.基站访问用户
+        # 2. 基站存储视频
+        # 3. 用户与视频访问关系
+        # 4. 基站信道可靠性-> 基站提供的可靠性最大，基站实际提供的可靠性*#
+        anv = 0  # 基站的功效值
+        stordedVideoList = self.baseVideo[base]
+        visitedUserList = list(set(self.C[base]))  # 基站访问用户，去掉重复元素，原本有重复元素，因为一个基站的多个信道可以分配给同一用户
+        for user in visitedUserList:
+            for video in stordedVideoList:
+                if self.VN[video][user] == 1:
+                    # 用户是否访问该基站
+                    anv = anv + self.getTrueBaseUtility(user, video, base)
+        return anv
+
+    # 用户访问该视频时，实际是否访问该基站，访问的话，返回可靠性，否则返回0
+    def getTrueBaseUtility(self, user, video, base):
+        userUtiltyList = [0]  # 存储该视频的基站提供的可靠性，访问可靠性最大的基站
+        for storedBase in self.videoBase[video]:
+            userUtiltyList.append(self.ansArray[user][storedBase])
+        if self.ansArray[user][base] == max(userUtiltyList):
+            return self.ansArray[user][base]
+        else:
+            return 0
 
     # 获取当前视频的功效函数，考虑，与以前不同，多个基站为同一视频提供可靠性
     def videoUtilty(self, video):
@@ -339,11 +361,11 @@ class Matching:
     # 对于视频而言，是否可以交换,找到交换对
     # 对于某一视频而言找交换对,video-anotherVideo,base1-base2，有四种情况，分别讨论
     def getSwapBlock(self, f):
-        self.printData("videoBase:", self.videoBase)
-        self.printData("baseVideo", self.baseVideo)
+        # self.printData("videoBase:", self.videoBase)
+        # self.printData("baseVideo", self.baseVideo)
         # 1. 交换已匹配基站
         for video1 in range(self.sumOfVideo):
-            print("+++++++++++++++++++++++++++++++++++++++++++++")
+            # print("+++++++++++++++++++++++++++++++++++++++++++++")
             baseList = self.videoBase[video1]
             initialV1Utilty = self.videoUtilty(video1)
             for video2 in range(video1 + 1, self.sumOfVideo):
@@ -359,14 +381,14 @@ class Matching:
                 for base1 in differVideoList1:
                     for base2 in differVideolist2:
 
-                        initialBase1Utilty = self.baseUtilty(base1)
-                        initialBase2Utilty = self.baseUtilty(base2)
+                        initialBase1Utilty = self.baseUtilty2(base1)
+                        initialBase2Utilty = self.baseUtilty2(base2)
                         self.swapBase(video1, base1, video2, base2)
                         # 看四者的功效函数是否都大于等于并
                         differ1 = self.videoUtilty(video1) - initialV1Utilty
                         differ2 = self.videoUtilty(video2) - initialV2Utilty
-                        differ3 = self.baseUtilty(base1) - initialBase1Utilty
-                        differ4 = self.baseUtilty(base2) - initialBase2Utilty
+                        differ3 = self.baseUtilty2(base1) - initialBase1Utilty
+                        differ4 = self.baseUtilty2(base2) - initialBase2Utilty
                         totalDiffer = differ1 + differ2 + differ3 + differ4
                         # 形成交换对了，直接返回
                         if differ1 >= 0 and differ2 >= 0 and differ3 >= 0 and differ4 >= 0 and totalDiffer > 0:
@@ -381,13 +403,13 @@ class Matching:
                             return 1
                         # 不能形成交换块，返回初始状态，并继续判断下一个
                         else:
-                            print("未形成交换块，回到初始状态")
+                            # print("未形成交换块，回到初始状态")
                             self.swapBase(video1, base2, video2, base1)
                             self.flag = 0
                 # 看是否可交换了，或者有个基站有空闲资源,考虑空闲资源块
         # 2. 抢夺已匹配基站,video1 抢夺video2的 base2
         for video1 in range(self.sumOfVideo):
-            print("---------------------------------")
+            # print("---------------------------------")
             initialV1Utilty = self.videoUtilty(video1)
             for video2 in range(self.sumOfVideo):
                 if video1 != video2:
@@ -396,12 +418,12 @@ class Matching:
                     differVideolist2 = [item for item in self.videoBase[video2] if item not in self.videoBase[video1]]
                     # 交换已匹配资源对应的资源，看是否形成交换块
                     for base2 in differVideolist2:
-                        initialBase2Utilty = self.baseUtilty(base2)
+                        initialBase2Utilty = self.baseUtilty2(base2)
                         self.snatchDistributedBase(video1, video2, base2)
                         # 看三者的功效函数是否都大于等于并
                         differ1 = self.videoUtilty(video1) - initialV1Utilty
                         differ2 = self.videoUtilty(video2) - initialV2Utilty
-                        differ4 = self.baseUtilty(base2) - initialBase2Utilty
+                        differ4 = self.baseUtilty2(base2) - initialBase2Utilty
                         totalDiffer = differ1 + differ2 + differ4
                         # 形成交换对了，直接返回
                         if differ1 >= 0 and differ2 >= 0 and differ4 >= 0 and totalDiffer > 0:
@@ -415,13 +437,13 @@ class Matching:
                             return 1
                         # 不能形成交换块，返回初始状态，并继续判断下一个
                         else:
-                            print("未形成交换块，回到初始状态")
+                            # print("未形成交换块，回到初始状态")
                             self.snatchDistributedBase(video2, video1, base2)
                             self.flag = 0  # 看是否可交换了，或者有个基站有空闲资源,考虑空闲资源块
 
         # 3. 交换未匹配基站
         for video1 in range(self.sumOfVideo):
-            print("***********************************")
+            # print("***********************************")
             initialV1Utilty = self.videoUtilty(video1)
             baseList = self.videoBase[video1]
             # 也是求二者的差集
@@ -430,13 +452,13 @@ class Matching:
             # 使用base2，不使用base1
             for base1 in differVideolist1:
                 for base2 in exchangeableBaseList:
-                    initialBase1Utilty = self.baseUtilty(base1)
-                    initialBase2Utilty = self.baseUtilty(base2)
+                    initialBase1Utilty = self.baseUtilty2(base1)
+                    initialBase2Utilty = self.baseUtilty2(base2)
                     self.useAvaiableBase(video1, base2)
                     self.deuseAvaiableBase(video1, base1)
                     differ1 = self.videoUtilty(video1) - initialV1Utilty
-                    differ2 = self.baseUtilty(base1) - initialBase1Utilty
-                    differ3 = self.baseUtilty(base2) - initialBase2Utilty
+                    differ2 = self.baseUtilty2(base1) - initialBase1Utilty
+                    differ3 = self.baseUtilty2(base2) - initialBase2Utilty
                     totalDiffer = differ1 + differ2 + differ3
                     if differ1 >= 0 and differ2 >= 0 and differ3 >= 0 and totalDiffer > 0:
                         self.matchingTimes = self.matchingTimes + 1
@@ -451,19 +473,19 @@ class Matching:
                     else:
                         self.useAvaiableBase(video1, base1)
                         self.deuseAvaiableBase(video1, base2)
-                        print("未形成交换块，回到初始状态")
+                        # print("未形成交换块，回到初始状态")
                         self.flag = 0
         # 4. 抢夺未匹配资源
         # 看是否有可用基站，形成交换块，或抢夺或交换，有两种
         for video1 in range(self.sumOfVideo):
-            print("////////////////////////////////")
+            # print("////////////////////////////////")
             initialV1Utilty = self.videoUtilty(video1)
             exchangeableBaseList = self.getExchangeableBaselist(video1)
             for base in exchangeableBaseList:
-                initialBaseUtilty = self.baseUtilty(base)
+                initialBaseUtilty = self.baseUtilty2(base)
                 self.useAvaiableBase(video1, base)
                 differ1 = self.videoUtilty(video1) - initialV1Utilty
-                differ2 = self.baseUtilty(base) - initialBaseUtilty
+                differ2 = self.baseUtilty2(base) - initialBaseUtilty
                 totalDiffer = differ1 + differ2
                 if differ1 >= 0 and differ2 >= 0 and totalDiffer > 0:
                     self.matchingTimes = self.matchingTimes + 1
@@ -474,7 +496,7 @@ class Matching:
                     return 1
                     # 不能形成交换块，返回初始状态，并继续判断下一个
                 else:
-                    print("未形成交换块，回到初始状态")
+                    # print("未形成交换块，回到初始状态")
                     self.deuseAvaiableBase(video1, base)
                     self.flag = 0
 
@@ -482,10 +504,12 @@ class Matching:
         return 0
 
     def getFitnessOfMatching(self):
-        # self.SINR = self.getSINR()
         # 在执行初始化时已得到该值
-        # self.asm_array = self.getPERofBaseChannelWithIntegral()  # 得到每个基站信道的可靠性
-        # self.ansArray = self.getAns()  # 得到每个用户访问某基站的可靠性
+        # self.getPERofBaseChannelWithIntegral()  # 得到每个基站信道的可靠性
+        # self.getAns()  # 得到每个用户访问某基站的可靠性
+        # print("getFitnessOfMatching  ansArray: " + str(self.ansArray))
+        # print("getFitnessOfMatching  asm_array: " + str(self.asm_array))
+
         PER = []
         #
         for video in range(len(self.VN)):  # 视频i
@@ -500,25 +524,6 @@ class Matching:
                 fitness += PER[video][user]
         return fitness
 
-    def getPEROfVQDMatching(self, user, video):
-        ''' self.SINR = self.getSINR()
-               self.asm_array = self.getPERofBaseChannelWithIntegral()
-               self.ans = self.getAns(self.asm_array)'''
-        Pnv = 1
-        if self.VN[video][user] == 1:
-            '''找user访问video的描述description时，访问的基站，去哪个基站找这个视频'''
-            for decsription in range(len(self.VQD[video])):
-                visitedBase = (np.array(self.baseVisitedOfUserVisitingVideo))[user][video][decsription]
-                Pnvq = self.ansArray[user][visitedBase]
-                Pnv *= Pnvq  # 多个描述，每个描述都要求误码率
-        else:
-            Pnv = 0
-        return Pnv
-
-        def printdataFirst(self, name, data):
-            print(name)
-            print(str(data))
-
     # 交换video对应的base
     # video、base对应存储的基站、视频也要变化
     def swapBase(self, video1, base1, video2, base2):
@@ -530,11 +535,11 @@ class Matching:
         self.baseVideo[base1].append(video2)
         self.baseVideo[base2].remove(video2)
         self.baseVideo[base2].append(video1)
-        print("------执行交换操作之后")
+        '''        print("------执行交换操作之后")
         print("videoBase " + str(video1) + ": ", self.videoBase[video1])
         print("videoBase " + str(video2) + ": ", self.videoBase[video2])
         print("baseVideo " + str(base1) + ": ", self.baseVideo[base1])
-        print("baseVideo " + str(base2) + ": ", self.baseVideo[base2])
+        print("baseVideo " + str(base2) + ": ", self.baseVideo[base2])'''
 
     def useAvaiableBase(self, video, base):
         self.restOfBaseCapacity[base] = self.restOfBaseCapacity[base] - 1

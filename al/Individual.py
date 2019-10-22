@@ -22,7 +22,7 @@ class Individual:
     # 高斯噪声
     BW = 1e7
     __N0_dbm = -174 + 10 * np.log10(BW)
-    __N0 = 10 ** ((__N0_dbm - 30) / 10)
+    __N0 = (10 ** ((__N0_dbm - 30) / 10)) * 10
     # perFileName = "./data/picture/20190528-VQD5-2-picture.txt"
 
     '''个体中需要用到的：1.C、P的初始化 
@@ -154,53 +154,37 @@ class Individual:
 
     def mutate(self):
         '''变异，随机选择一个位置进行变异'''
-        flag = 0
         for base in range(self.sumOfBase):
             if (len(self.basevisitedUE[base]) > 0):
                 channel = random.randint(0, self.sumOfChannels - 1)
                 '''信道处于闲置状态，没有分配给任何用户，则随机产生一个用户，将该基站base的信道channel分配给用户usernum'''
                 if (self.C[base][channel] == -1):
                     ''' random.sample()从指定的序列中随机截取指定长度的片段，不作原地修改，返回的仍是列表，不是一个单独数字'''
-                    if flag == 0:
-                        print("发生变异")
-                        flag = 1
-                    user = (random.sample(self.basevisitedUE[base], 1))[0]
+                    user = random.choice(self.basevisitedUE[base])
                     self.C[base][channel] = user  # 把信道随机分配给一个用户
-                    if self.Qmax - sum(self.P[base]) < self.powerLimit * 100:  # ---------2017.07.24修改为0，如果功率溢出就修复
+                    if self.Qmax - sum(self.P[base]) < self.powerLimit * 100:
                         self.revisePower(base)  # 功率超了修复
-                    self.P[base][channel] = random.random() * (self.Qmax - sum(
-                        self.P[base]))  # -----------------------------------------------------2017.06.08功率等级修改为实数
+                    self.P[base][channel] = random.random() * (self.Qmax - sum(self.P[base]))
                 else:
                     '''非闲置状态,产生一个随机概率，概率p小于0.5，该信道置空；概率p大于0.5，随机选择一个用户，将信道、功率分配给该用户'''
                     p = random.random()
                     if (p < 0.5):
-                        if flag == 0:
-                            print("发生变异")
-                            flag = 1
+                        print("信道置空！" + str(base) + " " + str(channel))
                         self.C[base][channel] = -1
                         self.P[base][channel] = 0
                     else:
                         ''' random.sample()从指定的序列中随机截取指定长度的片段，不作原地修改，返回的仍是列表，不是一个单独数字'''
-                        user = (random.sample(self.basevisitedUE[base], 1))[0]
+                        user = random.choice(self.basevisitedUE[base])
                         self.C[base][channel] = user  # 把信道随机分配给一个用户
-                        if self.Qmax - sum(self.P[
-                                               base]) < self.powerLimit * 100:  # -----------------------------------------------------------2017.07.24修改为0，如果功率溢出就修复
+                        if self.Qmax - sum(self.P[base]) < self.powerLimit * 100:
                             self.revisePower(base)  # 功率超了修复
-                        self.P[base][channel] = random.random() * (self.Qmax - sum(
-                            self.P[base]))  # -----------------------------------------------------2017.06.08功率等级修改为实数
+                        self.P[base][channel] = random.random() * (self.Qmax - sum(self.P[base]))
 
     def revisePower(self, base):
-        '''
-         try:
-            print("功率修复：" + str(base) + " 总功率值： " + str(sum(self.P[base])) + " 该基站的功率分配情况：" + str(self.P[base]))
-        except IndexError:
-            print("基站："+str(base))
-            print("该基站信道分配情况："+str(self.P[base]))
-        '''
-
         for channel in range(len(self.P[base])):
             # 如果功率非常非常小(小于最低限度)，则直接置为0
-            if self.P[base][channel] != 0 and self.P[base][channel] / self.Qmax < self.powerLimit:
+            if self.P[base][channel] != 0 and (self.P[base][channel] / self.Qmax < self.powerLimit):
+                print("信道置空:" + str(base) + " " + str(channel))
                 self.C[base][channel] = -1  # 信道标注为空闲
                 self.P[base][channel] = 0  # 功率标注为0
         a = sum(self.P[base])  # 该基站当前功率的总数，应该小于Qmax才对
@@ -214,7 +198,6 @@ class Individual:
             self.revisePower(base)
 
     def getFitnessOfMatching(self):
-        # self.SINR = self.getSINR()
         self.getPERofBaseChannelWithIntegral()  # self.asm_array 得到每个基站信道的可靠性
         self.getAns()  # self.ans 得到每个用户访问某基站的可靠性
         PER = []
@@ -252,6 +235,11 @@ class Individual:
                     if self.C[base][channe] == user:
                         ansEachChannel = 1 - self.asm_array[base][channe]
                         ansEachBase *= ansEachChannel
+                data = ans - ansEachBase
+                if data == float('inf'):
+                    print(str(self.ansArray))
+                    print(data)
+                    exit(1)
                 self.ansArray[user].append(ans - ansEachBase)
 
     def getPERofBaseChannelWithIntegral(self):
@@ -264,6 +252,14 @@ class Individual:
                 if user != -1:
                     ss = self.P[base][channel] * self.powerOfBase[base] * (
                             (self.distanceUserToBase[user][base]) ** (-4))
+                    if ss == 0:
+                        print("出现异常！")
+                        print("base： " + str(base) + " " + str(channel))
+                        print(str(self.P[base][channel]))
+                        print(self.powerOfBase[base])
+                        print(self.distanceUserToBase[user][base])
+                        print(self.distanceUserToBase[user][base] ** (-4))
+                        exit(1)
                     try:
                         asm = math.e ** (-(self.tau * self.__N0) / ss)
                     except:
@@ -284,6 +280,12 @@ class Individual:
                     self.asm_array[base].append(asm)
                 else:
                     self.asm_array[base].append(0)
+
+    def printMy(self):
+        self.getPERofBaseChannelWithIntegral()
+        self.getAns()
+
+        return [self.ansArray, self.asm_array]
 
     def getSINR(self):
         print("执行getsinr函数")
@@ -312,7 +314,6 @@ class Individual:
                             Ik = self.P[otherBase][channel] * self.powerOfBase[otherBase] * GOther * self.Bias
                             I += Ik  # 干扰相加，得到总的干扰  此处得到来自其他基站的干扰
                     sinr = S / (I + Noise)
-                    # print("基站： "+str(base)+" 信道："+str(channel)+" 噪声："+str(Noise)+" 干扰： "+str(I)+" 该信道信号大小：： "+str(S)+" 信噪比： "+str(sinr))
                     if I != 0:
                         f.write("base" + str(base) + " channel" + str(channel) + "S/I" + str(
                             S / I) + "S/(I+N) " + str(
