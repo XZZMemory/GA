@@ -254,6 +254,11 @@ class Individual:
                             (self.distanceUserToBase[user][base]) ** (-4))
                     if ss == 0:
                         print("出现异常！")
+                        for base in range(len(self.P)):
+                            print(str(base) + " " + str(self.P[base]))
+
+                            for base in range(len(self.C)):
+                                print(str(base) + " " + str(self.C[base]))
                         print("base： " + str(base) + " " + str(channel))
                         print(str(self.P[base][channel]))
                         print(self.powerOfBase[base])
