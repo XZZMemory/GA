@@ -53,7 +53,7 @@ class Individual:
         '''视频的存储方式'''
         self.typeOfVQD = typeOfVQD
         if self.typeOfVQD == 4 or self.typeOfVQD == 5:
-            self.baseVisitedOfUserVisitingVideo = baseVisitedOfUserVisitingVideo
+            self.baseVisitedOfUserVisitingVideo = (np.array(self.baseVisitedOfUserVisitingVideo))
         self.N0 = 11
         self.Bias = 1000000  # 防止干扰和噪声过小设置的偏移值，在计算SINR之后会约掉 10^6
         self.Qmax = 1  # 实数功率等级，所以最大功率等级是1
@@ -243,14 +243,14 @@ class Individual:
                 fitness += PER[video][user]
         return fitness / self.VNTimes
 
-    def getPEROfVQD123(self, user, video):
+    '''    def getPEROfVQD123(self, user, video):
         pnv = 1
-        '''用户访问视频时，需要计算失真'''
+        #用户访问视频时，需要计算失真
         if self.VN[video][user] == 1:
-            '''找到视频video的存储基站，到存储基站中找到信道误码率,有多个描述'''
+            #找到视频video的存储基站，到存储基站中找到信道误码率,有多个描述
             # 当前描述的存储位置只有一个，是确定的
             for base in self.VQD[video]:
-                '''video的第q个描述，在同一基站使用多条信道，考虑频谱聚合技术'''
+               #video的第q个描述，在同一基站使用多条信道，考虑频谱聚合技术
                 uniSinr = 0
                 for channel in range(len(self.P[base])):
                     if self.C[base][channel] == user:
@@ -263,32 +263,33 @@ class Individual:
                 pnv *= pnvq  # 多个描述，每个描述都要求误码率
         else:
             pnv = 0
-        return pnv
+        return pnv'''
 
     '''user访问视频video的误码率'''
 
-    def getPEROfVQD45(self, user, video):
+    '''
+        def getPEROfVQD45(self, user, video):
         Pnv = 1
         self.baseVisitedOfUserVisitingVideo  # 用户-视频-描述
-        '''用户访问这个视频了，需要计算失真'''
+       #用户访问这个视频了，需要计算失真
         if self.VN[video][user] == 1:
-            '''找user访问video的描述description时，访问的基站，去哪个基站找这个视频'''
+            #找user访问video的描述description时，访问的基站，去哪个基站找这个视频
             for decsription in range(len(self.VQD[video])):
                 visitedBase = (np.array(self.baseVisitedOfUserVisitingVideo))[user][video][decsription]
-                ''' video的第q个描述，在同一基站使用多条信道，考虑频谱聚合技术'''
+                # video的第q个描述，在同一基站使用多条信道，考虑频谱聚合技术
                 Pnvq = 1
                 uniSinr = 0
                 for channel in range(len(self.P[visitedBase])):
                     if self.C[visitedBase][channel] == user:
                         uniSinr += self.SINR[visitedBase][channel]  # 频谱聚合技术
-                '''如果sinr大于sinr的门限值，用公式误码率，如果小于则误码率直接为1'''
+                #如果sinr大于sinr的门限值，用公式误码率，如果小于则误码率直接为1
                 if uniSinr > self.Ti:
                     # 基站s使用（频谱聚合技术）信道联合信道m给用户n传输数据 ei、fi包大小相关约束
                     Pnvq = self.ei * math.e ** (-(self.fi * uniSinr))
                 Pnv *= Pnvq  # 多个描述，每个描述都要求误码率
         else:
             Pnv = 0
-        return Pnv
+        return Pnv'''
 
     def getAns(self):
         # 得到用户与每个基站进行通信时的链路可靠性，根据每个信道的可靠性，self.C
@@ -303,7 +304,7 @@ class Individual:
                         ansEachChannel = 1 - self.asm_array[base][channe]
                         ansEachBase *= ansEachChannel
                 self.ans[user].append(ans - ansEachBase)
-        i=0
+        i = 0
 
     def getPEROfVNWithIntegralOfVQD123(self, user, video):
         if self.VN[video][user] == 1:
@@ -320,7 +321,7 @@ class Individual:
         if self.VN[video][user] == 1:
             '''找user访问video的描述description时，访问的基站，去哪个基站找这个视频'''
             for decsription in range(len(self.VQD[video])):
-                visitedBase = (np.array(self.baseVisitedOfUserVisitingVideo))[user][video][decsription]
+                visitedBase = self.baseVisitedOfUserVisitingVideo[user][video][decsription]
                 Pnv = Pnv * self.ans[user][visitedBase]  # 多个描述，每个描述都要求误码率
         else:
             Pnv = 0
@@ -347,7 +348,7 @@ class Individual:
                                 ii = self.P[otherBase][channel] * self.powerOfBase[otherBase] * (
                                         (self.distanceUserToBase[user][otherBase]) ** (-4)) * self.tau
                                 ivalue = ss / (ss + ii)
-                                #print(str(base) + " -otherbase" + str(otherBase) + " ivalue: " + str(ivalue))
+                                # print(str(base) + " -otherbase" + str(otherBase) + " ivalue: " + str(ivalue))
                                 asm = asm * ivalue
 
                     self.asm_array[base].append(asm)

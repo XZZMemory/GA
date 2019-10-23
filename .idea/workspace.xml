@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010aef75-3e83-4ebe-9809-b2e7e5e82e46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/al/data1用户先分布在微基站再分布在宏基站中/result.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/al/data1用户先分布在微基站再分布在宏基站中/total.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Individual.py" beforeDir="false" afterPath="$PROJECT_DIR$/Individual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Population.py" beforeDir="false" afterPath="$PROJECT_DIR$/Population.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/GA.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/GA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/Individual.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/Individual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/Matching.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/Matching.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/Population.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/Population.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/al/暂时无用文件/config1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/al/暂时无用文件/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/fitness.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/result.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/al/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/total.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/al/进度.txt" beforeDir="false" afterPath="$PROJECT_DIR$/al/进度.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/maxFitness/painter/Painter.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/maxFitness/painter/Painter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,11 +65,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Individual.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="349" column="33" selection-start-line="349" selection-start-column="33" selection-end-line="349" selection-end-column="33" />
+            <state relative-caret-position="684">
+              <caret line="325" column="13" lean-forward="true" selection-start-line="325" selection-start-column="13" selection-end-line="325" selection-end-column="13" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -100,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Population.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
+            <state relative-caret-position="-259">
               <caret line="145" selection-start-line="145" selection-end-line="145" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -110,19 +90,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/al/进度.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="283">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="e#7#32#0" expanded="true" />
               </folding>
@@ -133,7 +104,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-2-VQD2-1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68294" />
+            <state relative-caret-position="697">
+              <caret line="2999" selection-start-line="2999" selection-end-line="3000" selection-end-column="37" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -148,6 +121,15 @@
         <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-1-VQD1-1.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-68495" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-2-VQD2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="683">
+              <caret line="2999" selection-start-line="2999" selection-end-line="3000" selection-end-column="37" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -354,7 +336,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -650,12 +632,12 @@
       <workItem from="1569572471621" duration="135467000" />
       <workItem from="1571210149070" duration="68518000" />
       <workItem from="1571796254787" duration="345000" />
-      <workItem from="1571796642870" duration="22053000" />
+      <workItem from="1571796642870" duration="23039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="493252000" />
+    <option name="totallyTimeSpent" value="494238000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -667,9 +649,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1064" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1064" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Structure" order="0" sideWeight="0.6483871" side_tool="true" weight="0.23347548" />
+      <window_info active="true" id="Structure" order="0" sideWeight="0.6483871" side_tool="true" visible="true" weight="0.23347548" />
       <window_info id="Favorites" order="1" sideWeight="0.6483871" side_tool="true" weight="0.23347548" />
       <window_info content_ui="combo" id="Project" order="2" sideWeight="0.3516129" visible="true" weight="0.23347548" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50159913" side_tool="true" weight="0.9215897" />
@@ -782,7 +765,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Individual.py</url>
-          <line>305</line>
+          <line>306</line>
           <option name="timeStamp" value="227" />
         </line-breakpoint>
       </breakpoints>
@@ -857,7 +840,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191021-3-VQD3.txt" />
     <entry file="file://$PROJECT_DIR$/data/maxFitness/20191017-1-VQD1.txt" />
     <entry file="file://$PROJECT_DIR$/al/MainOfMatching.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1137,39 +1119,9 @@
     <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-5-VQD5.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-1-VQD1-1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68495" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-1-VQD1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-68495" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Population.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="145" selection-start-line="145" selection-end-line="145" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Individual.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="349" column="33" selection-start-line="349" selection-start-column="33" selection-end-line="349" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-2-VQD2-1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68294" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/maxFitness/2019.10.23/1/20191023-2-VQD2.txt">
@@ -1180,9 +1132,48 @@
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="e#7#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-1-VQD1-1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68495" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-2-VQD2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="683">
+          <caret line="2999" selection-start-line="2999" selection-end-line="3000" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/maxFitness/20191023-2-VQD2-1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="2999" selection-start-line="2999" selection-end-line="3000" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Population.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-259">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Individual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="325" column="13" lean-forward="true" selection-start-line="325" selection-start-column="13" selection-end-line="325" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
