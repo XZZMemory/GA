@@ -45,7 +45,7 @@ def painter():
 
 
 def process():
-    data1FilePath = './data1.txt'
+    data1FilePath = './data1用户先分布在微基站再分布在宏基站中.txt'
     data2FilePath = './data2.txt'
     data3FilePath = './data3.txt'
     data4FilePath = './data4.txt'
@@ -57,7 +57,7 @@ def process():
     data3 = processing(data3FilePath, iterations, maxSum)
     data4 = processing(data4FilePath, iterations, maxSum)
     data5 = processing(data5FilePath, iterations, maxSum)
-    print("data1:" + str(data1))
+    print("data1用户先分布在微基站再分布在宏基站中:" + str(data1))
     print("data2:" + str(data2))
     print("data3:" + str(data3))
     print("data4:" + str(data4))
@@ -98,7 +98,7 @@ def processing(dataFilePath, iterations, maxSum):
 
 
 def painterOne():
-    data1 = processing('./data1.txt', 3000, 59)
+    data1 = processing('./data1用户先分布在微基站再分布在宏基站中.txt', 3000, 59)
 
     x1 = []
     y1 = []

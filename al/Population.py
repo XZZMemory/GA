@@ -53,6 +53,7 @@ class Population:
     6.PopulationRevise？？   后续适应值低会自动淘汰掉'''
 
     def initialization(self, basevisitedUE, videoBase):
+        configPath = './config.txt'
         # self.VN = self.VNInitial()  # 就需要特殊处理了。
         self.VN = [[1, -1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1, -1, -1, -1, 1, -1, 1, -1, 1],
                    [1, 1, -1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1],
@@ -64,7 +65,7 @@ class Population:
             self.VQS.append([])
             for j in range(10):
                 self.VQS[video].append(5)
-        self.allLocationInitialTest()  # ,500m
+        self.processing(configPath)  # ,500m
         self.getDistanceUserToBase()
         self.basevisitedUE = basevisitedUE
         self.videoBase = videoBase
@@ -95,8 +96,21 @@ class Population:
                                [291.0596615986839, -247.14272987541483], [299.23199964783413, -163.72401214156],
                                [269.074342921944, -147.81745965853176], [369.62920091002326, -141.611472724778]]
 
-    # 用户位置初始化
+    # 读取配置文件信息
+    def processing(self, configPath):
+        times = 1
+        with open(configPath) as file_object:
+            for line in file_object:
+                if times == 1:
+                    self.locationOfBase = eval(line)
+                elif times == 2:
+                    self.locationOfUser = eval(line)
+                elif times == 3:
+                    self.VN = eval(line)
+                times = times + 1
+        self.VNTimes = Utils.getVNTimes(self.VN)  # printListWithTwoDi(str(self.VN), self.VN)
 
+    # 用户位置初始化
     def allLocationInitial(self):
         self.locationOfBase = self.baseLocationInitial()  # 基站位置初始化
         self.locationOfUser = self.userLocationInitial(radius=500, radius2=100, )  # 用户位置初始化 为了测试注解掉这个初始化
@@ -166,7 +180,7 @@ class Population:
         for i in range(Population.sizeOfPopulation):
             individual = Individual(self.tau, self.videoBase, self.sumOfBase, self.sumOfUser, self.sumOfVideo,
                                     self.sumOfChannels, self.powerOfBase, self.baseRadius, self.Alpha, self.VN,
-                                    self.basevisitedUE, self.distanceUserToBase)
+                                    self.basevisitedUE, self.distanceUserToBase, self.VNTimes)
             self.individualList.append(individual)
 
     def getDistanceUserToBase(self):

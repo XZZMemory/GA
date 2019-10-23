@@ -42,11 +42,12 @@ class Matching:
             powerOfBase.append(1000)
 
     # 不传输个体了，不然还要有VQD的type等，很麻烦
-    def __init__(self):
+    def __init__(self, maFilePath):
         configPath = './config.txt'
         self.processing(configPath)  # 读取配置信息
         # 这个在初始化时就固定了，不会发生变化，一直就是这个，所以放在这里
         self.distanceUserToBase = self.getDistanceUserToBase()
+        self.maFilePath = maFilePath
 
     # 读取配置文件信息
     def processing(self, configPath):
@@ -63,32 +64,23 @@ class Matching:
         self.VNTimes = Utils.getVNTimes(self.VN)  # printListWithTwoDi(str(self.VN), self.VN)
 
     # 初始化C、P，确定base和video的映射关系
-    def init(self, C, P, videoBase, baseVideo, ansArray):
+    def init(self, ansArray):
         # 程序刚开始，没有C和P的话，需要初始化一个，如果经过GA算法，有了C和P，则不用再初始化了
-        if C == None:
+        if ansArray == None:
             self.initOfCAndP()
-            self.initMappingOfMatching()
-            # 3. 获取用户访问基站时的可靠性
             self.getPERofBaseChannelWithIntegral()  # 基站每个信道的可靠性
-            # print("matching init asm_array: " + str(self.asm_array))
-            self.getAns()  # 获取每个用户访问基站时，基站为用户提供的可靠性
+            self.getAns()  # 获取用户访问基站时的可靠性
         else:
-            self.C = C
-            self.P = P
+            self.ansArray = ansArray
             #
-            self.videoBase = videoBase
+            '''self.videoBase = videoBase
             self.baseVideo = baseVideo
             self.restOfBaseCapacity = copy.deepcopy(self.baseCapacity)  # 每个基站存储容量状态
             for base in range(len(self.baseVideo)):
-                self.restOfBaseCapacity[base] = self.restOfBaseCapacity[base] - len(self.baseVideo[base])
-            self.ansArray = ansArray
-        # 2. 确定的映射关系
-        # 随机产生video和base对应关系，即：matching初始状态是随机产生的
-        # 随机初始化映射关系：
-
+                self.restOfBaseCapacity[base] = self.restOfBaseCapacity[base] - len(self.baseVideo[base])'''
+        # 2. 确定的映射关系随机产生video和base对应关系，即：matching初始状态是随机产生的
+        self.initMappingOfMatching()
         print("matching init ansArray: " + str(self.ansArray))
-        print("matching C: " + str(self.C))
-        print("matching P: " + str(self.P))
         print("init 初始化执行完毕*********************************************")
 
     def printData(self, name, data):
@@ -188,29 +180,28 @@ class Matching:
             self.P.append(powe)  # 当前基站的功率分配加入基因中
 
     def matching(self):
-        fitnessFileName = 'fitness.txt'
-        ff = open(fitnessFileName, 'w')
-        ff.write(str(self.getFitnessOfMatching() / self.VNTimes) + '\n')
-        fileName = './result.txt'
-        f = open(fileName, 'w')
-        self.writeFile(f, "videoBase", self.videoBase)
-        self.writeFile(f, "baseVideo", self.baseVideo)
+        ff = open(self.maFilePath, 'w')
+        ff.write("****start**** " + '\n')
+        ff.write(str(self.getFitnessOfMatching()) + '\n')
+        self.writeFile(ff, "videoBase", self.videoBase)
+        self.writeFile(ff, "baseVideo", self.baseVideo)
         while self.flag == 1:
-            if self.getSwapBlock(f) == 1:
-                f.write("matching successfully matching times:" + str(self.matchingTimes) + '\n')
+            if self.getSwapBlock(ff) == 1:
+                ff.write("matching successfully matching times:" + str(self.matchingTimes) + '\n')
                 # break
 
         print("matchingTimes:" + str(self.matchingTimes))
-        f.write("matchingTimes:" + str(self.matchingTimes) + '\n')
+        ff.write("matchingTimes:" + str(self.matchingTimes) + '\n')
         print("结束状态")
         self.printData("videoBase:", self.videoBase)
         self.printData("baseVideo", self.baseVideo)
-        self.writeFile(f, "videoBase", self.videoBase)
-        self.writeFile(f, "baseVideo", self.baseVideo)
-        ff.write(str(self.getFitnessOfMatching() / self.VNTimes) + '\n')
+        ff.write("****end****" + '\n')
+        self.writeFile(ff, "videoBase", self.videoBase)
+        self.writeFile(ff, "baseVideo", self.baseVideo)
+        ff.write(str(self.getFitnessOfMatching()) + '\n')
         # matching结束，返回baseVideo，每个视频存储位置、用户访问视频时，访问的基站，-->基站访问用户
         # C、P、videoBase
-        # 基站访问用户，重新获取
+        # 基站访问用户，重新获取  matching.getFitnessOfMatching())
         self.basevisitedUE = []
         for base in range(self.sumOfBase):
             self.basevisitedUE.append([])
@@ -391,7 +382,8 @@ class Matching:
                         differ4 = self.baseUtilty2(base2) - initialBase2Utilty
                         totalDiffer = differ1 + differ2 + differ3 + differ4
                         # 形成交换对了，直接返回
-                        if differ1 >= 0 and differ2 >= 0 and differ3 >= 0 and differ4 >= 0 and totalDiffer > 0:
+                        # if differ1 >= 0 and differ2 >= 0 and differ3 >= 0 and differ4 >= 0 and totalDiffer > 0:
+                        if differ1 + differ2 >= 0 and differ3 + differ4 >= 0 and totalDiffer > 0:
                             self.flag = 1
                             self.matchingTimes = self.matchingTimes + 1
                             f.write(
@@ -426,7 +418,8 @@ class Matching:
                         differ4 = self.baseUtilty2(base2) - initialBase2Utilty
                         totalDiffer = differ1 + differ2 + differ4
                         # 形成交换对了，直接返回
-                        if differ1 >= 0 and differ2 >= 0 and differ4 >= 0 and totalDiffer > 0:
+                        # if differ1 >= 0 and differ2 >= 0 and differ4 >= 0 and totalDiffer > 0:
+                        if differ1 + differ2 >= 0 and differ4 >= 0 and totalDiffer > 0:
                             self.flag = 1
                             self.matchingTimes = self.matchingTimes + 1
                             f.write(
@@ -445,7 +438,6 @@ class Matching:
         for video1 in range(self.sumOfVideo):
             # print("***********************************")
             initialV1Utilty = self.videoUtilty(video1)
-            baseList = self.videoBase[video1]
             # 也是求二者的差集
             exchangeableBaseList = self.getExchangeableBaselist(video1)
             differVideolist1 = [item for item in self.videoBase[video1] if item not in exchangeableBaseList]
@@ -460,7 +452,7 @@ class Matching:
                     differ2 = self.baseUtilty2(base1) - initialBase1Utilty
                     differ3 = self.baseUtilty2(base2) - initialBase2Utilty
                     totalDiffer = differ1 + differ2 + differ3
-                    if differ1 >= 0 and differ2 >= 0 and differ3 >= 0 and totalDiffer > 0:
+                    if differ1 >= 0 and differ2 + differ3 >= 0 and totalDiffer > 0:
                         self.matchingTimes = self.matchingTimes + 1
                         self.flag = 1
                         f.write(
@@ -522,7 +514,7 @@ class Matching:
         for video in range(len(PER)):
             for user in range(len(PER[video])):
                 fitness += PER[video][user]
-        return fitness
+        return fitness / self.VNTimes
 
     # 交换video对应的base
     # video、base对应存储的基站、视频也要变化

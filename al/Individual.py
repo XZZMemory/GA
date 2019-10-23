@@ -34,13 +34,14 @@ class Individual:
 
     def __init__(self, tau, videoBase, sumOfBase, sumOfUser, sumOfVideo,
                  sumOfChannels, powerOfBase, baseRadius, Alpha, VN,
-                 basevisitedUE, distanceUserToBase):
+                 basevisitedUE, distanceUserToBase, VNTimes):
         self.tau = tau
         self.sumOfBase = sumOfBase
         self.sumOfUser = sumOfUser
         self.sumOfVideo = sumOfVideo
         self.sumOfChannels = sumOfChannels
         self.VN = VN
+        self.VNTimes = VNTimes
         ''' 每个基站的访问用户，在个体初始化C、P时使用'''
         self.basevisitedUE = basevisitedUE
         self.videoBase = videoBase  # 每个视频描述的存储地点
@@ -91,11 +92,12 @@ class Individual:
                     try:
                         user = random.choice(self.basevisitedUE[base])
                         chan.append(user)  # 随机在可选用户群中选取一个用户分配给当前信道
-                        # wp = random.randint(2,int(wholePower/(self.BS[i].chaNum-j)*0.6))-1  #随机生成一个功率值(1到剩余功率的50%+1)
-                        wp = random.random() * (wholePower / (
-                                self.sumOfChannels - j))  # -----------2017.06.08修改功率等级为实数
+                        wp = random.random() * (wholePower / (self.sumOfChannels - j))
                         powe.append(wp)  # 将这个功率值分配给这个信道
-                        wholePower = wholePower - wp  # 可用功率值减少
+                        if wp == 0:
+                            chan[j] = -1
+                        else:
+                            wholePower = wholePower - wp  # 可用功率值减少
                     except IndexError:
                         print('user序号:' + str(user))
                         if self.basevisitedUE[base] == None:
@@ -110,28 +112,7 @@ class Individual:
                     powe.append(0)  # 不用的信道功率设置为0
             self.C.append(chan)  # 当前基站的信道分配加入基因中
             self.P.append(powe)  # 当前基站的功率分配加入基因中
-            '''
-            2019.4.25删掉，之前没有宏基站，所以在交叉变异时，各个基站的功率是可以交叉的，但是网络拓扑结构发生变化，有宏基站了，所以将功率变为一个实数，可以交叉变异
-                        for channel in range(self.sumOfChannels):  # 信道分配给哪个用户传输,这个信道分配的功率是多少
-                posibility = random.random()
-                #信道分配用户
-                if ((posibility>p) and (len(self.basevisitedUE[base]) != 0)):
-                    #从基站的访问用户中随机选择一个用户分配信道,
-                    random.sample()从指定的序列中随机截取指定长度的片段，不作原地修改，返回的仍是列表，不是一个单独数字
-                    user = random.sample(self.basevisitedUE[base], 1)[0]
-                    self.C[base].append(user)
-                    self.P[base].append((random.randint(20, 35)))
-                else:
-                   #信道不分配
-                    self.C[base].append(-1)
-                    self.P[base].append(0)
-            '''
 
-    '''
-            初始化信道分配和功率分配
-
-            功率分配的从1开始有点太少了，应该计算出一个最小功率
-            '''
     '''2.交叉   从种群中随机选择两个个体，从基站1到S循环，每层产生一个随机数，随机值后的基因为交叉，对应位置交换位置，即交换两个个体的值'''
 
     def crossover(self, individual2):
@@ -165,26 +146,27 @@ class Individual:
                     if self.Qmax - sum(self.P[base]) < self.powerLimit * 100:
                         self.revisePower(base)  # 功率超了修复
                     self.P[base][channel] = random.random() * (self.Qmax - sum(self.P[base]))
+                    if self.P[base][channel] == 0:
+                        self.C[base][channel] = -1
                 else:
                     '''非闲置状态,产生一个随机概率，概率p小于0.5，该信道置空；概率p大于0.5，随机选择一个用户，将信道、功率分配给该用户'''
                     p = random.random()
                     if (p < 0.5):
-                        print("信道置空！" + str(base) + " " + str(channel))
                         self.C[base][channel] = -1
                         self.P[base][channel] = 0
                     else:
-                        ''' random.sample()从指定的序列中随机截取指定长度的片段，不作原地修改，返回的仍是列表，不是一个单独数字'''
                         user = random.choice(self.basevisitedUE[base])
                         self.C[base][channel] = user  # 把信道随机分配给一个用户
                         if self.Qmax - sum(self.P[base]) < self.powerLimit * 100:
                             self.revisePower(base)  # 功率超了修复
                         self.P[base][channel] = random.random() * (self.Qmax - sum(self.P[base]))
+                        if self.P[base][channel] == 0:
+                            self.C[base][channel] = -1
 
     def revisePower(self, base):
         for channel in range(len(self.P[base])):
             # 如果功率非常非常小(小于最低限度)，则直接置为0
             if self.P[base][channel] != 0 and (self.P[base][channel] / self.Qmax < self.powerLimit):
-                print("信道置空:" + str(base) + " " + str(channel))
                 self.C[base][channel] = -1  # 信道标注为空闲
                 self.P[base][channel] = 0  # 功率标注为0
         a = sum(self.P[base])  # 该基站当前功率的总数，应该小于Qmax才对
@@ -212,7 +194,7 @@ class Individual:
         for video in range(len(PER)):
             for user in range(len(PER[video])):
                 fitness += PER[video][user]
-        return fitness
+        return fitness / self.VNTimes
 
     # 获取某一用户访问某视频描述的可靠性
     def getUserVisitVideoDescriptionReliability(self, user, video):
@@ -250,25 +232,15 @@ class Individual:
             for channel in range(self.sumOfChannels):
                 user = self.C[base][channel]
                 if user != -1:
-                    ss = self.P[base][channel] * self.powerOfBase[base] * (
-                            (self.distanceUserToBase[user][base]) ** (-4))
-                    if ss == 0:
-                        print("出现异常！")
-                        for base in range(len(self.P)):
-                            print(str(base) + " " + str(self.P[base]))
-
-                            for base in range(len(self.C)):
-                                print(str(base) + " " + str(self.C[base]))
-                        print("base： " + str(base) + " " + str(channel))
-                        print(str(self.P[base][channel]))
-                        print(self.powerOfBase[base])
-                        print(self.distanceUserToBase[user][base])
-                        print(self.distanceUserToBase[user][base] ** (-4))
-                        exit(1)
+                    s = self.P[base][channel] * self.powerOfBase[base] * ((self.distanceUserToBase[user][base]) ** (-4))
                     try:
-                        asm = math.e ** (-(self.tau * self.__N0) / ss)
+                        asm = math.e ** (-(self.tau * self.__N0) / s)
                     except:
-                        print(str(self.P[base][channel] * self.powerOfBase[base]) + " " + str(ss))
+                        print(self.tau)
+                        print(self.__N0)
+                        print(s)
+                        print(-(self.tau * self.__N0) / s)
+                        print(str(self.P[base][channel] * self.powerOfBase[base]) + " " + str(s))
                     for otherBase in range(self.sumOfBase):
                         if otherBase != base:
                             # 当前产生干扰的基站信道，是否被占用，未被占用，则不产生干扰
@@ -277,9 +249,9 @@ class Individual:
                                         (self.distanceUserToBase[user][otherBase]) ** (
                                     -4)) * self.tau
                                 try:
-                                    ivalue = ss / (ss + ii)
+                                    ivalue = s / (s + ii)
                                 except Exception:
-                                    print("ss:" + str(ss) + " ii: " + str(ii))
+                                    print("ss:" + str(s) + " ii: " + str(ii))
                                 asm = asm * ivalue
 
                     self.asm_array[base].append(asm)

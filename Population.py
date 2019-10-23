@@ -66,8 +66,6 @@ class Population:
 
     # 测试
     def allLocationInitialTest(self):
-
-        # self.VNInitial()#流媒体与用户之间的访问关系初始化
         self.VQS = [[5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
                     [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]]
         self.locationOfBase = [[0, 0], [346, 200], [0, 400], [-346, 200], [-346, -200], [0, -400],
@@ -111,7 +109,7 @@ class Population:
             [-1, 1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, -1, -1, -1, 1, -1,
              -1],
             [-1, 1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1]]'''
-        self.locationOfUser = [[305.96212762264906, 131.25364916562523], [289.57643206774475, 145.44403854417064],
+        ''' self.locationOfUser = [[305.96212762264906, 131.25364916562523], [289.57643206774475, 145.44403854417064],
                                [406.39283501445135, 131.17229479349172], [389.5110492791143, 227.0444709880261],
                                [289.43385447654094, 203.31281941487086], [47.08760959109169, 354.71919105088796],
                                [8.94781029569983, 324.9331989704249], [61.2513850664053, 381.05954615119316],
@@ -127,20 +125,24 @@ class Population:
                                [291.0596615986839, -247.14272987541483], [299.23199964783413, -163.72401214156],
                                [269.074342921944, -147.81745965853176], [369.62920091002326, -141.611472724778]]
 
-        ''' 
+        
        self.VN = [[1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                    [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]],用户可全访问微基站
                    '''
-        self.VN = [[1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0],
+        '''self.VN = [[1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0],
                    [1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1],
                    [1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1],
-                   [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]]
+                   [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]]'''
+        self.VN= [[1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0], [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1], [1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0]]
+        self.VNTimes=Utils.getVNTimes(self.VN)
+        self.locationOfUser=[[399.59413192549425, 202.17265320257155], [433.67031109477176, 243.2511996717791], [355.94812711853825, 130.29866820493834], [336.0213785186953, 158.11956202575186], [40.187964896169845, 327.9027832245315], [-57.676308608070535, 420.7128629554954], [4.9112317747963, 483.2350310906051], [-66.63843912992044, 380.21683501837344], [-424.3015612082439, 183.19194229432586], [-327.13553454055557, 178.26002275691812], [-305.92545207536796, 221.2938200783817], [-405.35961915801136, 152.88700650297082], [-304.7051511930708, -175.6058841222297], [-312.62550055998565, -241.53715452822397], [-311.0372341658077, -176.8480650057702], [-316.5854439049896, -183.15581093795566], [-7.725709606449042, -430.7006302232473], [-21.769677045554133, -362.92345511605254], [-75.80060785607789, -461.7633500772326], [-46.59625749948575, -412.868563773172], [353.1982513484292, -276.99318612705144], [371.5713216299222, -193.15801829873283], [359.12485727666126, -259.20658582257937], [252.94806577055778, -225.48773360142056], [-5.454097315018147, 71.26848948526256], [-227.16745395554648, -119.7783243809939], [52.36924896570608, 186.31550118865587], [283.6746506040315, 18.61335005320503], [-139.29264437685498, -23.99578719648378], [235.39926107500517, 143.31237750586322]]
 
-        Utils.printListWithTwoDi("VN---", self.VN)
-        # self.randomVN()# 在随机初始化几个值，增加访问关系
-        # self.userLocationInitial2()  # 用户位置初始化,选择第二种初始化方式，均在微基站覆盖范围内
+        #self.userLocationInitial3()  # 用户位置初始化,选择第二种初始化方式，均在微基站覆盖范围内
+        #self.randomVN()  # 在随机初始化几个值，增加访问关系
+        #print("VN:   " + str(self.VN))
+        #print("self.locationOfUser" + str(self.locationOfUser))
         self.getSortedBaseToUser()
         # self.getVQD()  # 视频描述存储位置初始化
 
@@ -149,9 +151,9 @@ class Population:
         for video in range(len(self.VN)):
             for user in range(len(self.VN[video])):
                 if self.VN[video][user] == 0:
-                    if random.random() < 0.3:
+                    if random.random() < 0.5:
                         self.VN[video][user] = 1
-        print("&&&&&&&&&&&&&VN" + str(self.VN))
+        print("random函数中VN" + str(self.VN))
 
     def initializationOfVQD(self, typeOfVQD):
         self.typeOfVQD = typeOfVQD
@@ -286,8 +288,12 @@ class Population:
 
         self.locationOfUser = []
         baseFlag = 0  # 用户全部在微基站覆盖范围内
-        userNum = self.sumOfUser / 3 * 2
-        avgUserNum = self.sumOfUser / (self.sumOfBase - 1)
+        print("self.sumOfUser: " + str(self.sumOfUser))
+        userNum = int(self.sumOfUser / 5 * 4)
+        print("self.userNum: " + str(userNum))
+        avgUserNum = int(userNum / (self.sumOfBase - 1))
+        userNum = avgUserNum * (self.sumOfBase - 1)
+        print("self.userNum: " + str(userNum))
         t = np.random.random(size=userNum) * 2 * np.pi - np.pi
         x = np.cos(t)
         y = np.sin(t)
@@ -295,7 +301,7 @@ class Population:
         list = [0, 1, 2, 3]
         for user in i_set:
             if user % avgUserNum == 0:
-                videoList = random.sample(list, 2)  # 随机选择两个video，用户访问
+                videoList = random.sample(list, 1)  # 随机选择两个video，用户访问
                 baseFlag = baseFlag + 1
             len = np.sqrt(np.random.random())
             x[user] = x[user] * len * self.baseRadius[baseFlag]
@@ -314,14 +320,14 @@ class Population:
         i_set = np.arange(0, userNum, 1)
         list = [0, 1, 2, 3]
         for user in i_set:
-            videoList = random.sample(list, 2)
+            videoList = random.sample(list, 1)
             len = np.sqrt(np.random.random())
-            x[user] = x[user] * len * self.baseRadius[0]
-            y[user] = y[user] * len * self.baseRadius[0]
+            x[user] = x[user] * len * (self.baseRadius[0] / 3 * 2)
+            y[user] = y[user] * len * (self.baseRadius[0] / 3 * 2)
             self.locationOfUser.append([x[user], y[user]])
             for currentVideo in videoList:
                 self.VN[currentVideo][user] = 1
-        Utils.printData("locationOfUser", self.locationOfUser)
+        # Utils.printData("locationOfUser", self.locationOfUser)
 
     def getDistanceUserToBase(self):
         self.distanceUserToBase = []
@@ -669,7 +675,7 @@ class Population:
                 Individual(self.tau, self.typeOfVQD, self.VQD, self.baseVisitedOfUserVisitingVideo,
                            self.sumOfBase, self.sumOfUser, self.sumOfVideo,
                            self.sumOfChannels, self.powerOfBase, self.baseRadius, self.Alpha, self.VN,
-                           self.basevisitedUE, self.distanceUserToBase))
+                           self.basevisitedUE, self.distanceUserToBase,self.VNTimes))
 
     # 2.交叉，返回空或者交叉之后的两个新个体，交叉操作已测试成功
     def crossover(self, individualForCross):  # individualForCross是一个数组，里面有两个个体

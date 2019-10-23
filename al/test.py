@@ -20,7 +20,7 @@ def te():
     print(fruits.pop())
 
     print(fruits)
-    configPath = './config.txt'
+    configPath = './config1.txt'
     print("读取配置文件")
 
 
@@ -114,6 +114,8 @@ elif float('inf') > i:
     print("大于")
 else:
     print("dengyu")
-a=4
-a-=5
+a = 4
+a -= 5
 print(a)
+ss = 0.038836753579833884 * 1000 * ((696) ** (-4))
+print("ss: " + str(ss))

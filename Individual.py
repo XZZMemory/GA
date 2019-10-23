@@ -35,20 +35,16 @@ class Individual:
     '''初始化的时候加上population.方便传输参数'''
 
     def __init__(self, tau, typeOfVQD, VQD, baseVisitedOfUserVisitingVideo, sumOfBase, sumOfUser, sumOfVideo,
-                 sumOfChannels, powerOfBase, baseRadius, Alpha, VN, basevisitedUE, distanceUserToBase):
+                 sumOfChannels, powerOfBase, baseRadius, Alpha, VN, basevisitedUE, distanceUserToBase, VNTimes):
         self.tau = tau
-        # self.population = population
-        '''（--------以下均是拷贝种群参数信息------'''
-        # self.locationOfBase = copy.deepcopy(population.locationOfBase)  # 拷贝基站和用户的坐标位置
-        # self.locationOfUser = copy.deepcopy(population.locationOfUser)
         self.sumOfBase = sumOfBase
         self.sumOfUser = sumOfUser
         self.sumOfVideo = sumOfVideo
         self.sumOfChannels = sumOfChannels
         self.VN = VN
+        self.VNTimes = VNTimes
         ''' 每个基站的访问用户，在个体初始化C、P时使用'''
         self.basevisitedUE = basevisitedUE
-        # print("basevisitedUE: "+str(self.basevisitedUE))
         ''' 每个视频描述的存储地点'''
         self.VQD = VQD
         self.powerOfBase = powerOfBase
@@ -58,7 +54,6 @@ class Individual:
         self.typeOfVQD = typeOfVQD
         if self.typeOfVQD == 4 or self.typeOfVQD == 5:
             self.baseVisitedOfUserVisitingVideo = baseVisitedOfUserVisitingVideo
-        # --------拷贝种群信息结束-----------）
         self.N0 = 11
         self.Bias = 1000000  # 防止干扰和噪声过小设置的偏移值，在计算SINR之后会约掉 10^6
         self.Qmax = 1  # 实数功率等级，所以最大功率等级是1
@@ -67,7 +62,6 @@ class Individual:
         self.C = []
         '''功率分配矩阵'''
         self.P = []
-
         self.initialOfCandP()
         '''用户与基站之间的距离，用于计算SINR'''
         self.distanceUserToBase = distanceUserToBase
@@ -113,11 +107,12 @@ class Individual:
                     try:
                         user = random.choice(self.basevisitedUE[base])
                         chan.append(user)  # 随机在可选用户群中选取一个用户分配给当前信道
-                        # wp = random.randint(2,int(wholePower/(self.BS[i].chaNum-j)*0.6))-1  #随机生成一个功率值(1到剩余功率的50%+1)
-                        wp = random.random() * (wholePower / (
-                                self.sumOfChannels - j))  # -----------2017.06.08修改功率等级为实数
+                        wp = random.random() * (wholePower / (self.sumOfChannels - j))
                         powe.append(wp)  # 将这个功率值分配给这个信道
-                        wholePower = wholePower - wp  # 可用功率值减少
+                        if wp == 0:
+                            chan[j] = -1
+                        else:
+                            wholePower = wholePower - wp  # 可用功率值减少
                     except IndexError:
                         print('user序号:' + str(user))
                         if self.basevisitedUE[base] == None:
@@ -132,28 +127,7 @@ class Individual:
                     powe.append(0)  # 不用的信道功率设置为0
             self.C.append(chan)  # 当前基站的信道分配加入基因中
             self.P.append(powe)  # 当前基站的功率分配加入基因中
-            '''
-            2019.4.25删掉，之前没有宏基站，所以在交叉变异时，各个基站的功率是可以交叉的，但是网络拓扑结构发生变化，有宏基站了，所以将功率变为一个实数，可以交叉变异
-                        for channel in range(self.sumOfChannels):  # 信道分配给哪个用户传输,这个信道分配的功率是多少
-                posibility = random.random()
-                #信道分配用户
-                if ((posibility>p) and (len(self.basevisitedUE[base]) != 0)):
-                    #从基站的访问用户中随机选择一个用户分配信道,
-                    random.sample()从指定的序列中随机截取指定长度的片段，不作原地修改，返回的仍是列表，不是一个单独数字
-                    user = random.sample(self.basevisitedUE[base], 1)[0]
-                    self.C[base].append(user)
-                    self.P[base].append((random.randint(20, 35)))
-                else:
-                   #信道不分配
-                    self.C[base].append(-1)
-                    self.P[base].append(0)
-            '''
 
-    '''
-            初始化信道分配和功率分配
-
-            功率分配的从1开始有点太少了，应该计算出一个最小功率
-            '''
     '''2.交叉   从种群中随机选择两个个体，从基站1到S循环，每层产生一个随机数，随机值后的基因为交叉，对应位置交换位置，即交换两个个体的值'''
 
     def crossover(self, individual2):
@@ -184,25 +158,22 @@ class Individual:
                     self.C[base][channel] = choice(self.basevisitedUE[base])  # 把信道随机分配给一个用户
                     if self.Qmax - sum(self.P[base]) < self.powerLimit * 100:  # ---------2017.07.24修改为0，如果功率溢出就修复
                         self.revisePower(base)  # 功率超了修复
-                    self.P[base][channel] = random.random() * (self.Qmax - sum(
-                        self.P[base]))  # -----------------------------------------------------2017.06.08功率等级修改为实数
+                    self.P[base][channel] = random.random() * (self.Qmax - sum(self.P[base]))
+                    if self.P[base][channel] == 0:
+                        self.C[base][channel] = -1
                 else:
                     '''非闲置状态,产生一个随机概率，概率p小于0.5，该信道置空；概率p大于0.5，随机选择一个用户，将信道、功率分配给该用户'''
-                    p = random.random()
-                    if (p < 0.5):
-                        '''                        if flag == 0:
-                            # print("发生变异")
-                            flag = 1'''
+                    if (random.random() < 0.5):
                         self.C[base][channel] = -1
                         self.P[base][channel] = 0
                     else:
                         user = choice(self.basevisitedUE[base])
                         self.C[base][channel] = user  # 把信道随机分配给一个用户
-                        if self.Qmax - sum(self.P[
-                                               base]) < self.powerLimit * 100:  # -----------------------------------------------------------2017.07.24修改为0，如果功率溢出就修复
+                        if self.Qmax - sum(self.P[base]) < self.powerLimit * 100:
                             self.revisePower(base)  # 功率超了修复
-                        self.P[base][channel] = random.random() * (self.Qmax - sum(
-                            self.P[base]))  # -----------------------------------------------------2017.06.08功率等级修改为实数
+                        self.P[base][channel] = random.random() * (self.Qmax - sum(self.P[base]))
+                        if self.P[base][channel] == 0:
+                            self.C[base][channel] = -1
 
     def revisePower(self, base):
         for channel in range(len(self.P[base])):
@@ -270,7 +241,7 @@ class Individual:
         for video in range(len(PER)):
             for user in range(len(PER[video])):
                 fitness += PER[video][user]
-        return fitness
+        return fitness / self.VNTimes
 
     def getPEROfVQD123(self, user, video):
         pnv = 1
@@ -332,6 +303,7 @@ class Individual:
                         ansEachChannel = 1 - self.asm_array[base][channe]
                         ansEachBase *= ansEachChannel
                 self.ans[user].append(ans - ansEachBase)
+        i=0
 
     def getPEROfVNWithIntegralOfVQD123(self, user, video):
         if self.VN[video][user] == 1:
@@ -349,7 +321,7 @@ class Individual:
             '''找user访问video的描述description时，访问的基站，去哪个基站找这个视频'''
             for decsription in range(len(self.VQD[video])):
                 visitedBase = (np.array(self.baseVisitedOfUserVisitingVideo))[user][video][decsription]
-                Pnv =Pnv* self.ans[user][visitedBase]  # 多个描述，每个描述都要求误码率
+                Pnv = Pnv * self.ans[user][visitedBase]  # 多个描述，每个描述都要求误码率
         else:
             Pnv = 0
         return Pnv
@@ -374,15 +346,14 @@ class Individual:
                             if self.C[otherBase][channel] != -1:
                                 ii = self.P[otherBase][channel] * self.powerOfBase[otherBase] * (
                                         (self.distanceUserToBase[user][otherBase]) ** (-4)) * self.tau
-                                try:
-                                    ivalue = ss / (ss + ii)
-                                except Exception:
-                                    print("ss:" + str(ss) + " ii: " + str(ii))
+                                ivalue = ss / (ss + ii)
+                                #print(str(base) + " -otherbase" + str(otherBase) + " ivalue: " + str(ivalue))
                                 asm = asm * ivalue
 
                     self.asm_array[base].append(asm)
                 else:
                     self.asm_array[base].append(0)
+        i = 0
 
     def getSINR(self):
         print("执行getsinr函数")

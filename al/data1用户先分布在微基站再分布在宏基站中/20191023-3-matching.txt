@@ -1,0 +1,120 @@
+0.5424575410283425
+videoBase
+0:  [0]
+1:  [0]
+2:  [0, 2, 5]
+3:  [1, 3, 6]
+baseVideo
+0:  [1, 2, 0]
+1:  [3]
+2:  [2]
+3:  [3]
+4:  []
+5:  [2]
+6:  [3]
+swap distributed basevmatching success 2 3 2 3
+videoBase
+0:  [0]
+1:  [0]
+2:  [5, 0, 3]
+3:  [6, 1, 2]
+baseVideo
+0:  [0, 1, 2]
+1:  [3]
+2:  [3]
+3:  [2]
+4:  []
+5:  [2]
+6:  [3]
+matching successfully matching times:1
+snatch distributed base matching success 0 2 5
+videoBase
+0:  [0, 5]
+1:  [0]
+2:  [0, 3]
+3:  [6, 1, 2]
+baseVideo
+0:  [0, 1, 2]
+1:  [3]
+2:  [3]
+3:  [2]
+4:  []
+5:  [0]
+6:  [3]
+matching successfully matching times:2
+snatch distributed base matching success 0 2 3
+videoBase
+0:  [0, 5, 3]
+1:  [0]
+2:  [0]
+3:  [6, 1, 2]
+baseVideo
+0:  [0, 1, 2]
+1:  [3]
+2:  [3]
+3:  [0]
+4:  []
+5:  [0]
+6:  [3]
+matching successfully matching times:3
+snatch  undistributed base  0  4
+videoBase
+0:  [0, 5, 3, 4]
+1:  [0]
+2:  [0]
+3:  [6, 1, 2]
+baseVideo
+0:  [0, 1, 2]
+1:  [3]
+2:  [3]
+3:  [0]
+4:  [0]
+5:  [0]
+6:  [3]
+matching successfully matching times:4
+snatch  undistributed base  3  0
+videoBase
+0:  [0, 5, 3, 4]
+1:  [0]
+2:  [0]
+3:  [6, 1, 2, 0]
+baseVideo
+0:  [0, 1, 2, 3]
+1:  [3]
+2:  [3]
+3:  [0]
+4:  [0]
+5:  [0]
+6:  [3]
+matching successfully matching times:5
+snatch distributed base matching success 1 3 2
+videoBase
+0:  [0, 5, 3, 4]
+1:  [0, 2]
+2:  [0]
+3:  [0, 6, 1]
+baseVideo
+0:  [0, 1, 2, 3]
+1:  [3]
+2:  [1]
+3:  [0]
+4:  [0]
+5:  [0]
+6:  [3]
+matching successfully matching times:6
+matchingTimes:6
+×îÖÕ×´Ì¬
+videoBase
+0:  [0, 5, 3, 4]
+1:  [0, 2]
+2:  [0]
+3:  [0, 6, 1]
+baseVideo
+0:  [0, 1, 2, 3]
+1:  [3]
+2:  [1]
+3:  [0]
+4:  [0]
+5:  [0]
+6:  [3]
+0.7282065201398159

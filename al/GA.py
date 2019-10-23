@@ -12,29 +12,25 @@ class GA:
         self.population = Population()  # 初始化
         self.population.initialization(basevisitedUEWithVideoBase[0], basevisitedUEWithVideoBase[1])  # 初始化网络拓扑，测试
 
-    def runGa(self):
-        # 根据初始化参数，执行
-        dataTime = time.strftime("%Y%m%d", time.localtime())
-        rootPath = "./data"
-        fileName = dataTime + "-matching"  ".txt"
-        populationFitnessPath = rootPath + "/populationFitness/" + fileName
-        maxFitnessPath = rootPath + "/maxFitness/" + fileName
-        resultVQD = self.ga(self.population, populationFitnessPath, maxFitnessPath)
+    def runGa(self, gaFilePath):
+        resultVQD = self.ga(self.population, gaFilePath)
         return resultVQD
         print("GA结束")
 
-    def ga(self, population, fileName, maxFitnessFile):
+    def ga(self, population, gaFilePath):
         population.creatPopulation()  # 生成种群
         points = []
         painter = Painter()
         painter.paintNetworkTopology(population.baseRadius, population.locationOfBase, population.locationOfUser,
-                                     population.basevisitedUE, maxFitnessFile)
+                                     population.basevisitedUE, gaFilePath)
         '''存储结果，用于绘图，文件操作'''
+        f = open(gaFilePath, 'w')
         iterations = 1  # 当前迭代次数
         while (iterations <= population.iterations):
             fitness = population.getAllFitnessIntegral()
             maxFitnessInCurrentPopulation = max(fitness)
             print("代数：" + str(iterations) + "  最好值：" + str(maxFitnessInCurrentPopulation))
+            f.write("iterations: " + str(iterations) + " fitness: " + str(maxFitnessInCurrentPopulation) + '\n')
             if iterations == 1:
                 maxFitness = maxFitnessInCurrentPopulation
             else:
@@ -71,5 +67,7 @@ class GA:
         print("VN： " + str(population.VN))
         print("C: " + str(population.individualList[index].C))
         print("P: " + str(population.individualList[index].P))
+        f.write("end" + '\n' + "C: " + str(population.individualList[index].C) + '\n' + "P: " + str(
+            population.individualList[index].P))
         return [population.individualList[index].C, population.individualList[index].P, fitness[index],
                 population.individualList[index].ansArray]
