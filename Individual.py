@@ -53,7 +53,7 @@ class Individual:
         '''视频的存储方式'''
         self.typeOfVQD = typeOfVQD
         if self.typeOfVQD == 4 or self.typeOfVQD == 5:
-            self.baseVisitedOfUserVisitingVideo = (np.array(self.baseVisitedOfUserVisitingVideo))
+            self.baseVisitedOfUserVisitingVideo = baseVisitedOfUserVisitingVideo
         self.N0 = 11
         self.Bias = 1000000  # 防止干扰和噪声过小设置的偏移值，在计算SINR之后会约掉 10^6
         self.Qmax = 1  # 实数功率等级，所以最大功率等级是1
@@ -149,7 +149,6 @@ class Individual:
     '''3.变异种群中选择一个个体，从基站1到S循环i，每层产生一个随机数j,信道j，有对应值删除，无对应值随机分配信道'''
 
     def mutate(self):
-        '''变异，随机选择一个位置进行变异'''
         for base in range(self.sumOfBase):
             if (len(self.basevisitedUE[base]) > 0):
                 channel = random.randint(0, self.sumOfChannels - 1)
@@ -171,7 +170,8 @@ class Individual:
                         self.C[base][channel] = user  # 把信道随机分配给一个用户
                         if self.Qmax - sum(self.P[base]) < self.powerLimit * 100:
                             self.revisePower(base)  # 功率超了修复
-                        self.P[base][channel] = random.random() * (self.Qmax - sum(self.P[base]))
+                        self.P[base][channel] = random.random() * (
+                                self.Qmax - sum(self.P[base]) + self.P[base][channel])
                         if self.P[base][channel] == 0:
                             self.C[base][channel] = -1
 
@@ -191,38 +191,6 @@ class Individual:
         for base in range(self.sumOfBase):  # 先修复一次功率,以免出现溢出
             self.revisePower(base)
 
-    def getFitness(self):
-        fileName = "sinr.txt"
-        print("执行getFitness函数")
-        self.getSINR()
-        f = open(fileName, 'w')
-        f.write(str(self.SINR) + '\n')
-        for i in range(len(self.SINR)):
-            f.write(str(self.SINR[i]) + '\n')
-        f.write('\n')
-        '''
-        计算用户n使用基站n的信道m访问基站n中的视频v的描述q的误码率
-        每个视频描述的误码率
-        误码率，是一个数组，只要用户访问这个视频了，就需要计算对于这个用户来说，整个视频描述的误码率
-        用户不访问视频，误码率为0.用户访问视频，误码率为0-1
-        '''
-        PER = []
-        for video in range(len(self.VN)):  # 视频i
-            PER.append([])
-            if self.typeOfVQD == 4 or self.typeOfVQD == 5:
-                for user in range(len(self.VN[video])):
-                    PER[video].append(self.getPEROfVQD45(user, video))
-            elif self.typeOfVQD == 1 or self.typeOfVQD == 2 or self.typeOfVQD == 3:
-                for user in range(len(self.VN[video])):
-                    PER[video].append(self.getPEROfVQD123(user, video))
-        '''个体适应值/误码率，fitness，越小越好'''
-        fitness = 0
-        for video in range(len(PER)):
-            for user in range(len(PER[video])):
-                fitness += PER[video][user]
-        '''为了符合遗传算法的演进规则，即：个体适应值越大。越容易存活，将适应值变为负数，满足GA算法演进规则'''
-        return -fitness
-
     # 这时候计算出来的就是信道的可靠性
     def getFitnessWithIntegral(self):
         self.getPERofBaseChannelWithIntegral()
@@ -241,55 +209,7 @@ class Individual:
         for video in range(len(PER)):
             for user in range(len(PER[video])):
                 fitness += PER[video][user]
-        return fitness / self.VNTimes
-
-    '''    def getPEROfVQD123(self, user, video):
-        pnv = 1
-        #用户访问视频时，需要计算失真
-        if self.VN[video][user] == 1:
-            #找到视频video的存储基站，到存储基站中找到信道误码率,有多个描述
-            # 当前描述的存储位置只有一个，是确定的
-            for base in self.VQD[video]:
-               #video的第q个描述，在同一基站使用多条信道，考虑频谱聚合技术
-                uniSinr = 0
-                for channel in range(len(self.P[base])):
-                    if self.C[base][channel] == user:
-                        uniSinr += self.SINR[base][channel]  # 使用频谱聚合技术
-                pnvq = 1
-                if uniSinr > self.Ti:
-                    pnvq = self.ei * math.e ** (-(self.fi * uniSinr))  # 如果sinr大于sinr门限值，用公式误码率，如果小于则误码率直接为1
-                # 基站s使用信道m给用户n传输数据 ei、fi包大小相关约束
-                pnsvq = 0
-                pnv *= pnvq  # 多个描述，每个描述都要求误码率
-        else:
-            pnv = 0
-        return pnv'''
-
-    '''user访问视频video的误码率'''
-
-    '''
-        def getPEROfVQD45(self, user, video):
-        Pnv = 1
-        self.baseVisitedOfUserVisitingVideo  # 用户-视频-描述
-       #用户访问这个视频了，需要计算失真
-        if self.VN[video][user] == 1:
-            #找user访问video的描述description时，访问的基站，去哪个基站找这个视频
-            for decsription in range(len(self.VQD[video])):
-                visitedBase = (np.array(self.baseVisitedOfUserVisitingVideo))[user][video][decsription]
-                # video的第q个描述，在同一基站使用多条信道，考虑频谱聚合技术
-                Pnvq = 1
-                uniSinr = 0
-                for channel in range(len(self.P[visitedBase])):
-                    if self.C[visitedBase][channel] == user:
-                        uniSinr += self.SINR[visitedBase][channel]  # 频谱聚合技术
-                #如果sinr大于sinr的门限值，用公式误码率，如果小于则误码率直接为1
-                if uniSinr > self.Ti:
-                    # 基站s使用（频谱聚合技术）信道联合信道m给用户n传输数据 ei、fi包大小相关约束
-                    Pnvq = self.ei * math.e ** (-(self.fi * uniSinr))
-                Pnv *= Pnvq  # 多个描述，每个描述都要求误码率
-        else:
-            Pnv = 0
-        return Pnv'''
+        return fitness
 
     def getAns(self):
         # 得到用户与每个基站进行通信时的链路可靠性，根据每个信道的可靠性，self.C
@@ -304,7 +224,6 @@ class Individual:
                         ansEachChannel = 1 - self.asm_array[base][channe]
                         ansEachBase *= ansEachChannel
                 self.ans[user].append(ans - ansEachBase)
-        i = 0
 
     def getPEROfVNWithIntegralOfVQD123(self, user, video):
         if self.VN[video][user] == 1:
@@ -337,24 +256,24 @@ class Individual:
                 if user != -1:
                     ss = self.P[base][channel] * self.powerOfBase[base] * (
                             (self.distanceUserToBase[user][base]) ** (-4))
-                    try:
+                    if ss == 0:
+                        self.C[base][channel] = -1
+                        self.asm_array[base].append(0)
+                    else:
                         asm = math.e ** (-(self.tau * self.__N0) / ss)
-                    except:
-                        print(str(self.P[base][channel] * self.powerOfBase[base]) + " " + str(ss))
-                    for otherBase in range(self.sumOfBase):
-                        if otherBase != base:
-                            # 当前产生干扰的基站信道，是否被占用，未被占用，则不产生干扰
-                            if self.C[otherBase][channel] != -1:
-                                ii = self.P[otherBase][channel] * self.powerOfBase[otherBase] * (
-                                        (self.distanceUserToBase[user][otherBase]) ** (-4)) * self.tau
-                                ivalue = ss / (ss + ii)
-                                # print(str(base) + " -otherbase" + str(otherBase) + " ivalue: " + str(ivalue))
-                                asm = asm * ivalue
+                        for otherBase in range(self.sumOfBase):
+                            if otherBase != base:
+                                # 当前产生干扰的基站信道，是否被占用，未被占用，则不产生干扰
+                                if self.C[otherBase][channel] != -1:
+                                    ii = self.P[otherBase][channel] * self.powerOfBase[otherBase] * (
+                                            (self.distanceUserToBase[user][otherBase]) ** (-4)) * self.tau
+                                    ivalue = ss / (ss + ii)
+                                    # print(str(base) + " -otherbase" + str(otherBase) + " ivalue: " + str(ivalue))
+                                    asm = asm * ivalue
 
-                    self.asm_array[base].append(asm)
+                        self.asm_array[base].append(asm)
                 else:
                     self.asm_array[base].append(0)
-        i = 0
 
     def getSINR(self):
         print("执行getsinr函数")
@@ -374,8 +293,9 @@ class Individual:
                     '''在用户k处能接受到的信号强度,信道功率×功率增益'''
                     S = self.P[base][channel] * self.powerOfBase[base] * G * self.Bias
                     I = 0
-                    Noise = self.Qmax * self.powerOfBase[base] * self.Bias * (
-                            self.baseRadius[base] ** (-4)) / self.Alpha  # 计算噪声
+                    '''Noise = self.Qmax * self.powerOfBase[base] * self.Bias * (
+                            self.baseRadius[base] ** (-4)) / self.Alpha  # 计算噪声'''
+                    Noise = self.__N0
                     for otherBase in range(self.sumOfBase):
                         '''如果不是当前基站，且基站信道处于非闲置状态，即功率不是0,# 其他基站在用户user处的信道增益'''
                         if (otherBase != base) and (self.C[otherBase][channel] != -1):
@@ -383,7 +303,6 @@ class Individual:
                             Ik = self.P[otherBase][channel] * self.powerOfBase[otherBase] * GOther * self.Bias
                             I += Ik  # 干扰相加，得到总的干扰  此处得到来自其他基站的干扰
                     sinr = S / (I + Noise)
-                    # print("基站： "+str(base)+" 信道："+str(channel)+" 噪声："+str(Noise)+" 干扰： "+str(I)+" 该信道信号大小：： "+str(S)+" 信噪比： "+str(sinr))
                     if I != 0:
                         f.write("base" + str(base) + " channel" + str(channel) + "S/I" + str(
                             S / I) + "S/(I+N) " + str(
@@ -392,4 +311,3 @@ class Individual:
                         f.write("I 0" + " S/(I+N)" + str(sinr) + " noise" + str(
                             Noise / self.Bias) + '\n')
                 self.SINR[base].append(round(sinr, 9))
-        return self.SINR

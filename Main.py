@@ -28,8 +28,8 @@ def ga(population, fileName, maxFitnessFile, typeOfVQD):
         fitness = population.getAllFitnessIntegral()
         maxFitness = max(maxFitness, max(fitness))
         minFitness = min(minFitness, min(fitness))
-        print("代数：" + str(iterations) + "  最好值：" + str(maxFitness))
-        m.write("iterations " + str(iterations) + ": " + str(maxFitness) + '\n')
+        print("代数：" + str(iterations) + "  最好值：" + str(maxFitness / population.VNTimes))
+        m.write("iterations " + str(iterations) + ": " + str(maxFitness / population.VNTimes) + '\n')
         f.write("iterations " + str(iterations + 1) + '\n')
         f.write(str(fitness) + '\n')
         points.append([iterations, maxFitness])
@@ -75,16 +75,16 @@ def printTime(name, time):
 def main2(dataTime):
     # 根据初始化参数，执行
     rootPath = "./data"
-    # type:[1,51, 2, 3, 4]
-    list = [2]
-    for type in list:
-        fileName = dataTime + "-" + str(type) + "-VQD" + str(type) + ".txt"
-        populationFitnessPath = rootPath + "/populationFitness/" + fileName
-        maxFitnessPath = rootPath + "/maxFitness/" + fileName
-        resultVQD = ga(population, populationFitnessPath, maxFitnessPath, type)
-        print("画图数据")
-        print("VQD" + str(type) + ".points " + str(resultVQD.points) + '\n')
-        print("画收敛图")
+    # type:[1,5, 2, 3, 4]
+    times = 4
+    for currentTime in range(4, times +3):
+        list = [1,5]
+        for type in list:
+            fileName = dataTime + "-" + str(type) + "-VQD" + str(type) + "-" + str(currentTime) + ".txt"
+            populationFitnessPath = rootPath + "/populationFitness/" + fileName
+            maxFitnessPath = rootPath + "/maxFitness/" + fileName
+            resultVQD = ga(population, populationFitnessPath, maxFitnessPath, type)
+            print("画图数据" + "VQD" + str(type) + ".points " + str(resultVQD.points) + '\n')
 
 
 population = Population()  # 初始化

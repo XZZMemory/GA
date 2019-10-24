@@ -1,5 +1,8 @@
 from random import choice
 import random
+import time
+
+import os
 
 
 def printListWithTwoDi(name, list):
@@ -51,10 +54,30 @@ def getImportant(data):
     return result[0][1]
 
 
-data = [[1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0], [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1], [1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0]]
+def test():
+    data = [[1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0],
+            [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+            [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1],
+            [1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0]]
 
-print(getVNTimes(data))
-list = [3, 4, 5, 6]
-#print(list / 2)
-print(50**(-4))
-print(400**(-4))
+    print(getVNTimes(data))
+    list = [3, 4, 5, 6]
+    # print(list / 2)
+    print(50 ** (-4))
+    print(400 ** (-4))
+
+
+def creatDirTest():
+    times = 3
+    print(time.localtime())
+    dataTime = time.strftime("%Y%m%d", time.localtime())
+    filePath = 2
+    totalTime = 2
+    # dataTime_+times
+    for k in range(1, totalTime + 1):
+        dir = "./al/data/ " + str(dataTime) + "-" + str(k)
+        os.mkdir(dir)
+        for y in range(1, times + 1):
+            filePath = dir + "/" + str(y) + "-"
+            maFilePath = filePath + "matching.txt"
+            f = open(maFilePath, 'w')
