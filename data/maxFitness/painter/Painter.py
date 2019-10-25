@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def painter():
     result = process()
-    data1 = result[0]
+    data1 = []
     data2 = result[1]
     data3 = result[2]
     data4 = result[3]
@@ -45,17 +45,17 @@ def painter():
 
 
 def process():
-    data1FilePath = './data1用户先分布在微基站再分布在宏基站中.txt'
+    data1FilePath = './data1.txt'
     data2FilePath = './data2.txt'
     data3FilePath = './data3.txt'
     data4FilePath = './data4.txt'
     data5FilePath = './data5.txt'
-    iterations = 3000
-    maxSum = 59
-    data1 = processing(data1FilePath, iterations, maxSum)
-    data2 = processing(data2FilePath, iterations, maxSum)
+    iterations = 6000
+    maxSum = 78
+    data1 = []  # []processing(data1FilePath, iterations, maxSum)
+    data2 = []  # processing(data2FilePath, iterations, maxSum)
     data3 = processing(data3FilePath, iterations, maxSum)
-    data4 = processing(data4FilePath, iterations, maxSum)
+    data4 = []  # processing(data4FilePath, iterations, maxSum)
     data5 = processing(data5FilePath, iterations, maxSum)
     print("data1用户先分布在微基站再分布在宏基站中:" + str(data1))
     print("data2:" + str(data2))
@@ -94,11 +94,11 @@ def processing(dataFilePath, iterations, maxSum):
     return data
 
 
-#painter()
+# painter()
 
 
 def painterOne():
-    data1 = processing('./data1用户先分布在微基站再分布在宏基站中.txt', 3000, 59)
+    data1 = processing('./data1.txt', 6000, 78)
 
     x1 = []
     y1 = []
@@ -111,4 +111,19 @@ def painterOne():
     plt.xlabel("iterations", fontsize=14)
     plt.ylabel("average reliability", fontsize=14)
     plt.show()
-painterOne()
+
+
+#painter()
+
+
+def processingTest():
+    dataFilePath = './data3.txt'
+    data1Temp = []
+    times = 0
+    with open(dataFilePath) as file_object:
+        for line in file_object:
+            times = times + 1
+            lineArray = eval(line)
+            for i in range(len(lineArray)):
+                print(lineArray[i])
+processingTest()
