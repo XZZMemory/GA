@@ -85,9 +85,9 @@ def processing(dataFilePath, iterations, maxSum):
     for i in range(len(data)):
         singleldata.append(data[i][1])
     print(str(singleldata))
-    # fiName = "./data+" + dataFilePath[6] + "-single.txt"
+    # fiName = "./25+" + dataFilePath[6] + "-single.txt"
     # ff = open(fiName, 'w')
-    '''    for i in range(len(data)):
+    '''    for i in range(len(25)):
         if i % 30 == 0:
             ff.write(str(int(i / 30)) + '\n')'''
 
